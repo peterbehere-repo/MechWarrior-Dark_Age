@@ -1,7 +1,0 @@
-{
-  "id": "smoke-20261019-230444",
-  "mode": "tab",
-  "url": "https://example.com/",
-  "extract": "h1",
-  "meta": "bridge smoke test: open tab, render, extract h1"
-}
