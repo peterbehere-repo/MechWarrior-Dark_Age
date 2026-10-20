@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"n\":0,\"urls\":[],\"vcType\":\"undefined\",\"tokenFound\":false,\"formatUuid\":null,\"cookie\":\"scribd-cookie-present\",\"dl\":[\"Download free for 30 days\",\"Download\",\"Download to read ad-free\",\"Download to read ad-free\"],\"title\":\"Mechwarrior Dark Age Campaign Fiction | PDF | Battle Tech\",\"pageCount\":\"202\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "id": "scribd-scout-01",
+  "mode": "interact",
+  "requestedUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "fetchedAt": "2026-10-20T13:56:37.457Z"
+}
