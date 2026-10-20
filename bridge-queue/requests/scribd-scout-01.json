@@ -1,0 +1,16 @@
+{
+ "id": "scribd-scout-01",
+ "mode": "interact",
+ "url": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+ "settleMs": 4000,
+ "steps": [
+  {
+   "act": "pause",
+   "ms": 6000
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{\n  const html = document.documentElement.outerHTML;\n  const re = /html\\.scribdassets\\.com\\/[a-z0-9]+\\/images\\/(\\d+)-[a-f0-9]+\\.jpg/g;\n  const urls = Array.from(new Set((html.match(re)||[])));\n  const out = {n: urls.length, urls: urls};\n  const vc = window.__viewContext;\n  out.vcType = typeof vc;\n  if (vc) { try { out.vcKeys = Object.keys(vc); out.vcLen = JSON.stringify(vc).length } catch(e){ out.vcErr = String(e) } }\n  const tm = html.match(/\"access_token\":\"([^\"]{20,})\"/); out.tokenFound = !!tm; if (tm) out.token = tm[1];\n  const fu = html.match(/\"format_uuid\":\"([^\"]+)\"/); out.formatUuid = fu ? fu[1] : null;\n  out.cookie = document.cookie.indexOf('scribd') >= 0 ? 'scribd-cookie-present' : 'no-scribd-cookie';\n  const t = document.body.innerText || '';\n  out.dl = (t.match(/Download[^\\n]{0,80}/g)||[]).slice(0,4);\n  out.title = document.title;\n  out.pageCount = (html.match(/\"page_count\":\\s*(\\d+)/)||[])[1] || null;\n  return JSON.stringify(out).slice(0,60000);\n})()"
+  }
+ ]
+}
