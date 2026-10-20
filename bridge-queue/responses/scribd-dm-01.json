@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"keys\":[\"possibleEvents\",\"eventListenerEnabled\",\"eventListeners\",\"options\",\"defaultViewMode\",\"mobile\",\"_imageDomainSubstitutionFrom\",\"callbacks_ready\",\"callbacks\",\"pages\",\"_renderedPageWidth\",\"_fontLoader\",\"adjacentFontLoadPages\",\"viewManagers\",\"viewportManager\",\"_currentFontAggregatorHostIdx\",\"visiblePages\",\"firstVisiblePage\",\"lastVisiblePage\",\"currentFontGroup\",\"isScrolling\",\"_scrollingCount\",\"lazyImageObserver\",\"_isEmbed\",\"fontAggregatorHosts\",\"assetPrefix\",\"displayType\",\"_imageDomainSubstitutionList\",\"_documentId\",\"_refreshPromise\",\"_onBeforeUnload\",\"_onPageShow\",\"_currentViewManager\",\"_expectedFirstPageNum\",\"logPageViewTimout\",\"_mostVisiblePageNum\",\"pageToken\",\"_refreshTimer\"],\"proto\":[\"constructor\",\"setupLazyImageObserver\",\"lazyLoad\",\"observeImages\",\"loadImages\",\"registerCallback\",\"executeCallbacks\",\"_fireZoomed\",\"nextFontAggregatorHost\",\"currentPageNum\",\"setupTestElements\",\"pageCount\",\"setupPaidDocument\",\"minimumPageNumber\",\"maximumPageNumber\",\"getClosestPageNumber\",\"flushFontQueue\",\"getMostVisiblePageNum\",\"updateMostVisiblePage\",\"visiblePagesChanged\",\"constrain\",\"boundingRatioForPage\",\"scheduleLogPageView\",\"_floor2\",\"getVisibleBBox\",\"logPageView\",\"_updateExpectedFirstPage\",\"_loadAdjacentFonts\",\"_loadAdjacentPages\",\"_removeUnusedPages\",\"_updatePageBoundingRects\",\"addPage\",\"setIsScrolling\",\"setViewManager\",\"_setViewManager\",\"setInitialViewManager\",\"setDefaultWidth\",\"subImageSrc\",\"allPagesAdded\",\"setEmbeddedDoc\",\"setPageWidths\",\"addFont\",\"initStyles\",\"gotoPage\",\"gotoPreviousPage\",\"gotoNextPage\",\"viewMode\",\"zoom\",\"resetZoom\",\"updateBasePageWidth\",\"setImageDomainSubstitution\",\"setAssetsHost\",\"disable\",\"disableCopyPasteOnPage\",\"enableCopyPasteOnPage\",\"initTokenRefresh\",\"destroyTokenRefresh\",\"_scheduleRefresh\",\"_doRefresh\",\"_appendToken\",\"_decodeTokenExpiry\"],\"pagesType\":\"object\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"gotoPage\":\"fn\",\"called\":\"gotoPage\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"n\":4,\"urls\":[\"https://html.scribdassets.com/7in2mkh54wchuan3/pages/1-bc4c135566.jsonp\",\"https://html.scribdassets.com/7in2mkh54wchuan3/pages/2-089ae620e7.jsonp\",\"https://html.scribdassets.com/7in2mkh54wchuan3/pages/3-9dbb7adabc.jsonp\",\"https://html.scribdassets.com/7in2mkh54wchuan3/pages/4-15cbd85df6.jsonp\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "id": "scribd-dm-01",
+  "mode": "interact",
+  "requestedUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "fetchedAt": "2026-10-20T14:08:01.376Z"
+}
