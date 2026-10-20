@@ -1,0 +1,16 @@
+{
+ "id": "scribd-dm-02",
+ "mode": "interact",
+ "url": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+ "settleMs": 5000,
+ "steps": [
+  {
+   "act": "pause",
+   "ms": 7000
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{const dm=window.docManager;if(!dm)return JSON.stringify({err:'no dm'});const p=dm.pages;const ks=Object.keys(p);const out={n:ks.length,first:ks.slice(0,10),last:ks.slice(-5)};try{const e=p[ks[0]];out.e0keys=Object.keys(e).slice(0,60);out.e0n=e.pageNum;out.e0hash=e.pageHash||e.hash||e.page_hash||null;out.e0url=(e.url||e.pageUrl||'').slice(0,150)}catch(err){out.e0err=String(err).slice(0,300)}try{out.pageCount=dm.pageCount;out.min=dm.minimumPageNumber();out.max=dm.maximumPageNumber();out.pageToken=(dm.pageToken||'').slice(0,80)}catch(err){out.e1=String(err).slice(0,300)}return JSON.stringify(out).slice(0,7000)})()"
+  }
+ ]
+}
