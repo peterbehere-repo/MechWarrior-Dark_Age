@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"n\":202,\"first\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"last\":[\"198\",\"199\",\"200\",\"201\",\"202\"],\"e0keys\":[\"containerElem\",\"innerPageElem\",\"contentUrl\",\"origWidth\",\"origHeight\",\"fonts\",\"docManager\",\"pageNum\",\"_targetHeight\",\"_targetWidth\",\"_innerPageVisible\",\"_imagesTurnedOn\",\"boundingRect\",\"isVisible\",\"displayDirty\",\"displayOn\",\"loadHasStarted\",\"loadFontGroup\",\"visibleHeight\",\"_tokenRetryCount\",\"_linksTurnedOn\",\"_svgFontsFixed\"],\"e0n\":1,\"e0hash\":null,\"e0url\":\"\",\"min\":1,\"max\":202,\"pageToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3OTUwOTczODMsImlhdCI6MTc5MjUwNTM4MywiaXNzIjoic2N\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "id": "scribd-dm-02",
+  "mode": "interact",
+  "requestedUrl": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+  "fetchedAt": "2026-10-20T14:10:07.104Z"
+}
