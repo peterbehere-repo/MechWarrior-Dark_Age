@@ -1,0 +1,28 @@
+{
+ "id": "scribd-dm-01",
+ "mode": "interact",
+ "url": "https://www.scribd.com/document/733661340/Dark-Age-Campaigns",
+ "settleMs": 5000,
+ "steps": [
+  {
+   "act": "pause",
+   "ms": 7000
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{const dm=window.docManager;const out={};if(!dm) return JSON.stringify({err:'no dm'});out.keys=Object.keys(dm).slice(0,60);try{out.proto=Object.getOwnPropertyNames(Object.getPrototypeOf(dm)).slice(0,100)}catch(e){out.e='p'};try{const p=dm.pages;out.pagesType=Array.isArray(p)?'array:'+p.length:String(typeof p);if(p&&p[0]){out.p0keys=Object.keys(p[0]).slice(0,50);out.p0n=p[0].pageNum; out.p0hash=p[0].pageHash||p[0].hash||null;out.p1hash=p[1]&&(p[1].pageHash||p[1].hash||null)}}catch(e){out.e1=String(e).slice(0,200)}return JSON.stringify(out).slice(0,9000)})()"
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{const dm=window.docManager;const out={};const cands=['scrollToPage','goToPage','gotoPage','setPage','showPage','jumpToPage','goTo','jumpTo','setCurrentPage','go'];for(const c of cands){if(typeof dm[c]==='function'){out[c]='fn';try{dm[c](100);out.called=c}catch(e){out['err_'+c]=String(e).slice(0,120)}}}return JSON.stringify(out)})()"
+  },
+  {
+   "act": "pause",
+   "ms": 8000
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{const es=performance.getEntriesByType('resource').map(e=>e.name).filter(n=>/html\\.scribdassets\\.com\\/[a-z0-9]+\\/pages\\//.test(n));return JSON.stringify({n:es.length,urls:Array.from(new Set(es))})})()"
+  }
+ ]
+}
