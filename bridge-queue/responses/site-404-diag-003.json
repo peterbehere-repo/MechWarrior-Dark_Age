@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "error": "step 1 (js) failed: js eval failed (CDP): TypeError: document.images.forEach is not a function\n    at <anonymous>:1:17",
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"imgs\":8,\"brokenBefore\":8}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": false,
+      "error": "js eval failed (CDP): TypeError: document.images.forEach is not a function\n    at <anonymous>:1:17",
+      "step": 1,
+      "act": "js"
+    }
+  ],
+  "id": "site-404-diag-003",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=3",
+  "fetchedAt": "2026-10-21T15:02:15.240Z"
+}
