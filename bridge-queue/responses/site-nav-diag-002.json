@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "error": "step 1 (click) failed: no match for undefined",
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"crumbs\":[\"https://peterbehere-repo.github.io/MechWarrior-Dark_Age/index.html\",\"https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards.html\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "error": "no match for undefined",
+      "ok": false,
+      "step": 1,
+      "act": "click"
+    }
+  ],
+  "id": "site-nav-diag-002",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=navfix2",
+  "fetchedAt": "2026-10-21T15:46:48.237Z"
+}
