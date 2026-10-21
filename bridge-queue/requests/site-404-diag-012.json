@@ -1,1 +1,0 @@
-{"id": "site-404-diag-012", "mode": "interact", "url": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?raw2", "settleMs": 3000, "steps": [{"act": "js", "expr": "(() => JSON.stringify({sampleSrc: [...document.images].slice(0,2).map(i=>i.src), rawCount: document.documentElement.outerHTML.split('raw.githubusercontent').length-1}))()"}]}
