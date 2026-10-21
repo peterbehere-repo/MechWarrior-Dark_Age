@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "eager set: 8",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "error": "unknown act: drag",
+      "ok": false,
+      "step": 1,
+      "act": "drag"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"broken\":[\"WS-SQ-001.jpg\",\"WS-SQ-002.jpg\",\"WS-SQ-003.jpg\",\"WS-SQ-004.jpg\",\"WS-SQ-005.jpg\",\"WS-SQ-006.jpg\",\"WS-SQ-007.jpg\",\"WS-SQ-008.jpg\"],\"resources\":[{\"f\":\"WS-SQ-001.jpg\",\"st\":404,\"tx\":9679,\"dur\":132},{\"f\":\"WS-SQ-002.jpg\",\"st\":404,\"tx\":9679,\"dur\":131},{\"f\":\"WS-SQ-003.jpg\",\"st\":404,\"tx\":9679,\"dur\":132},{\"f\":\"WS-SQ-004.jpg\",\"st\":404,\"tx\":9679,\"dur\":137},{\"f\":\"WS-SQ-005.jpg\",\"st\":404,\"tx\":9679,\"dur\":148},{\"f\":\"WS-SQ-006.jpg\",\"st\":404,\"tx\":9679,\"dur\":149},{\"f\":\"WS-SQ-007.jpg\",\"st\":404,\"tx\":9679,\"dur\":148},{\"f\":\"WS-SQ-008.jpg\",\"st\":404,\"tx\":9679,\"dur\":150}]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=6",
+  "id": "site-404-diag-006",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=6",
+  "fetchedAt": "2026-10-21T15:08:24.781Z"
+}
