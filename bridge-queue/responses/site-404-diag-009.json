@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "started",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "[[\"plain404\",404,\"{\\\"accept-ranges\\\":\\\"bytes\\\",\\\"access-control-allow-origin\\\":\\\"*\\\",\\\"age\\\":\\\"1122\\\",\\\"content-encoding\\\":\\\"gzip\\\",\\\"content-length\\\":\\\"5254\\\",\\\"content-security-policy\\\":\\\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\\\",\\\"content-type\\\":\\\"text/html; charset=utf-8\\\",\\\"date\\\":\\\"Wed, 21 Oct 2026 15:14:15 GMT\\\",\\\"etag\\\":\\\"W/\\\\\\\"6abcf5c5-24a3\\\\\\\"\\\",\\\"server\\\":\\\"GitHub.com\\\",\\\"strict-transport-security\\\":\\\"max-age=31556952\\\",\\\"vary\\\":\\\"Accept-Encoding\\\",\\\"via\\\":\\\"1.1 varnish\\\",\\\"x-cache\\\":\\\"HIT\\\",\\\"x-cache-hits\\\":\\\"16\\\",\\\"x-fastly-request-id\\\":\\\"e4642b7e5378e59b288d0dee7100f337cfb68a25\\\",\\\"x-github-edge-region\\\":\\\"iad\\\",\\\"x-github-reque\"],[\"busted\",404,\"text/html; charset=utf-8\"]]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=9",
+  "id": "site-404-diag-009",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=9",
+  "fetchedAt": "2026-10-21T15:14:25.576Z"
+}
