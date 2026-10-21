@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "label": "Home",
+      "matched": true,
+      "ok": true,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/index.html | MechWarrior: Dark Age",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "label": "Browse all cards →",
+      "matched": true,
+      "ok": true,
+      "step": 3,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "step": 4,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards.html | Card Gallery — MechWarrior: Dark Age",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 5,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards.html",
+  "id": "site-nav-diag-003",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=navfix3",
+  "fetchedAt": "2026-10-21T15:49:06.250Z"
+}
