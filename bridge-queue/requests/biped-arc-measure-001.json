@@ -1,9 +1,0 @@
-{
-  "id": "biped-arc-measure-001",
-  "mode": "interact",
-  "url": "https://7b5ype.files.rool.cloud/Mocks/Clix%20Bases/Bipedal%20Mech%20Base%20Template.html",
-  "settleMs": 1000,
-  "steps": [
-    {"act": "js", "expr": "(() => { const svg=document.querySelector('svg'); const tn=[...svg.querySelectorAll('text')].find(t=>t.textContent.includes('ATLAS')); const arc=document.getElementById('nameArc'); const g=[...svg.querySelectorAll('g')].filter(x=>(x.getAttribute('transform')||'').includes('rotate')).map(x=>x.getAttribute('transform')); const b=tn?tn.getBBox():null; return JSON.stringify({ok:!!tn, ctl: tn?tn.getComputedTextLength():null, tot: arc?arc.getTotalLength():null, bbox: b?{x:+b.x.toFixed(1),y:+b.y.toFixed(1),w:+b.width.toFixed(1),h:+b.height.toFixed(1)}:null, rankTransforms: g.slice(0,3), txt: tn?tn.textContent:null}); })()"}
-  ]
-}
