@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"broken\":[],\"loaded\":0,\"title\":\"Card Gallery — MechWarrior: Dark Age\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "label": "Wolf Strike",
+      "matched": true,
+      "ok": true,
+      "step": 1,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "value": "/MechWarrior-Dark_Age/cards/wolf-strike.html | Wolf Strike — Special — MechWarrior: Dark Age",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"imgs\":8,\"broken\":[\"Thumbs/WS-SQ-001.jpg\",\"Thumbs/WS-SQ-002.jpg\",\"Thumbs/WS-SQ-003.jpg\",\"Thumbs/WS-SQ-004.jpg\",\"Thumbs/WS-SQ-005.jpg\",\"Thumbs/WS-SQ-006.jpg\",\"Thumbs/WS-SQ-007.jpg\",\"Thumbs/WS-SQ-008.jpg\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html",
+  "id": "site-404-diag-001",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards.html",
+  "fetchedAt": "2026-10-21T14:59:20.696Z"
+}
