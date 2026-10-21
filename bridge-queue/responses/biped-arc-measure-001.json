@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "error": "step 0 (js) failed: Frame with ID 0 is showing error page",
+  "results": [
+    {
+      "ok": false,
+      "error": "Frame with ID 0 is showing error page",
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "id": "biped-arc-measure-001",
+  "mode": "interact",
+  "requestedUrl": "https://7b5ype.files.rool.cloud/Mocks/Clix%20Bases/Bipedal%20Mech%20Base%20Template.html",
+  "fetchedAt": "2026-10-21T23:59:35.028Z"
+}
