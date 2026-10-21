@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"imgs\":8,\"brokenBefore\":8}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"broken\":[\"Thumbs/WS-SQ-001.jpg\",\"Thumbs/WS-SQ-002.jpg\",\"Thumbs/WS-SQ-003.jpg\",\"Thumbs/WS-SQ-004.jpg\",\"Thumbs/WS-SQ-005.jpg\",\"Thumbs/WS-SQ-006.jpg\",\"Thumbs/WS-SQ-007.jpg\",\"Thumbs/WS-SQ-008.jpg\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=4",
+  "id": "site-404-diag-004",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/cards/wolf-strike.html?v=4",
+  "fetchedAt": "2026-10-21T15:04:23.227Z"
+}
