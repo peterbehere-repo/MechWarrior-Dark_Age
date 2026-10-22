@@ -1,0 +1,12 @@
+{
+  "id": "biped-arc-measure-003",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "settleMs": 800,
+  "steps": [
+    {"act": "clickText", "selector": "button", "text": "Open the page", "optional": true},
+    {"act": "wait", "selector": "svg", "timeoutMs": 8000, "optional": true},
+    {"act": "pause", "ms": 900},
+    {"act": "js", "expr": "(() => { const svg=document.querySelector('svg'); if(!svg) return JSON.stringify({ok:false, why:'no svg', title:document.title}); const tn=[...svg.querySelectorAll('text')].find(t=>t.textContent.includes('ATLAS')); const arc=document.getElementById('nameArc'); const g=[...svg.querySelectorAll('g')].filter(x=>(x.getAttribute('transform')||'').includes('rotate')).map(x=>x.getAttribute('transform')); const b=tn?tn.getBBox():null; return JSON.stringify({ok:!!tn, ctl: tn?tn.getComputedTextLength():null, tot: arc?arc.getTotalLength():null, bbox: b?{x:+b.x.toFixed(1),y:+b.y.toFixed(1),w:+b.width.toFixed(1),h:+b.height.toFixed(1)}:null, rankTransforms: g.slice(0,3), txt: tn?tn.textContent:null, dpr: window.devicePixelRatio, vw: innerWidth}); })()"}
+  ]
+}
