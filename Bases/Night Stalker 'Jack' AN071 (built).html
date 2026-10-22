@@ -73,30 +73,31 @@ const UNIT={
   baseTip:'Night Stalker \'Jack\' — Gunslinger — 149 points — fixed base top; the combat dial turns beneath',
   frontTip:'Front firing arc — 270° (Warrenborn AN071: Arc 270)',
   rearTip:'Rear firing arc — 90° (Warrenborn AN071: Rear Arc 90); runs under the heat dial and stops at the dial window',
-  prim:{kind:'e',n:1,min:0,max:0,tip:'Primary weapon: Energy — 1 target (range 0–0)'},
-  sec:null,
+  prim:{kind:'m',n:1,min:0,max:0,tip:'Primary weapon: Melee — 1 target (close combat (0–0))'},
+  sec:{kind:'e',n:2,min:0,max:10,tip:'Secondary weapon: Energy — 2 targets (range 0–10)'},
   vent:3,
   arc:270,
   rearArc:90,
   life:12,
   ko:6,
   repairClicks:[5,6,9],
-  P:[3,3,3,3,2,2,2,2,2,2,0,0],
-  S:[null,null,null,null,null,null,null,null,null,null,null,null],
+  P:[3,3,3,3,0,0,0,0,2,2,0,0],
+  S:[3,3,3,3,2,2,2,2,2,2,0,0],
   SPD:[10,10,10,9,9,8,8,7,7,7,6,5],
   ATK:[9,9,9,8,8,7,7,6,6,6,5,5],
   DEF:[20,20,19,19,18,18,17,17,16,16,15,15],
-  primSE:[null,null,null,null,null,null,null,null,null,null,null,null],
+  primSE:[null,'k','k','k','r','r','r','r',null,null,null,null],
   atkSE:[null,null,null,null,null,null,null,null,null,null,'k','k'],
   defSE:[null,'gy','gy','gy',null,null,null,null,null,null,null,null],
-  primSEn:[null,null,null,null,null,null,null,null,null,null,null,null],
+  primSEn:[null,'Agility','Agility','Agility','Hand-to-Hand Weapon','Hand-to-Hand Weapon','Hand-to-Hand Weapon','Hand-to-Hand Weapon',null,null,null,null],
   atkSEn:[null,null,null,null,null,null,null,null,null,null,'Salvage','Salvage'],
   defSEn:[null,'Heavy Armor','Heavy Armor','Heavy Armor',null,null,null,null,null,null,null,null],
   heat:[[['gr','0'],['gr','0'],['gr','0']],[['w','0'],['w','0'],['w','0']],[['w','0'],['w','0'],['sh','☢']],[['w','0'],['y','-1'],['sh','☢']],[['w','0'],['y','-1'],['sh','☢']],[['sh','☢'],['sh','☢'],['sh','☢']]],
   heatFx:[['Start','Start','Start'],[null,null,null],[null,null,null],[null,'Heat Sink Overload Check (1-2: heat)','Avoid Shutdown Check (1-2: shutdown)'],[null,'Heat Sink Overload Check (1-2: heat)','Avoid Shutdown Check (1-2: shutdown)'],[null,null,null]],
-  heatRows:[{key:'energy',label:'Secondary damage (energy)'},{key:'energy',label:'Primary damage (energy)'},{key:'mech',label:'Speed'}],
+  heatRows:[{key:'melee',label:'Primary damage (melee)'},{key:'energy',label:'Secondary damage (energy)'},{key:'mech',label:'Speed'}],
   era:'2.0',
   footHtml:'Layout from the AoD rulebook p.10 &lsquo;Mech base (same geometry as all MWDA biped bases):<br>front arc = 270&deg; line + rear arc = 90&deg; line (Warrenborn AN071: Arc 270 / Rear Arc 90); dial columns: vent, primary, secondary, speed, attack, defense; START at click 1; heat drum panels = Warrenborn heat table cols 1-6 (green start &rarr; shutdown). Data: Warrenborn Unit.php?ID=AN071 cross-checked against the MWDA Game scrape.',
+  rank:'Unique',
   variantHtml:'',
   variantTok:null,
   variantTip:null,
@@ -155,10 +156,17 @@ for(let i=0;i<46;i++){const a=i/46*2*Math.PI;
    Measured on p.10 (front-up photo, tilt-corrected): vent 0.28R, primary 0.43R,
    secondary 0.57R, speed 0.71R, band 0.86R. Column 54px wide, band 78px. ==== */
 const COLW=54, COLX=CX, COLTOP=428, COLBOT=540;
-const BL=CX-39, BR=CX+39, BTOP=COLBOT, BBOT=580;
+const BL=CX-34.5, BR=CX+34.5, BTOP=COLBOT, BBOT=580;
 const P_Y=445, S_Y=483, SPD_Y=521, BAND_Y=562;
 const ATK_X=CX-21, DEF_X=CX+21, MK_X=CX;
-const L_PATH=`M ${CX-27} ${COLTOP} H ${CX+27} V ${BTOP} H ${BR} V ${BBOT} H ${BL} V ${BTOP} H ${CX-27} V ${COLTOP} Z`;
+/* Peter 2026-10-21: window vs printed strip are now SEPARATE — the die-cut aperture is
+   narrower than the dial's printed column (Peter: "narrow the view window ... I can see
+   edges of the next segment"). The printed white strip keeps its measured width (column
+   54, band 78) and runs WIDER than the aperture, so neighbouring clicks' strips underlie
+   the slot continuously and never seam at the edges. Worst-case neighbour poke at a 20 deg
+   step lands 16.25px off-centre — outside the 16px aperture — with 28px cells. */
+const L_PATH=`M ${CX-16} ${COLTOP} H ${CX+16} V ${BTOP} H ${BR} V ${BBOT} H ${BL} V ${BTOP} H ${CX-16} V ${COLTOP} Z`;
+const STRIP_PATH=`M ${CX-27} ${COLTOP} H ${CX+27} V ${BTOP} H ${CX+39} V ${BBOT} H ${CX-39} V ${BTOP} H ${CX-27} V ${COLTOP} Z`;
 /* ==== front arc: 180° white line (9 to 3 o'clock over the top) + end ticks, per p.10 photo.
    Drawn LATER (after the base top) so it isn't covered by the dial disc — it's printed on
    the fixed top shell, since the arc is relative to the miniature, not the dial. ==== */
@@ -198,24 +206,26 @@ function val(g,px,py,w,h,txt,fs,se,tipText){
   if(tipText){const r=el('rect',{x:px-w/2,y:py-h/2,width:w,height:h,fill:'transparent','pointer-events':'all'},g);tip(r,tipText);}}
 for(let i=0;i<NSEG;i++){
   const g=el('g',{transform:`rotate(${-i*STEP} ${CX} ${CY})`},discG);
-  el('path',{d:L_PATH,fill:'#f4f4f0'},g);
+  el('path',{d:STRIP_PATH,fill:'#f4f4f0'},g);
   if(i>=UNIT.life){ /* KO'd clicks: the slot shows three bullet holes = eliminated (AoD p.2).
     Peter 2026-10-20: actual hole art (Mocks/icons/bullet-hole.png, white->transparent) replaces
     the old three-dot circles, which read as '***'. */
     /* per-hole tooltips (Peter 2026-10-20): each hole names its count and the click */
-    for(const bx of [-19,0,19]){
-      const k=[-19,0,19].indexOf(bx);
-      const im=el('image',{href:ICONS.bul,x:CX+bx-13,y:471,width:26,height:26},g);
-      tip(im,`Bullet hole ${k+1} of 3 — the unit is ELIMINATED: click ${i+1-UNIT.life} past its last click (AoD p.2)`);}
+    /* Peter 2026-10-21: holes are VERTICAL — one in each of the three damage rows
+       (primary, secondary, speed), taking the place of the stat values, like the real
+       base's dial (was: a horizontal trio, Peter's correction). */
+    [[P_Y,0],[S_Y,1],[SPD_Y,2]].forEach(([ky,k])=>{
+      const im=el('image',{href:ICONS.bul,x:CX-13,y:ky-13,width:26,height:26},g);
+      tip(im,`Bullet hole ${k+1} of 3 — the unit is ELIMINATED: click ${i+1-UNIT.life} past its last click (AoD p.2)`);});
     continue;}
   /* per-value tooltip text (Peter 2026-10-20): value + click + SE name & description.
      SE names come from the MWDA Game scrape (UNIT.primSEn etc.); configs without them
      (the hand-built originals) simply show the value line. */
   const seN=a=>(Array.isArray(a)?a[i]:null)||null;
   const cellTip=(label,v,name)=>`${label} ${v} — click ${i+1} of ${UNIT.life}`+(name?` — ${seDesc(name)}`:'');
-  val(g,COLX,P_Y,30,28,P[i],22,primSE(i),cellTip('Primary damage',P[i],seN(UNIT.primSEn))); /* primary damage */
-  val(g,COLX,S_Y,30,28,S[i],22,null,cellTip('Secondary damage',S[i],seN(UNIT.secSEn)));      /* secondary damage */
-  val(g,COLX,SPD_Y,30,28,SPD[i],22,null,cellTip('Speed',SPD[i],seN(UNIT.spdSEn)));           /* speed */
+  val(g,COLX,P_Y,28,28,P[i],22,primSE(i),cellTip('Primary damage',P[i],seN(UNIT.primSEn))); /* primary damage */
+  val(g,COLX,S_Y,28,28,S[i],22,null,cellTip('Secondary damage',S[i],seN(UNIT.secSEn)));      /* secondary damage */
+  val(g,COLX,SPD_Y,28,28,SPD[i],22,null,cellTip('Speed',SPD[i],seN(UNIT.spdSEn)));           /* speed */
   const BAND_SHIFT=-5;   /* cells up 5px = marker visually 10px lower vs the numbers (Incr 28) */
   val(g,ATK_X,BAND_Y+BAND_SHIFT,26,26,ATK[i],19,atkSE(i),cellTip('Attack',ATK[i],seN(UNIT.atkSEn))); /* attack */
   val(g,DEF_X,BAND_Y+BAND_SHIFT,26,26,DEF[i],19,defSE(i),cellTip('Defense',DEF[i],seN(UNIT.defSEn))); /* defense */
@@ -262,9 +272,9 @@ function renderCellOv(idx){
   const g=el('g',{transform:`rotate(${-idx*STEP} ${CX} ${CY})`},cellOv);
   const seN=a=>(Array.isArray(a)?a[idx]:null)||null;
   const cellTip=(label,v,name)=>`${label} ${v} — click ${idx+1} of ${UNIT.life}`+(name?` — ${seDesc(name)}`:'');
-  val(g,COLX,P_Y,30,28,P[idx],22,primSE(idx),cellTip('Primary damage',P[idx],seN(UNIT.primSEn)));
-  val(g,COLX,S_Y,30,28,S[idx],22,null,cellTip('Secondary damage',S[idx],seN(UNIT.secSEn)));
-  val(g,COLX,SPD_Y,30,28,SPD[idx],22,null,cellTip('Speed',SPD[idx],seN(UNIT.spdSEn)));
+  val(g,COLX,P_Y,28,28,P[idx],22,primSE(idx),cellTip('Primary damage',P[idx],seN(UNIT.primSEn)));
+  val(g,COLX,S_Y,28,28,S[idx],22,null,cellTip('Secondary damage',S[idx],seN(UNIT.secSEn)));
+  val(g,COLX,SPD_Y,28,28,SPD[idx],22,null,cellTip('Speed',SPD[idx],seN(UNIT.spdSEn)));
   const BAND_SHIFT=-5;
   val(g,ATK_X,BAND_Y+BAND_SHIFT,26,26,ATK[idx],19,atkSE(idx),cellTip('Attack',ATK[idx],seN(UNIT.atkSEn)));
   val(g,DEF_X,BAND_Y+BAND_SHIFT,26,26,DEF[idx],19,defSE(idx),cellTip('Defense',DEF[idx],seN(UNIT.defSEn)));
@@ -280,12 +290,12 @@ for(let i=0;i<150;i++){const a=Math.random()*2*Math.PI,rr=Math.sqrt(Math.random(
 /* wall shadow inside the window edges */
 function vgrad(id,x1,y1,x2,y2){defs.innerHTML+=`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`;}
 vgrad('vT','0','0','0','1');vgrad('vB','0','1','0','0');vgrad('vL','0','0','1','0');vgrad('vR','1','0','0','0');
-el('rect',{x:CX-27,y:COLTOP,width:COLW,height:12,fill:'url(#vT)','pointer-events':'none'});
-el('rect',{x:CX-27,y:COLBOT-12,width:COLW,height:12,fill:'url(#vB)','pointer-events':'none'});
-el('rect',{x:CX-27,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vL)','pointer-events':'none'});
-el('rect',{x:CX+19,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vR)','pointer-events':'none'});
-el('rect',{x:BL,y:BTOP,width:12,height:BBOT-BTOP,fill:'url(#vL)','pointer-events':'none'});
-el('rect',{x:BR-12,y:BTOP,width:12,height:BBOT-BTOP,fill:'url(#vR)','pointer-events':'none'});
+el('rect',{x:CX-16,y:COLTOP,width:32,height:12,fill:'url(#vT)','pointer-events':'none'});
+el('rect',{x:CX-16,y:COLBOT-12,width:32,height:12,fill:'url(#vB)','pointer-events':'none'});
+el('rect',{x:CX-16,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vL)','pointer-events':'none'});
+el('rect',{x:CX+8,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vR)','pointer-events':'none'});
+el('rect',{x:BL,y:BTOP,width:8,height:BBOT-BTOP,fill:'url(#vL)','pointer-events':'none'});
+el('rect',{x:BR-8,y:BTOP,width:8,height:BBOT-BTOP,fill:'url(#vR)','pointer-events':'none'});
 el('rect',{x:BL,y:BBOT-12,width:BR-BL,height:12,fill:'url(#vB)','pointer-events':'none'});
 /* window bezel: die-cut edge */
 tip(el('path',{d:L_PATH,fill:'none',stroke:'#4a4a52','stroke-width':1.5}),'Die-cut edge of the L-shaped stat-slot window');
@@ -343,8 +353,8 @@ rangePrint(UNIT.sec.kind,UNIT.sec.n,UNIT.sec.min,UNIT.sec.max,S_Y,'Secondary');
    rects below — so the heat dial OVERLAYS it: the line passes under the housing + drum and
    re-emerges left of it, exactly like the real base (p.10 photo). The line STOPS at the
    combat dial window's edges, mirroring the two sides: right piece ends at std 78&deg;
-   (10px clear of the band's right edge BR=359), left piece ends at std 102&deg; (10px clear
-   of the band's left edge BL=281 — the mirror point). The stretch under the die-cut slot
+   (10px clear of the band's right edge BR=354.5), left piece ends at std 102&deg; (10px clear
+   of the band's left edge BL=285.5 — the mirror point). The stretch under the die-cut slot
    (std 78-102&deg;) is not drawn, as the slot cuts the line away on the real base. */
 {
   /* arcPt(deg): std angle = deg-90, so std 45&deg;=arcPt(135), std 78&deg;=arcPt(168),
@@ -393,12 +403,12 @@ for(let i=0;i<6;i++){
      dial and AoD p.10 base photo). 'range type' in the card text is resolved to the
      row's actual type: bolt = energy, bullets = ballistic. */
   const HFXRULE={
-    'Heat Sink Overload Check (1-2: heat)':'AVOID HEAT SINK OVERLOAD — if this unit is not shutdown, roll one die; on a 1–2 this unit gains 1 heat. (AoD SEC)',
-    'Heat Sink Overload Critical Check (1-3: heat)':'AVOID HEAT SINK OVERLOAD: CRITICAL — if this unit is not shutdown, roll one die; on a 1–3 this unit gains 2 heat. (AoD SEC)',
-    'Avoid Shutdown Check (1-2: shutdown)':'AVOID SHUTDOWN — if this unit is not shutdown, roll one die; on a 1–2 this unit is marked so that it has two order tokens. (AoD SEC)',
-    'Avoid Shutdown Critical Check (1-3: shutdown)':'AVOID SHUTDOWN: CRITICAL — if this unit is not shutdown, roll one die; on a 1–3 this unit is marked so that it has two order tokens. (AoD SEC)',
-    'Ammo Explosion Check (1-2: heat)':'AVOID AMMUNITION EXPLOSION — if this unit is not shutdown, roll one die; on a 1–2 this unit is dealt pushing damage equal to its damage value with the range type –1, minimum 0. (AoD SEC)',
-    'Ammo Explosion Critical Check (1-3: heat)':'AVOID AMMUNITION EXPLOSION: CRITICAL — if this unit is not shutdown, roll one die; on a 1–3 this unit is dealt pushing damage equal to its damage value with the range type +1. (AoD SEC)',
+    'Heat Sink Overload Check (1-2: heat)':'AVOID HEAT SINK OVERLOAD — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit gains 1 heat. (AoD SEC)',
+    'Heat Sink Overload Critical Check (1-3: heat)':'AVOID HEAT SINK OVERLOAD: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit gains 2 heat. (AoD SEC)',
+    'Avoid Shutdown Check (1-2: shutdown)':'AVOID SHUTDOWN — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit is marked so that it has two order tokens. (optional) if this unit is shutdown, roll one six-sided die; on a result of 3–6, this unit restarts. (AoD SEC)',
+    'Avoid Shutdown Critical Check (1-3: shutdown)':'AVOID SHUTDOWN: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit is marked so that it has two order tokens. (optional) if this unit is shutdown, roll one six-sided die; on a result of 4–6, this unit restarts. (AoD SEC)',
+    'Ammo Explosion Check (1-2: heat)':'AVOID AMMUNITION EXPLOSION — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit is dealt pushing damage equal to its damage value with the range type –1, minimum 0. (AoD SEC)',
+    'Ammo Explosion Critical Check (1-3: heat)':'AVOID AMMUNITION EXPLOSION: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit is dealt pushing damage equal to its damage value with the range type +1. (AoD SEC)',
     'Weapons Offline':'WEAPONS OFFLINE — this unit cannot use special equipment with the range type or make ranged combat attacks using the range type. (AoD SEC)',
     'Ammunition Jam':'AMMUNITION JAM — this unit cannot use special equipment with the range type or make ranged combat attacks using the range type. (AoD SEC)',
     'Engine Overheat':'ENGINE OVERHEAT — this unit cannot use speed special equipment or the run option. (AoD SEC)',
@@ -416,7 +426,7 @@ for(let i=0;i<6;i++){
     if(c==='sh'){
       cell.title='Heat '+(i+1)+' — '+rowLab+': SHUTDOWN — the \'Mech shuts down: no orders; roll a die at the start of each of your turns — on 4–6 it restarts. (AoD SEC)';
     }else if(c==='gr'&&i===0){
-      cell.title='Heat 1 — '+rowLab+': STARTING POSITION — at the beginning of the game this green square must be showing on the heat dial. (AoD SEC)';
+      cell.title='Heat 1 — '+rowLab+': STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)';
     }else if(fx&&HFXRULE[fx]){
       let rt=HFXRULE[fx];
       if(/range type/.test(rt)){
@@ -437,7 +447,7 @@ for(let i=0;i<6;i++){
      green = starting position, shutdown = restart rule, middle columns carry the
      unit's own mods. The 1.0-era flavour words (ammunition explodes / heat sink /
      engine) apply to the MW 1.0 card era; 2.0 CECs use the same effects. */
-  const HEFX=['Green starting squares — the \u2019Mech must START the game with this column showing in the heat slot (AoD SEC)',
+  const HEFX=['STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)',
     null,null,null,null,
     'SHUTDOWN — the \u2019Mech shuts down: no orders; roll a die at the start of each of your turns — on 4\u20136 it restarts (AoD SEC)'];
   p.title=`Heat panel ${i+1} of ${HEAT.length}: primary ${md[0]}, secondary ${md[1]}, speed ${md[2]}`+
@@ -508,6 +518,33 @@ const NA_R=245, NA_TH=61*Math.PI/180;
 defs.innerHTML+=`<path id="nameArc" d="M ${CX-NA_R*Math.sin(NA_TH)} ${(CY-NA_R*Math.cos(NA_TH)).toFixed(2)} A ${NA_R} ${NA_R} 0 0 1 ${CX+NA_R*Math.sin(NA_TH)} ${(CY-NA_R*Math.cos(NA_TH)).toFixed(2)}"/>`;
 const tn=el('text',{fill:'#e8e8ec','font-size':'24','font-weight':'800','letter-spacing':'3'});
 tn.innerHTML=`<textPath href="#nameArc" startOffset="50%" text-anchor="middle">${UNIT.nameHtml}</textPath>`;
+/* rank glyphs after the name (AoD rulebook p.10 RANK box): stacked chevrons = Green (1) /
+   Veteran (2) / Elite (3), a single star = Unique. Measured along the same arc so the stack
+   hugs the end of the name text. */
+if(UNIT.rank){
+  const nArc=document.getElementById('nameArc'), NA_TOT=nArc.getTotalLength();
+  const rp=nArc.getPointAtLength((NA_TOT/2 + tn.getComputedTextLength()/2 + 14)/NA_TOT*NA_TOT);
+  const rq=nArc.getPointAtLength(Math.max(0,(NA_TOT/2 + tn.getComputedTextLength()/2 + 20))/NA_TOT*NA_TOT);
+  const tang=Math.atan2(rp.y-rq.y,rp.x-rq.x)*180/Math.PI+90;   /* glyph up = arc inward */
+  const RANKN={Green:1,Veteran:2,Elite:3};
+  if(RANKN[UNIT.rank]){
+    const NR=RANKN[UNIT.rank];
+    const g=el('g',{transform:`translate(${rp.x} ${rp.y}) rotate(${tang})`});
+    for(let k=0;k<NR;k++){const ry=(NR-1)*2.75-k*5.5;
+      const p=document.createElementNS(NS,'path');
+      p.setAttribute('d',`M -6.5 ${ry+2.6} L 0 ${ry-2.6} L 6.5 ${ry+2.6}`);
+      p.setAttribute('stroke','#e8e8ec');p.setAttribute('stroke-width',3);
+      p.setAttribute('fill','none');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');
+      g.appendChild(p);}
+    area(rp.x-9,rp.y-9,18,18,'Rank chevrons — '+UNIT.rank+' (AoD p.10 RANK box: 1 chevron Green / 2 Veteran / 3 Elite)');
+  }else{
+    const g=el('g',{transform:`translate(${rp.x} ${rp.y}) rotate(${tang})`});
+    const st=document.createElementNS(NS,'text');
+    st.setAttribute('y',6);st.setAttribute('font-size',20);st.setAttribute('fill','#e8e8ec');
+    st.setAttribute('text-anchor','middle');st.textContent='\u2605';g.appendChild(st);
+    area(rp.x-10,rp.y-10,20,20,'Unique star (AoD p.10 RANK box)');
+  }
+}
 /* set symbol + collector number on the LEFT rim, reading DOWN the rim, glyph tops facing
    the center — the mirror of the variant on the right (p.10 photo: set glyph first at the
    top, digits descending; confirmed on the user's own Solitude dial photo) */
