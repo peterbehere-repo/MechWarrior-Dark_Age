@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "error": "no match for button with text ~ Open the page",
+      "ok": false,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"ok\":true,\"tot\":393.9,\"nameBbox\":{\"x\":190.9,\"y\":68.3,\"w\":174.7},\"ptBbox\":{\"x\":422.4,\"y\":105.4,\"w\":48.1},\"rankGroups\":[\"translate(393.1018981933594 105.05227661132812) rotate(24.209912449348934)\",\"translate(125.9123764038086 764.531982421875) rotate(72.65338142148157)\"],\"placeholderFill\":\"none\",\"nameTxt\":\"THUNDER FOX\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r3.html",
+  "id": "quad-arc-measure-002",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r3.html",
+  "fetchedAt": "2026-10-22T00:08:29.907Z"
+}
