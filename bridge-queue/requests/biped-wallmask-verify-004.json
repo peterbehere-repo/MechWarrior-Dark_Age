@@ -1,0 +1,1 @@
+{"id": "biped-wallmask-verify-004", "mode": "interact", "url": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html", "settleMs": 1500, "steps": [{"act": "js", "expr": "'svgs='+document.querySelectorAll('svg *').length+' hasMask='+!!document.querySelector('mask#wallMask')+' url='+location.pathname"}]}
