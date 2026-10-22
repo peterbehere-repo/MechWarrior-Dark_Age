@@ -1,0 +1,33 @@
+{
+  "ok": false,
+  "error": "step 3 (js) failed: js eval failed (CDP): TypeError: m[3].toFixed is not a function\n    at <anonymous>:1:914\n    at <anonymous>:1:1148",
+  "results": [
+    {
+      "error": "no match for button with text ~ Open the page",
+      "ok": false,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": false,
+      "error": "js eval failed (CDP): TypeError: m[3].toFixed is not a function\n    at <anonymous>:1:914\n    at <anonymous>:1:1148",
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "id": "quad-arc-measure-013",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r8.html",
+  "fetchedAt": "2026-10-22T00:32:53.284Z"
+}
