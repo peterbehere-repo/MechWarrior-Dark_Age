@@ -1,0 +1,1 @@
+Rool Web Bridge BT queue — requests land as bridge-queue/<id>.json, responses in bridge-queue/responses/. Operated by the Battletech Rool Machine.
