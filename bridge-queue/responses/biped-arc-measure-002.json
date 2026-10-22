@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"ok\":false,\"ctl\":null,\"tot\":null,\"bbox\":null,\"rankTransforms\":[],\"txt\":null,\"dpr\":1.25,\"vw\":1536}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "id": "biped-arc-measure-002",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "fetchedAt": "2026-10-22T00:01:49.244Z"
+}
