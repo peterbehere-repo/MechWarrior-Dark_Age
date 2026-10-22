@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"title\":\"Night Stalker 'Jack' — Clix Base (AN071)\",\"unitId\":\"AN071\",\"svgChildren\":127,\"errors\":[]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20(built).html",
+  "id": "site-an071-verify-001",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20(built).html",
+  "fetchedAt": "2026-10-22T01:58:57.823Z"
+}
