@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20%28built%29.html",
+  "id": "melee-glyph-check-002",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20%28built%29.html",
+  "fetchedAt": "2026-10-22T02:16:11.986Z"
+}
