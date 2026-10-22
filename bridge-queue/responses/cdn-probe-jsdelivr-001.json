@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "",
+  "finalUrl": "https://cdn.jsdelivr.net/gh/peterbehere-repo/MechWarrior-Dark_Age@battletech-queue/mocks/biped.html",
+  "contentType": "text/plain; charset=utf-8",
+  "title": null,
+  "text": "Bipedal ’Mech Clix Base — Template (defaults: Atlas Solitude VG085) Click of Damage Click of Repair Click of Heat Vent Order (−2) Cool 1 (end turn) Restart Reset",
+  "id": "cdn-probe-jsdelivr-001",
+  "mode": "fetch",
+  "requestedUrl": "https://cdn.jsdelivr.net/gh/peterbehere-repo/MechWarrior-Dark_Age@battletech-queue/mocks/biped.html",
+  "fetchedAt": "2026-10-22T00:00:41.913Z"
+}
