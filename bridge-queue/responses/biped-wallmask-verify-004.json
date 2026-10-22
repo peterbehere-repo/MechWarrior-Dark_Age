@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "svgs=667 hasMask=true url=/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "id": "biped-wallmask-verify-004",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "fetchedAt": "2026-10-22T15:04:16.795Z"
+}
