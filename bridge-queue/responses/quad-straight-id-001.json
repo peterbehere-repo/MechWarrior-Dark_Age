@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "error": "no match for button with text ~ Open the page",
+      "ok": false,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"baselineEnds\":[{\"x\":134.9,\"y\":615.4,\"rimDist\":205.6},{\"x\":116.1,\"y\":678.6,\"rimDist\":205.6}],\"setArcGone\":true}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r12.html",
+  "id": "quad-straight-id-001",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r12.html",
+  "fetchedAt": "2026-10-22T01:35:34.590Z"
+}
