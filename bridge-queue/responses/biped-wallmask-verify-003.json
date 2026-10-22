@@ -1,0 +1,191 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "matched": true,
+      "step": 0,
+      "act": "wait"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 1,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 3,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 4,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 5,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 6,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 7,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 8,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 9,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 10,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 11,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 12,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 13,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 14,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 15,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 16,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 17,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 18,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 19,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 20,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 21,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 22,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 23,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 24,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 25,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 26,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 27,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 28,
+      "act": "pause"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 29,
+      "act": "click"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "id": "biped-wallmask-verify-003",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "fetchedAt": "2026-10-22T15:01:51.052Z"
+}
