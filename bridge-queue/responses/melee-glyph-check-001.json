@@ -1,0 +1,15 @@
+{
+  "ok": false,
+  "error": "step 0 (open) failed: Cannot access a chrome:// URL",
+  "results": [
+    {
+      "ok": false,
+      "error": "Cannot access a chrome:// URL",
+      "step": 0,
+      "act": "open"
+    }
+  ],
+  "id": "melee-glyph-check-001",
+  "mode": "interact",
+  "fetchedAt": "2026-10-22T02:15:04.337Z"
+}
