@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"title\":\"Night Stalker 'Jack' — Clix Base (AN071)\",\"svgEls\":660,\"imgs\":[{\"t\":\"data:image/svg+\",\"nw\":0},{\"t\":\"data:image/svg+\",\"nw\":0},{\"t\":\"data:image/svg+\",\"nw\":0},{\"t\":\"data:image/svg+\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0},{\"t\":\"data:image/png;\",\"nw\":0}]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20%28built%29.html",
+  "id": "melee-glyph-check-003",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20%27Jack%27%20AN071%20%28built%29.html",
+  "fetchedAt": "2026-10-22T02:17:14.033Z"
+}
