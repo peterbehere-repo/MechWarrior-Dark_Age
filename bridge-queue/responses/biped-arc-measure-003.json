@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "label": "Open the page",
+      "matched": true,
+      "ok": true,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"ok\":true,\"ctl\":359.2750244140625,\"tot\":521.6861572265625,\"bbox\":{\"x\":138.9,\"y\":59.3,\"w\":361.7,\"h\":94},\"rankTransforms\":[\"rotate(0 320 330)\",\"rotate(-20 320 330)\",\"rotate(-40 320 330)\"],\"txt\":\"ATLAS  \\\"SOLITUDE\\\"  300\",\"dpr\":1.25,\"vw\":1536}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "id": "biped-arc-measure-003",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "fetchedAt": "2026-10-22T00:05:00.512Z"
+}
