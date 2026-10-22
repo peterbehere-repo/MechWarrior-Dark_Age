@@ -1,0 +1,11 @@
+{
+  "id": "heat-tips-verify-003",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/heat-tips-verify.html",
+  "settleMs": 1200,
+  "steps": [
+    {"act": "wait", "selector": ".cell", "timeoutMs": 8000, "optional": true},
+    {"act": "pause", "ms": 900},
+    {"act": "js", "expr": "(() => { const t=[...document.querySelectorAll('.cell')].map(c=>c.title); const se=t.filter(x=>/AVOID|WEAPONS OFFLINE|AMMUNITION JAM|ENGINE OVERHEAT/.test(x)); return JSON.stringify({total:t.length, seTitles:se.slice(0,6)}); })()"}
+  ]
+}
