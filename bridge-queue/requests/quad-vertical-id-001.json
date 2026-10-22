@@ -1,0 +1,12 @@
+{
+  "id": "quad-vertical-id-001",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r13.html",
+  "settleMs": 1200,
+  "steps": [
+    {"act": "clickText", "selector": "button", "text": "Open the page", "optional": true},
+    {"act": "wait", "selector": "text", "timeoutMs": 8000, "optional": true},
+    {"act": "pause", "ms": 900},
+    {"act": "js", "expr": "(() => { const st=[...document.querySelectorAll('text')].find(t=>t.textContent==='AOD098'); if(!st) return 'not found'; const m=st.transform.baseVal.consolidate().matrix; const b=st.getBBox(); const pt=(x,y)=>({x:+(m.a*x+m.c*y+m.e).toFixed(1), y:+(m.b*x+m.d*y+m.f).toFixed(1)}); const bl=[pt(b.x,0),pt(b.x+b.width,0)]; return JSON.stringify({baselineEnds:bl, vertical:bl[0].x===bl[1].x, inkSpanX:[bl[0].x, +(bl[0].x+b.height).toFixed(1)]}); })()"}
+  ]
+}
