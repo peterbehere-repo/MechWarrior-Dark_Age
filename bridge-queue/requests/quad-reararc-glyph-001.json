@@ -1,0 +1,12 @@
+{
+  "id": "quad-reararc-glyph-001",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r9.html",
+  "settleMs": 900,
+  "steps": [
+    {"act": "clickText", "selector": "button", "text": "Open the page", "optional": true},
+    {"act": "wait", "selector": "svg", "timeoutMs": 8000, "optional": true},
+    {"act": "pause", "ms": 1000},
+    {"act": "js", "expr": "(() => { const svg=document.querySelector('svg'); if(!svg) return JSON.stringify({ok:false,why:'no svg',title:document.title}); const gi=[...svg.querySelectorAll('image')].find(i=>i.getAttribute('width')==='33'); const gb=gi?gi.getBBox():null; const crest=[...svg.querySelectorAll('image')].find(i=>i.getAttribute('width')==='69.3'); const cb=crest?crest.getBBox():null; const arcs=[...svg.querySelectorAll('path')].filter(p=>Math.abs(p.getTotalLength()-339.29)<3); const rb=arcs.length?arcs[0].getBBox():null; const ticks=[...svg.querySelectorAll('line')].filter(l=>Math.abs(l.getTotalLength?-1:1)>=0).length; return JSON.stringify({ok:true, glyphBbox: gb?{x:+gb.x.toFixed(1),y:+gb.y.toFixed(1),w:+gb.width.toFixed(1),h:+gb.height.toFixed(1)}:null, crestBbox: cb?{x:+cb.x.toFixed(1),y:+cb.y.toFixed(1),w:+cb.width.toFixed(1)}:null, rearArcFound: arcs.length, rearArcBbox: rb?{x:+rb.x.toFixed(1),y:+rb.y.toFixed(1),w:+rb.width.toFixed(1),h:+rb.height.toFixed(1)}:null}); })()"}
+  ]
+}
