@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "matched": true,
+      "step": 0,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"total\":18,\"seCount\":2,\"sample\":[\"Heat 5 — Primary damage (energy): WEAPONS OFFLINE — this unit cannot use special equipment with the energy type (bolt ⚡) or make ranged combat attacks using the energy type (bolt ⚡). (AoD SEC)\",\"Heat 5 — Speed: AVOID SHUTDOWN — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit is marked so that it has two order tokens. (optional) if this unit is shutdown, roll one six-sided die; on a result of 3–6, this unit restarts. (AoD SEC)\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/heat-tips-verify2.html",
+  "id": "heat-tips-verify-004",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/heat-tips-verify2.html",
+  "fetchedAt": "2026-10-22T01:15:13.255Z"
+}
