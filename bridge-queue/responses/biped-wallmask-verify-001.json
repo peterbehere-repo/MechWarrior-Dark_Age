@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "error": "step 0 (?) failed: unknown act: undefined",
+  "results": [
+    {
+      "error": "unknown act: undefined",
+      "ok": false,
+      "step": 0,
+      "act": "?"
+    }
+  ],
+  "id": "biped-wallmask-verify-001",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "fetchedAt": "2026-10-22T14:51:06.578Z"
+}
