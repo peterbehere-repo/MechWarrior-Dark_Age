@@ -1,0 +1,9 @@
+{
+  "id": "biped-diag-004",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "settleMs": 1500,
+  "steps": [
+    {"act": "js", "expr": "JSON.stringify({href: location.href, links: [...document.querySelectorAll('a')].map(a=>({t:a.textContent.trim().slice(0,60),h:a.getAttribute('href')})).slice(0,8), btns: [...document.querySelectorAll('button')].map(b=>b.textContent.trim()).slice(0,8), bodyText: document.body.innerText.slice(0,600)})"}
+  ]
+}
