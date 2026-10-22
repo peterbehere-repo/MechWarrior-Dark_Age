@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "error": "no match for button with text ~ Open the page",
+      "ok": false,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"count\":6,\"titles\":[\"Heat 1 — Primary damage (melee): STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)\",\"Heat 1 — Secondary damage (melee): STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)\",\"Heat 1 — Speed: STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)\",\"Heat 2 — Primary damage (melee): modifier -1 this turn\",\"Heat 2 — Secondary damage (melee): modifier 0 this turn\",\"Heat 2 — Speed: modifier 0 this turn\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/heat-tips-verify.html",
+  "id": "heat-tips-verify-001",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/heat-tips-verify.html",
+  "fetchedAt": "2026-10-22T01:09:07.474Z"
+}
