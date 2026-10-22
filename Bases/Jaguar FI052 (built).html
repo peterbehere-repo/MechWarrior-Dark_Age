@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<!-- APPROVED QUAD TEMPLATE — Peter McDonald, 2026-10-21 20:44. This is THE quad mech template: all future quad builds derive from this shell (bulk script: /rool-drive/MWDA Game/scripts/build_quad_bases.py). -->
+<html><head><meta charset="utf-8"><title>Quad ’Mech Clix Base — Template (defaults: Thunder Fox AOD098)</title>
+<style>
+body{background:#111;color:#ddd;font:14px system-ui;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center;gap:12px}
+h1{font-size:16px;letter-spacing:2px;margin:0;color:#bbb}
+button{background:#2a2a30;color:#eee;border:1px solid #555;border-radius:6px;padding:8px 13px;font:13px system-ui;cursor:pointer;margin:0 3px}
+button:hover{background:#3a3a42}
+.status{min-height:20px;color:#9fd89f;font-weight:600}
+.foot{color:#888;font-size:12px;max-width:680px;text-align:center}
+/* ==== 3D heat drum: 6 panels (table cols 2-7) around a vertical-pole cylinder; col7
+   (shutdown) wraps around to join col2 (green start). The drum rotates about its pole axis;
+   the fixed window reveals one column at a time. ==== */
+#stage{position:relative;width:640px;height:980px}
+/* Incr 48: perspective 480 -> 2000 — at rest the front panel's projection is now 1.015x (was
+   1.065x), so the flat combat-strip digits and the projected heat rows land within ~1px of each
+   other in all three rows (with 480 the stretched bottom row sat 3.7px low). Rotation sweep is
+   unchanged in character; the drum face just reads flatter, as it does on the real dial. */
+#heat3d{position:absolute;left:0;top:0;width:34px;height:114px;perspective:2000px;perspective-origin:50% 50%;overflow:hidden}
+#heat3d .winLight{position:absolute;inset:0;pointer-events:none;z-index:5;
+  background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 22%,rgba(255,255,255,.14) 46%,rgba(0,0,0,0) 66%,rgba(0,0,0,.6) 100%)}
+#drum{position:absolute;left:0;top:4px;width:34px;height:108px; /* Incr 48: 5->4 centers residual projection offset */transform-style:preserve-3d;will-change:transform}
+.panel{position:absolute;left:0;top:0;width:34px;height:104px;backface-visibility:hidden;display:flex;flex-direction:column;gap:4px;border-radius:3px;box-shadow:inset 0 0 6px rgba(0,0,0,.35)}
+.cell{box-sizing:border-box;width:34px;height:32px;border-radius:3px;border:1.2px solid #33333a;display:flex;align-items:center;justify-content:center;font:800 19px system-ui;flex:none}
+.cell.rad{font-size:22px}
+/* ==== 3D twist knob (Incr 22): a COAXIAL extension of the heat drum's cylinder — the same
+   vertical pole axis (x=240), same rotateY rotation, same transition, so knob and drum turn
+   as one mechanism. 12 narrow flutes = knurled grip. Fixed gradient light stays put while
+   the flutes revolve (cylindrical shading). Static SVG collar + cap sit underneath. ==== */
+#knob3d{position:absolute;width:30px;height:40px;perspective:420px;perspective-origin:50% 50%;cursor:pointer;z-index:6}
+#knobdrum{position:absolute;left:0;top:0;width:30px;height:40px;transform-style:preserve-3d;will-change:transform}
+.kflute{position:absolute;top:0;height:40px;backface-visibility:hidden;border-radius:2px}
+.kflute.a{background:#3a3a42;box-shadow:inset 0 0 4px rgba(0,0,0,.4)}
+.kflute.b{background:#2b2b32;box-shadow:inset 0 0 4px rgba(0,0,0,.5)}
+.knobLight{position:absolute;inset:0;pointer-events:none;z-index:5;
+  background:linear-gradient(90deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,0) 26%,rgba(255,255,255,.24) 48%,rgba(0,0,0,0) 74%,rgba(0,0,0,.48) 100%)}
+</style></head><body>
+<h1 id="h1"></h1>
+<div id="stage"><svg id="baseSvg" width="640" height="980" viewBox="0 0 640 980"></svg></div>
+<div class="bar">
+  <button id="bDmg">Click of Damage</button>
+  <button id="bRep">Click of Repair</button>
+  <button id="bHeat">Click of Heat</button>
+  <button id="bCool">Vent Order (−2)</button>
+  <button id="bCool1">Cool 1 (end turn)</button>
+  <button id="bRes">Restart</button>
+  <button id="bRst">Reset</button>
+</div>
+<div class="status" id="status"></div>
+<div class="foot" id="foot"></div>
+<script>
+/* ==== UNIT CONFIG — all unit-specific data lives here; everything below consumes it.
+   To create a new quad 'Mech base: fill in this block (dial arrays from Warrenborn,
+   one entry per CLICK — arrays are life long; the KO'd segments (three bullet holes) are drawn
+   automatically after the last life segment), pick crestURI/setURI from
+   /rool-drive/Mocks/icons/ (inline as data:image/svg+xml;base64,...), and set the
+   tooltip strings. Nothing else in the file should need changing. ==== */
+// ===UNIT-BEGIN=== do not move: Build Mech Base.py replaces the block between these markers
+const UNIT={
+  /* UNIT data transplanted from the unit's biped build (melee-aware pipeline, 2026-10-21);
+     shell = the APPROVED quad template (Peter McDonald, 2026-10-21 20:44). footHtml from
+     the quad shell; rank from the Warrenborn JSON where the biped build lost it. */
+  id:'FI052',
+  title:'Jaguar — Clix Base (FI052)',
+  h1:'JAGUAR — CLIX BASE (FI052)',
+  rank:'Elite',
+  nameHtml:'JAGUAR&#160;&#160;100',
+  nameTok:'JAGUAR',
+  nameTip:'Jaguar — Elite — unit name and point value (100)',
+  collector:'FI052',
+  collectorTip:'FI052 — set symbol and collector’s number (Fire Power, #52)',
+  crestURI:'data:image/gif;base64,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',
+  facName:'House Steiner',
+  facTip:'House Steiner — faction symbol (Warrenborn art)',
+  setURI:'data:image/png;base64,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',
+  setName:'Fire Power',
+  setTip:'Fire Power — Warrenborn set symbol (warrenborn.com/images/setlogos/)',
+  baseTip:'Jaguar — House Steiner — 100 points — fixed base top; the combat dial turns beneath',
+  frontTip:'Front firing arc — 270° (Warrenborn FI052: Arc 270)',
+  rearTip:'Rear firing arc — 90° (Warrenborn FI052: Rear Arc 90); runs under the heat dial and stops at the dial window',
+  prim:{kind:'e',n:1,min:0,max:6,tip:'Primary weapon: Energy — 1 target (range 0–6)'},
+  sec:{kind:'b',n:2,min:2,max:10,tip:'Secondary weapon: Ballistic — 2 targets (range 2–10)'},
+  vent:2,
+  arc:270,
+  rearArc:90,
+  life:10,
+  ko:8,
+  repairClicks:[6],
+  P:[2,2,2,2,2,2,2,2,0,0],
+  S:[3,3,3,3,3,0,0,0,0,0],
+  SPD:[8,8,8,8,7,7,7,6,4,0],
+  ATK:[10,9,9,8,8,7,7,7,6,0],
+  DEF:[19,18,18,17,17,16,16,15,14,14],
+  primSE:[null,null,null,null,null,null,null,null,null,null],
+  atkSE:[null,null,null,null,null,null,null,null,'k','k'],
+  defSE:[null,null,null,null,null,null,null,null,null,null],
+  secSE:['r','r','r','r',null,null,null,null,null,null],
+  primSEn:[null,null,null,null,null,null,null,null,null,null],
+  atkSEn:[null,null,null,null,null,null,null,null,'Salvage','Salvage'],
+  defSEn:[null,null,null,null,null,null,null,null,null,null],
+  secSEn:['Armor Piercing','Armor Piercing','Armor Piercing','Armor Piercing','Armor Piercing',null,null,null,null,null],
+  heat:[[['gr','0'],['gr','0'],['gr','0']],[['w','0'],['w','0'],['w','0']],[['w','0'],['w','0'],['w','0']],[['w','0'],['y','0'],['y','0']],[['w','0'],['y','0'],['y','0']],[['sh','☢'],['sh','☢'],['sh','☢']]],
+  heatFx:[['Start','Start','Start'],[null,null,null],[null,null,null],[null,'Ammo Explosion Check (1-2: heat)','Avoid Shutdown Check (1-2: shutdown)'],[null,'Ammo Explosion Check (1-2: heat)','Avoid Shutdown Check (1-2: shutdown)'],[null,null,null]],
+  heatRows:[{key:'energy',label:'Primary damage (energy)'},{key:'ballistic',label:'Secondary damage (ballistic)'},{key:'mech',label:'Speed'}],
+  era:'2.0',
+  unitType:'Quad',
+  footHtml:'Layout from the AoD rulebook p.11 quad base (elongated capsule with parallel flanks &mdash; quads share the vehicle base shape, rulebook p.4/p.7, but keep the ’Mech dial):<br>front arc = 270&deg; line + rear arc = 90&deg; line (Warrenborn FI052: Arc 270 / Rear Arc 90); dial columns: vent, primary, secondary, speed, attack, defense; START at click 1; heat drum panels = Warrenborn heat table cols 1-6 (green start &rarr; shutdown). Data: Warrenborn Unit.php?ID=FI052 cross-checked against the MWDA Game scrape.',
+  variantHtml:'',
+  variantTok:null,
+  variantTip:'',
+  spdSEn:null,
+};
+// ===UNIT-END===
+const P=UNIT.P, S=UNIT.S, SPD=UNIT.SPD, ATK=UNIT.ATK, DEF=UNIT.DEF;
+const NSEG=UNIT.life+UNIT.ko, STEP=360/NSEG;
+document.getElementById('foot').innerHTML = UNIT.footHtml;
+document.title = UNIT.title;
+document.getElementById('h1').textContent = UNIT.h1;
+const atkSE=i=>UNIT.atkSE[i], defSE=i=>UNIT.defSE[i], primSE=i=>UNIT.primSE[i];
+/* Warrenborn heat dial table: first panel = green starting squares (heat 0); each click of
+   heat rolls the drum one panel — all three boxes change together. A number on the heat dial
+   modifies the combat value in the same row (energy->primary, ballistic->secondary,
+   'Mech->speed); colored squares mark SEC effects. Last panel = shutdown. */
+const HEAT=UNIT.heat;
+const SEC={gr:'#2f7d32',gy:'#9a9aa2',w:'#f4f4f0',y:'#f2f200',k:'#15151a',r:'#c0453c',bl:'#1d4fd8',sh:'#f4f4f0'};
+const TXTC={gr:'#ffffff',w:'#16161a',y:'#111114',k:'#f2f2f2',r:'#ffffff',bl:'#ffffff',sh:'#16161a'};
+let cur=0, heat=0, destroyed=false;
+/* ==== SE glossary (Peter 2026-10-20: tooltips name + describe special equipment).
+   Text is VERBATIM from "Special Equipment Card Set - Age of Destruction.pdf" (desc2,
+   MW 2.0 era) and "Special Equipment Card Set - MW 1.0 (printer friendly).pdf" (desc1,
+   MW 1.0 era). The card PDFs print the range-type symbols as inline images that text
+   extraction loses, so entries whose text says "the range type" carry the colour note.
+   The full library also lives at Mocks/icons/special-equipment.json. ==== */
+const SE_INFO={"Agility":{"cat":"Melee damage","optional":true,"desc2":"(optional) When this unit is the target of a close combat or special attack from an opposing figure, damage and impact damage scored is reduced to 1.","desc1":"(optional) ’Mech only. This unit reduces to 1 all damage received from opposing units by close combat, charge, ram, and death from above attacks."},"Alpha Strike":{"cat":"Energy damage","optional":true,"desc2":"(optional) When this unit makes a ranged combat attack against a single opposing target figure, turn its heat dial until it is shutdown; keep track of the number of turns needed to reach shutdown. If the attack succeeds, this unit gets +X to its damage value, where X equals the number of heat dial turns needed to reach shutdown.","desc1":"(optional) ’Mech only. When this ’Mech is given a ranged combat order with a single opposing unit as the target, click its heat dial until the shutdown icons appear; keep track of the number of clicks needed to reach shutdown. If the attack succeeds, the ’Mech’s damage value is increased a number of clicks equal to the number of clicks of heat this unit needed to reach shutdown. Once the ranged combat attack is resolved, this ’Mech is shutdown."},"Anti-Personnel":{"cat":"Ballistic damage","optional":true,"desc2":"(optional) This unit’s ranged combat attacks affect its targets and any infantry in base contact with those targets. First, make one attack roll and compare the attack result to the defense values of the targets of the attack. Score damage per the rules to each target against which the attack succeeds. Then compare the attack result to the defense values of any infantry in base contact with the targets. Score damage equal to this unit’s damage value to each infantry against which the attack succeeds.","desc1":"(optional) This unit’s ranged combat attack affects the target unit and every infantry unit in base contact with the target, delivering this unit’s damage value to each unit hit. For this attack, only one dice roll is made and compared to each unit’s defense value."},"Armor Piercing":{"cat":"Ballistic damage","optional":true,"desc2":"(optional) This unit’s ranged combat attacks ignore other units’ defense special equipment with “armor” in the name.","desc1":"(optional) When this unit makes a ranged combat attack, it ignores all defense special equipment of the affected unit or units while resolving the attack."},"Brawling":{"cat":"Melee damage","optional":true,"desc2":"(optional) This unit gets +1 to its damage value when making a close combat or special attack against opposing figures, regardless of the damage value used to resolve the attack.","desc1":"(optional) ’Mech only. This unit adds 1 click of damage to all of its close combat, charge, and death from above attacks."},"Bypass":{"cat":"Attack","optional":true,"desc2":"(optional) If this unit began the turn with no order tokens and in base contact with a single target captive vehicle or ’Mech, give it a move order but do not move it. Eliminate this unit to gain control of the target; it is friendly to you and ceases being a captive. If a player other than you was the last player to control the target before it became a captive, that player gains victory points for this eliminated unit.","desc1":"(optional) Give this unit a move order but do not move it. If this unit begins the turn with no order tokens and in base contact with a single captured vehicle or captured ’Mech, eliminate this unit to gain control of the captured unit. Your opponent gains victory points for the eliminated Bypass unit. The captured unit is no longer considered captured and is a friendly unit to you."},"Command":{"cat":"Attack","optional":true,"desc2":"(optional) At the beginning of your command stage, roll one six-sided die. On a result of 5 or 6, you get an extra order that turn.","desc1":"(optional) At the beginning of your turn, roll one six-sided die. A result of 5 or 6 adds one extra order to your normal order allotment for this turn."},"Decoy":{"cat":"Defense","optional":true,"desc2":"(optional) When this unit is the target of a successful ranged combat attack that is not a critical hit, the attacker must make a second attack roll. If the second attack roll fails, this unit ignores the successful attack. The second attack roll does not count as an additional attack for the attacker and does not cost an order.","desc1":"(optional) When this unit is the target of a successful ranged combat attack that is not a critical hit, the firer must make a second attack roll. If the second attack roll succeeds, this unit is hit by the attack. Otherwise, the attack misses. If a second attack roll is made, it does not count as an additional attack for the firer, and does not cost an extra order."},"Flamers":{"cat":"Energy damage","optional":true,"desc2":"(optional) This unit may be given close combat orders, regardless of its type. When this unit succeeds at a close combat attack targeting a single opposing infantry or vehicle, it gets +1 to its damage value for this attack. If the target is a ’Mech, deal no damage; instead, the target gains 2 heat. Shutdown ’Mechs ignore an attack using Flamers.","desc1":"(optional) This unit can be given a close combat order targeting a single opposing unit. When this unit succeeds at a close combat attack against an infantry or vehicle unit, add 1 click of damage to this unit’s normal damage value. When this unit succeeds at a close combat attack against a ’Mech that is not shutdown, the target takes 2 clicks of heat instead of this unit’s normal damage value."},"Full Strike":{"cat":"Melee damage","optional":true,"desc2":"(optional) When this unit makes a close combat attack, all opposing figures in base contact with its front arc become targets. Make one attack roll and compare the attack result to each target’s defense value. Score damage equal to this unit’s damage value to each target against which the attack succeeds.","desc1":null},"Grapple":{"cat":"Energy damage","optional":true,"desc2":"(optional) When this unit is in base contact with a single opposing vehicle or ’Mech figure, the figure succeeds at break away results of only 5 or 6, even if it has Evade or Jump Jets special equipment.","desc1":"(optional) When this unit is in base contact with a single opposing vehicle or ’Mech, the target unit successfully breaks away only on a die roll result of 5 or 6, even if it has the Evade or Jump Jets special equipment."},"Hand-to-Hand Weapon":{"cat":"Melee damage","optional":true,"desc2":"(optional) When this unit succeeds at a close combat attack targeting a single opposing figure, roll one six-sided die. Score damage to the target equal to the result instead of this unit’s damage value.","desc1":"(optional) ’Mech only. Give this unit a close combat action with a single opposing unit as the target. When this unit succeeds at a close combat attack, roll one six-sided die. This is the number of clicks of damage this unit delivers to the target instead of this ’Mech’s normal damage value."},"Hardened Armor":{"cat":"Defense","optional":false,"desc2":"Decrease by 2 any damage scored to this unit by ranged or close combat attacks. Hardened Armor does not reduce pushing or impact damage.","desc1":"Subtract 2 from any damage scored against this unit by close or ranged combat attacks. Hardened Armor does not reduce pushing, critical miss, charge, ram, or death from above damage."},"Heavy Armor":{"cat":"Defense","optional":false,"desc2":"Decrease by 1 any damage scored to this unit by ranged or close combat attacks. Heavy Armor does not reduce pushing or impact damage.","desc1":"Subtract 1 from any damage scored against this unit by close or ranged combat attacks. Heavy Armor does not reduce pushing, critical miss, charge, ram, or death from above damage."},"Homing Beacon":{"cat":"Ballistic damage","optional":true,"desc2":"(optional) Give this unit a ranged combat order targeting a single opposing vehicle or ’Mech; it gets +2 to its attack value for this attack. If the attack succeeds, until the end of your turn any line of fire for a ranged combat attack using the range type drawn to the target is clear, and the target ignores hindering terrain when it is the target of ranged combat attacks using the range type.","desc1":null,"rangeNote":"(This square's colour marks its position on the SEC card — green, red, blue, black, grey in order; the range type comes from the card's own printed icon: ⚡ = energy, 🚀 = ballistic.)"},"Improved Targeting":{"cat":"Attack","optional":false,"desc2":"When this unit makes a ranged or close combat attack, you may reroll one attack die; if you do, you must accept the reroll result. If you would roll a critical hit with the rerolled die, it is not a critical hit; calculate the attack result normally. If you reroll a die from a critical miss, and the new result is not a critical miss, this unit does not take critical miss damage.","desc1":"When this unit is given a close or ranged combat order, when you roll three six-sided dice to resolve the attack you may choose to reroll one of those dice. If you do, you must accept the result of the second die roll. You may not score a critical hit with the rerolled die."},"Point Defense System":{"cat":"Ballistic damage","optional":true,"desc2":"(optional) Any friendly figure in base contact with this unit may use this unit’s unmodified defense value instead of its own.","desc1":"(optional) Any friendly unit in base contact with this unit may use this unit’s unmodified defense value instead of its own."},"Pulse":{"cat":"Energy damage","optional":true,"desc2":"(optional) Once per turn, when this unit resolves a successful ranged combat attack against a single opposing target figure, make a second ranged combat attack against that target, which gets +2 to its defense value against the second attack. If this unit is a ’Mech, it gains 1 heat after resolving the second attack in addition to any other heat generated by the order. The second attack does not cost an order.","desc1":"(optional) When this unit succeeds at a ranged combat attack against a single target, this unit may immediately make a second ranged combat attack against the same target with a +2 modifier to the target’s defense. If the firing unit is a ’Mech, it takes an additional 1 click of heat for the second attack. Pulse can be used by a unit only once per turn; it does not cost an extra order."},"Rapid Strike":{"cat":"Melee damage","optional":true,"desc2":"(optional) Once per turn, when this unit resolves a successful close combat attack against a single opposing target figure, make a second close combat attack against that target. This unit gains 1 heat in addition to any other heat generated by the order. The second attack does not cost an order.","desc1":"(optional) ’Mech only. When this unit succeeds at a close combat attack, it may immediately make a second attack against the same target, and takes an additional 1 click of heat. Rapid Strike can be used only once per turn and does not cost an extra order."},"Reactive Armor":{"cat":"Defense","optional":false,"desc2":"Decrease by 2 any damage scored to this unit by ranged combat attacks using the range type.","desc1":"Subtract 2 from any damage scored against this unit by ballistic ranged combat attacks.","rangeNote":"(This square's colour marks its position on the SEC card — green, red, blue, black, grey in order; the range type comes from the card's own printed icon: ⚡ = energy, 🚀 = ballistic.)"},"Reflective Armor":{"cat":"Defense","optional":false,"desc2":"Decrease by 2 any damage scored to this unit by ranged combat attacks using the range type.","desc1":"Subtract 2 from any damage scored against this unit by energy ranged combat attacks.","rangeNote":"(This square's colour marks its position on the SEC card — green, red, blue, black, grey in order; the range type comes from the card's own printed icon: ⚡ = energy, 🚀 = ballistic.)"},"Repair":{"cat":"Attack","optional":true,"desc2":"(optional) This unit may be given close combat orders, regardless of its type. Make a close combat attack targeting a friendly figure; neither this unit nor the target may be in base contact with an opposing figure. Ignore all non–heat effect close combat modifiers. If the attack succeeds, repair the target of damage equal to either this unit’s damage value or the result of one six-sided die. If this unit has the attack symbol, it can repair only figures with the attack speed mode. If this unit has the attack symbol, it can repair all figures except those with the speed mode. If this unit has the attack symbol, it can repair any figure.","desc1":"(optional) This unit can be given a close combat order targeting a friendly unit to repair it. Neither unit may be in base contact with an opposing unit. All modifiers to the close combat attack are ignored, except heat effects. If the attack succeeds, you may either a) repair the target with clicks of repair equal to this unit’s damage value or b) roll 1 six-sided die and repair that many clicks to the target unit. If this unit has the attack symbol, it can repair only units with speed mode Foot. If this unit has the attack symbol, it can repair all units except those with speed mode Foot. If this unit has the attack symbol, this unit can repair any type of unit."},"Salvage":{"cat":"Attack","optional":false,"desc2":"If this unit is an infantry or a vehicle, it may be given only move orders and may not be pushed. If this unit is a ’Mech, it may be given only move or vent orders and may not make a death from above special attack.","desc1":"If this unit is a vehicle, it may not be pushed and may be given only move orders. If this unit is a ’Mech, it may be given only move or vent orders, and it may not make a death from above attack."},"Streak Missiles":{"cat":"Ballistic damage","optional":true,"desc2":"(optional) When this unit makes a ranged combat attack targeting a single opposing figure, it ignores figure bases and terrain for line of fire purposes. If the attack succeeds, this unit gets –1 to its damage value for this attack, minimum 1. This attack may not target a shutdown ’Mech or a unit with Electronic Camouflage special equipment.","desc1":"(optional) When this unit is given a ranged combat order targeting a single unit, the line of fire is not affected by terrain or other units. If the attack succeeds, deal damage equal to this unit’s damage value reduced by 1 to a minimum of 1. This attack may not be used to target a ’Mech that is shutdown or a unit with Electronic Camouflage special equipment."},"TSEMP":{"cat":"Energy damage","optional":true,"desc2":"(optional) Give this unit a ranged combat order targeting a single opposing figure with zero or one order token. If the attack succeeds, and the target is not shutdown, give the target an order token after resolving the attack. If a ’Mech is given a second order token in this way, it shuts down; remove both tokens at the beginning of the controlling player’s next turn. If the target is at cruising level, it changes to NOE level; do not move it. If it cannot occupy the terrain at its NOE position, eliminate it.","desc1":null}};
+const SE_NOTE="(This square's colour marks its position on the SEC card \u2014 green, red, blue, black, grey in order; the range type comes from the card's own printed icon: \u26A1 = energy, \uD83D\uDE80 = ballistic.)";
+const ERA=UNIT.era||'2.0';
+function seDesc(name){
+  const s=SE_INFO[name]; if(!s) return null;
+  const d=ERA==='1.0'?(s.desc1||s.desc2):(s.desc2||s.desc1);
+  return d? name+': '+d+((d.indexOf('the range type')>=0)?' '+SE_NOTE:'') : name;
+}
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('baseSvg');
+function el(t,a,parent){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(parent||svg).appendChild(e);return e;}
+/* Incr 40: hover tooltips. For SVG art a <title> CHILD ELEMENT is the standard mechanism —
+   SVGElement.title= silently no-ops in Chromium (verified: attribute never set), so the
+   expando property does nothing. HTML overlays (heat3d/panels/knob3d) keep .title. */
+function tip(e,t){const ti=document.createElementNS(NS,'title');ti.textContent=t;e.appendChild(ti);return e;}
+const CX=320, CY=675;   /* dial pivot; stat column + L band hang toward the REAR tip */
+/* Thunder Fox Incr 3 capsule: dome centers y=275/705, rim radius 235 — the elongated
+   oval with parallel flanks (AoD p.4/p.7 vehicle base), stat slot toward the rear tip. */
+const defs=el('defs',{});
+defs.innerHTML=`
+<radialGradient id="bg" gradientUnits="userSpaceOnUse" cx="320" cy="328" r="765">
+ <stop offset="0%" stop-color="#3a3a40"/><stop offset="55%" stop-color="#242428"/><stop offset="100%" stop-color="#0c0c0f"/>
+</radialGradient>
+<filter id="raised"><feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-opacity="0.75"/></filter>`;
+/* ==== base rim: capsule (vehicle-base shape, AoD p.4/p.7 — parallel flanks, hemispherical
+   ends). The combat disc (r=234 about the pivot) fits inside the capsule: 86..554 vs flanks
+   85..555, and the dome arcs clear the disc by 1px. ==== */
+const NSHAPE=`M 85 275 L 85 705 A 235 235 0 0 0 555 705 L 555 275 A 235 235 0 0 0 85 275 Z`;
+el('g',{transform:'translate(6,14)'}).appendChild(el('path',{d:NSHAPE,fill:'#000',opacity:.45}));
+tip(el('path',{d:NSHAPE,fill:'#17171a',stroke:'#0a0a0c','stroke-width':3}),
+  'Outer rim of the base \u2014 the sculpted band around the figure; click to twist the combat dial');
+/* ==== slot geometry: stat slot toward the REAR tip (Thunder Fox Incr 3 = Atlas I44
+   proportions on the capsule): printed column 54px wide hangs below the dial pivot toward
+   the rear dome, printed band arm 100px across (50px each side). Peter 2026-10-21: the
+   Peter 2026-10-21 (Option A, per Peter): FORK REMOVED — the die-cut aperture is now one
+   plain rectangle spanning CX±42 from the vent to the band bottom. The printed strip stays
+   wider (±50) so neighbouring strips underlie the aperture continuously and never seam;
+   worst-case neighbour-cell poke at a 20-deg step lands 16.25px off-centre, inside the
+   42px aperture, with 28px cells. Disc r=234 covers the arm bottom corners. ==== */
+const COLX=CX, COLTOP=CY+79, BBOT=CY+229;
+const P_Y=CY+100, S_Y=CY+136, SPD_Y=CY+172, BAND_Y=CY+211;
+const ATK_X=CX-21, DEF_X=CX+21, MK_X=CX;
+/* Peter 2026-10-21 18:14: fork RESTORED (Option A rejected) — narrow column over the three
+   damage/speed rows, arm steps out to ±34.5 for the attack/defense band, like the real dial
+   photo. COLBOT = SPD cell bottom (847+14) + 5, mirroring built (3)'s +5. */
+const COLBOT=CY+191;
+const L_PATH=`M ${CX-16} ${COLTOP} H ${CX+16} V ${COLBOT} H ${CX+34.5} V ${BBOT} H ${CX-34.5} V ${COLBOT} H ${CX-16} V ${COLTOP} Z`;
+const STRIP_PATH=`M ${CX-27} ${COLTOP} H ${CX+27} V ${COLBOT} H ${CX+39} V ${BBOT} H ${CX-39} V ${COLBOT} H ${CX-27} V ${COLTOP} Z`;
+/* ==== firing arcs: ONE continuous rim-tracking curve (Thunder Fox Incr 3 convention) —
+   Warrenborn AOD098: Arc 270 front / Rear Arc 90 rear. The front arc runs from the right
+   rear wedge edge, up the right flank, across the front dome, down the left flank, to the
+   left rear wedge edge: an offset curve at RIN=216 tracking the capsule edge (not a plain
+   circle), so it keeps a constant 19px inset from the rim through the domes. Bracket ticks
+   mark the shared ends of the front and rear arcs. Drawn LATER (drawFrontArc, after the
+   base top) so the disc doesn't cover it — printed on the fixed top shell, since the arc
+   is relative to the miniature, not the dial. ==== */
+const RIN=216, FR=[320,275], RR=[320,705];   /* front/rear dome centers, inset print radius */
+/* GENERALIZED FIRING ARCS (bulk build, Peter 2026-10-21 21:05): the shell shipped hardcoded for
+   Thunder Fox's 270/90. The 27 quad-class units span four cases: 270/90 (Thunder Fox, Ursa,
+   Jaguar, Xanthos...), 180/90, 360/90 (Stalking Spider - full ring), 180/0 (BF016 - no rear
+   arc in its Warrenborn data). Geometry: the print tracks the base-edge offset (RIN inset).
+   The REAR arc spans UNIT.rearArc about the rear dome center RR, centered on straight-down;
+   ticks sit at its ends. The FRONT arc spans UNIT.arc centered on straight-up on the same
+   offset curve; when front+rear = 360 (270/90) the two share the rear-dome bracket ticks (the
+   approved Thunder Fox look); when they total < 360 (180/90: two 45deg side blind wedges;
+   180/0: no rear at all) the front arc ends at angle \u00b1FA/2 about FR - on the front dome
+   circle (\u226490deg) or continuing straight down the flank (>90deg) - with its own ticks.
+   All segments sweep 0 (decreasing std angle), the approved direction. */
+const RTK=UNIT.rearArc>0?(180-UNIT.rearArc)/2*Math.PI/180:null;   /* 45deg for a 90deg rear arc */
+const TK_L=RTK!=null?[RR[0]-RIN*Math.sin(RTK),RR[1]+RIN*Math.cos(RTK)]:null;
+const TK_R=RTK!=null?[RR[0]+RIN*Math.sin(RTK),RR[1]+RIN*Math.cos(RTK)]:null;
+const ptFromFR=a=>{const r=a*Math.PI/180;   /* angle from straight-up about FR */
+  if(Math.abs(a)<=90) return [CX+RIN*Math.sin(r),FR[1]-RIN*Math.cos(r)];
+  return [CX+Math.sign(a)*RIN,FR[1]+RIN*(Math.abs(a)-90)*Math.PI/180];};
+const FTK_R=ptFromFR(UNIT.arc/2), FTK_L=ptFromFR(-UNIT.arc/2);
+function arcTickAt(pt,c){const a=Math.atan2(pt[1]-c[1],pt[0]-c[0]);
+  tip(el('line',{x1:pt[0],y1:pt[1],x2:pt[0]+12*Math.cos(a),y2:pt[1]+12*Math.sin(a),stroke:'#e8e8ec','stroke-width':3.5,'stroke-linecap':'round'}),
+    'Firing arc bracket \u2014 arc end (AoD p.4/p.7 base layout)');}
+function drawFrontArc(){
+  const seg=(d,tipText)=>tip(el('path',{d,stroke:'#e8e8ec','stroke-width':3.5,fill:'none','stroke-linecap':'round'}),tipText);
+  const FA=UNIT.arc, RA=UNIT.rearArc||0;
+  if(RA>0){   /* rear arc about RR + its end ticks (Peter 2026-10-21 19:49: rear arc added —
+     quad geometry clears the printed column by 14px, so no gap needed at the dial window) */
+    seg(`M ${TK_L[0]} ${TK_L[1]} A ${RIN} ${RIN} 0 ${RA>180?1:0} 0 ${TK_R[0]} ${TK_R[1]}`,UNIT.rearTip);
+    arcTickAt(TK_L,RR);arcTickAt(TK_R,RR);}
+  if(FA>=360){   /* full ring (Stalking Spider 360/90): closed loop; the rear arc overprints it */
+    seg(`M ${CX+RIN} ${FR[1]} A ${RIN} ${RIN} 0 0 0 ${CX-RIN} ${FR[1]} L ${CX-RIN} ${RR[1]} A ${RIN} ${RIN} 0 0 0 ${CX+RIN} ${RR[1]} Z`,
+      UNIT.frontTip + ' \u2014 one continuous curve tracking the base-edge offset');
+  } else if(FA+RA>=360){   /* complement of the rear arc: shares the rear ticks (Thunder Fox 270/90) */
+    seg(`M ${TK_R[0]} ${TK_R[1]} A ${RIN} ${RIN} 0 0 0 ${CX+RIN} ${RR[1]} L ${CX+RIN} ${FR[1]} A ${RIN} ${RIN} 0 0 0 ${CX-RIN} ${FR[1]} L ${CX-RIN} ${RR[1]} A ${RIN} ${RIN} 0 0 0 ${TK_L[0]} ${TK_L[1]}`,
+      UNIT.frontTip + ' \u2014 one continuous curve tracking the base-edge offset');
+  } else {   /* front arc ends inside its own span: ticks at both ends (AOD097 180/90, BF016 180/0) */
+    seg(`M ${FTK_R[0]} ${FTK_R[1]} A ${RIN} ${RIN} 0 ${FA>180?1:0} 0 ${FTK_L[0]} ${FTK_L[1]}`,
+      UNIT.frontTip + ' \u2014 one continuous curve tracking the base-edge offset');
+    arcTickAt(FTK_R,FR);arcTickAt(FTK_L,FR);}
+}
+/* ==== combat dial: physical disc beneath the base top. The dial face is printed dark with a
+   WHITE value strip per click (2.0 numerals: dark on white, per the p.10 photo). The strip
+   matches the L-window shape, so neighbouring clicks' white strips meet invisibly behind the
+   cut and only this click's dark numerals show. One click = 360/18° = 20°. Group i is printed
+   pre-rotated by -i*STEP; rotating the disc +i*STEP (clockwise = damage) brings it upright into
+   the fixed L-window. Group 17 = bullet-hole position (3 holes in the slot = eliminated). ==== */
+const ICONS={e:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%20121%22%3E%3Cpath%20d%3D%22M11.00%20119.92C11.01%20119.14%2012.82%20111.57%2015.03%20103.11C17.24%2094.64%2018.83%2087.50%2018.56%2087.23C18.29%2086.96%2015.35%2087.42%2012.03%2088.26C8.72%2089.09%206.00%2089.42%206.00%2088.99C6.00%2088.56%208.97%2078.69%2012.60%2067.04C16.24%2055.40%2018.95%2045.62%2018.64%2045.31C18.33%2045.00%2015.98%2045.27%2013.42%2045.92C10.85%2046.56%208.55%2046.88%208.30%2046.63C8.05%2046.38%209.34%2039.31%2011.17%2030.93L14.50%2015.68L27.36%207.78C34.43%203.43%2040.39%200.06%2040.60%200.27C40.82%200.49%2038.24%207.29%2034.88%2015.38C31.52%2023.48%2029.03%2030.36%2029.35%2030.68C29.67%2031.00%2032.65%2030.58%2035.97%2029.74C39.28%2028.91%2042.00%2028.38%2042.00%2028.57C42.00%2028.76%2037.98%2038.84%2033.06%2050.96C27.93%2063.62%2024.63%2073.00%2025.31%2072.99C25.96%2072.99%2028.23%2072.51%2030.34%2071.92C32.46%2071.33%2034.39%2071.06%2034.64%2071.31C35.04%2071.71%2012.56%20119.78%2011.45%20120.89C11.20%20121.13%2011.00%20120.70%2011.00%20119.92Z%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',b:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2042%20118%22%3E%3Cpath%20d%3D%22M6.00%20104.94L6.00%2091.43L11.50%2086.00C17.18%2080.40%2018.00%2079.00%2015.62%2079.00C14.86%2079.00%2012.58%2077.17%2010.56%2074.93L6.88%2070.86L7.20%2044.18C7.51%2019.06%207.66%2017.16%209.83%2011.76C17.15%20-6.46%2029.97%20-2.78%2034.56%2018.86C36.02%2025.78%2036.61%2062.68%2035.36%2068.95C34.71%2072.18%2029.78%2078.24%2027.00%2079.23C25.89%2079.62%2026.86%2081.16%2030.75%2085.16L36.00%2090.56L36.00%20104.00L36.00%20117.45L29.22%20110.72C25.50%20107.03%2022.02%20104.00%2021.50%20104.00C20.98%20104.00%2017.27%20107.25%2013.27%20111.22L6.00%20118.45L6.00%20104.94ZM30.50%2044.22C30.50%2018.62%2030.35%2016.17%2028.50%2012.15L26.50%207.80L26.50%2041.87L26.50%2075.94L28.50%2073.94C30.40%2072.04%2030.50%2070.61%2030.50%2044.22Z%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',m:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2095%2087%22%3E%3Cpath%20d%3D%22M22.80%2078.70C15.81%2074.19%209.59%2070.00%208.98%2069.39C8.17%2068.57%2010.84%2064.77%2019.00%2055.14C31.33%2040.58%2034.03%2038.71%2030.53%2047.18C29.67%2049.27%2036.83%2054.31%2038.61%2052.88C40.20%2051.60%2058.39%2024.04%2057.90%2023.64C57.68%2023.46%2055.71%2022.12%2053.52%2020.66L49.55%2018.01L47.43%2021.51C45.38%2024.92%2045.27%2024.96%2043.60%2023.11C41.96%2021.29%2042.08%2020.80%2046.36%2012.35C53.35%20-1.48%2051.72%20-0.86%2064.50%205.44C74.08%2010.17%2076.31%2011.77%2081.74%2017.83L87.97%2024.79L80.46%2033.38C72.55%2042.43%2069.05%2044.48%2066.25%2041.68C64.81%2040.24%2064.91%2039.73%2067.41%2035.96C68.92%2033.68%2070.00%2031.70%2069.82%2031.56C69.65%2031.42%2067.75%2030.14%2065.60%2028.71L61.70%2026.11L60.03%2028.31C59.12%2029.51%2054.46%2036.20%2049.69%2043.17L41.01%2055.84L45.10%2059.08L49.18%2062.31L51.51%2059.40C53.36%2057.11%2054.11%2056.76%2055.09%2057.72C56.07%2058.68%2054.40%2061.85%2047.02%2072.97C41.90%2080.68%2037.22%2086.98%2036.61%2086.95C36.00%2086.92%2029.78%2083.21%2022.80%2078.70ZM50.44%2072.75C59.81%2058.53%2059.82%2058.50%2057.88%2056.41C56.19%2054.58%2056.10%2051.00%2057.74%2051.00C59.35%2051.00%2065.06%2055.42%2064.80%2056.47C64.64%2057.16%2060.45%2064.31%2055.50%2072.36C47.48%2085.41%2046.20%2086.99%2043.78%2087.00C41.14%2087.00%2041.31%2086.62%2050.44%2072.75ZM3.01%2066.03C1.77%2065.24%202.03%2064.55%204.59%2061.79C6.28%2059.98%2012.96%2052.54%2019.43%2045.25L31.20%2032.00L34.10%2034.07C36.54%2035.81%2036.83%2036.45%2035.93%2038.13C35.10%2039.68%2034.23%2039.99%2032.02%2039.51C29.36%2038.92%2028.44%2039.76%2017.37%2052.94C10.88%2060.67%205.32%2066.99%205.03%2066.98C4.74%2066.98%203.83%2066.55%203.01%2066.03ZM46.59%2056.69C44.88%2055.44%2045.30%2054.53%2053.13%2042.70C57.73%2035.74%2061.98%2030.04%2062.56%2030.03C63.14%2030.01%2064.37%2030.56%2065.30%2031.25C66.80%2032.37%2066.11%2033.76%2058.44%2045.00C53.75%2051.88%2049.58%2057.62%2049.17%2057.76C48.76%2057.91%2047.60%2057.42%2046.59%2056.69ZM65.75%2049.87C60.70%2046.56%2060.26%2045.86%2062.27%2044.19C63.18%2043.43%2064.20%2043.64%2065.93%2044.95C68.24%2046.69%2068.47%2046.69%2072.41%2044.93C74.66%2043.92%2077.40%2042.00%2078.50%2040.66C79.60%2039.32%2083.15%2035.00%2086.40%2031.07C91.83%2024.48%2092.19%2023.73%2091.04%2021.57C89.94%2019.52%2090.09%2018.80%2092.14%2016.02L94.50%2012.82L94.79%2021.98L95.08%2031.13L88.36%2039.09C82.66%2045.85%2073.81%2053.03%2071.23%2052.99C70.83%2052.98%2068.36%2051.58%2065.75%2049.87ZM35.00%2049.20L32.74%2047.37L41.49%2034.24C50.21%2021.16%2050.25%2021.12%2052.62%2022.67C53.93%2023.53%2055.00%2024.44%2055.00%2024.70C55.00%2024.95%2051.01%2030.98%2046.12%2038.09L37.25%2051.02L35.00%2049.20ZM35.25%2028.90C30.39%2025.46%2030.30%2023.17%2034.78%2017.25C37.44%2013.73%2037.78%2013.58%2039.91%2014.92C41.09%2015.67%2041.11%2016.32%2040.02%2018.95C38.84%2021.79%2038.93%2022.30%2041.00%2024.50C43.17%2026.81%2043.20%2027.04%2041.62%2029.46C40.70%2030.86%2039.85%2031.98%2039.73%2031.96C39.60%2031.93%2037.59%2030.55%2035.25%2028.90ZM81.20%2012.71L76.99%208.41L80.08%204.21C81.78%201.89%2083.43%20-0.00%2083.73%20-0.00C84.04%20-0.00%2086.37%201.66%2088.90%203.69C91.43%205.71%2093.68%207.50%2093.89%207.66C94.44%208.07%2087.03%2017.00%2086.14%2017.00C85.74%2017.00%2083.52%2015.07%2081.20%2012.71Z%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',mech:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2088%20135%22%3E%3Cpath%20d%3D%22M4.00%20129.21C4.00%20126.92%204.89%20125.90%209.00%20123.50L14.00%20120.58L14.00%20110.79C14.00%20102.75%2013.73%20101.00%2012.50%20101.00C11.33%20101.00%2011.00%2099.67%2011.00%2095.00C11.00%2090.33%2011.33%2089.00%2012.50%2089.00C13.61%2089.00%2014.00%2087.83%2014.00%2084.50C14.00%2080.18%2013.88%2080.00%2011.05%2080.00C9.42%2080.00%206.95%2079.48%205.55%2078.84C3.25%2077.79%203.00%2077.12%203.00%2072.00C3.00%2066.91%203.26%2066.20%205.50%2065.18C7.91%2064.09%208.00%2063.69%208.00%2054.72L8.00%2045.40L13.08%2039.70C15.92%2036.51%2019.01%2034.00%2020.08%2034.00C21.14%2034.00%2022.00%2033.58%2022.00%2033.07C22.00%2032.56%2022.98%2032.00%2024.17%2031.82C25.37%2031.64%2026.53%2030.94%2026.76%2030.25C27.07%2029.30%2024.60%2029.00%2016.58%2029.00L6.00%2029.00L6.00%2016.00L6.00%203.00L18.50%203.00L31.00%203.00L31.00%2012.04L31.00%2021.07L34.73%2018.54C39.94%2015.00%2048.20%2014.97%2053.36%2018.47L57.00%2020.94L57.00%2011.97L57.00%203.00L69.50%203.00L82.00%203.00L82.00%2016.00L82.00%2029.00L71.42%2029.00C63.40%2029.00%2060.93%2029.30%2061.24%2030.25C61.47%2030.94%2062.63%2031.64%2063.83%2031.82C65.02%2032.00%2066.00%2032.56%2066.00%2033.07C66.00%2033.58%2066.86%2034.00%2067.92%2034.00C69.00%2034.00%2072.05%2036.51%2074.90%2039.75L79.97%2045.50L79.99%2054.77C80.00%2063.68%2080.10%2064.09%2082.50%2065.18C84.74%2066.20%2085.00%2066.91%2085.00%2072.00C85.00%2077.12%2084.75%2077.79%2082.45%2078.84C81.05%2079.48%2078.58%2080.00%2076.95%2080.00C74.12%2080.00%2074.00%2080.18%2074.00%2084.50C74.00%2086.97%2074.45%2089.00%2075.00%2089.00C75.56%2089.00%2076.00%2091.67%2076.00%2095.00C76.00%2098.33%2075.56%20101.00%2075.00%20101.00C74.40%20101.00%2074.00%20104.93%2074.00%20110.79L74.00%20120.58L79.00%20123.50C83.11%20125.90%2084.00%20126.92%2084.00%20129.21L84.00%20132.00L68.50%20132.00L53.00%20132.00L53.00%20129.12C53.00%20126.65%2053.77%20125.84%2058.50%20123.37L64.00%20120.50L64.00%20110.75C64.00%20102.75%2063.73%20101.00%2062.50%20101.00C61.33%20101.00%2061.00%2099.67%2061.00%2095.00C61.00%2091.67%2061.44%2089.00%2062.00%2089.00C62.55%2089.00%2063.00%2087.31%2063.00%2085.25C63.00%2081.53%2062.95%2081.48%2057.04%2079.75C53.77%2078.79%2047.90%2078.00%2044.00%2078.00C40.10%2078.00%2034.22%2078.79%2030.93%2079.75L24.95%2081.50L25.62%2091.25C26.10%2098.29%2025.97%20101.00%2025.14%20101.00C24.36%20101.00%2024.00%20104.10%2024.00%20110.75L24.00%20120.50L29.50%20123.37C34.23%20125.84%2035.00%20126.65%2035.00%20129.12L35.00%20132.00L19.50%20132.00L4.00%20132.00L4.00%20129.21ZM33.00%2064.87C33.00%2063.20%2031.88%2061.03%2030.08%2059.24C27.97%2057.12%2026.83%2054.61%2025.95%2050.16C25.17%2046.20%2024.25%2044.00%2023.37%2044.00C22.62%2044.00%2022.00%2043.55%2022.00%2043.00C22.00%2040.86%2018.98%2042.16%2016.55%2045.34C14.35%2048.24%2014.00%2049.69%2014.01%2056.09C14.01%2063.27%2014.11%2063.55%2017.01%2065.20C19.06%2066.37%2020.00%2067.68%2020.00%2069.36L20.00%2071.82L26.50%2069.71C32.39%2067.79%2033.00%2067.34%2033.00%2064.87ZM71.07%2065.16C73.88%2063.56%2073.99%2063.23%2073.99%2056.09C74.00%2049.69%2073.65%2048.24%2071.45%2045.34C69.02%2042.16%2066.00%2040.86%2066.00%2043.00C66.00%2043.55%2065.38%2044.00%2064.63%2044.00C63.75%2044.00%2062.83%2046.20%2062.05%2050.16C61.17%2054.61%2060.03%2057.12%2057.92%2059.24C56.12%2061.03%2055.00%2063.20%2055.00%2064.88C55.00%2067.35%2055.60%2067.81%2061.25%2069.62L67.50%2071.63L67.83%2069.23C68.01%2067.83%2069.37%2066.13%2071.07%2065.16ZM46.40%2035.75C46.76%2033.41%2047.32%2030.04%2047.64%2028.25C48.21%2025.06%2048.16%2025.00%2044.47%2025.00L40.72%2025.00L41.41%2031.67C42.16%2039.04%2042.51%2040.00%2044.43%2040.00C45.21%2040.00%2046.01%2038.26%2046.40%2035.75Z%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',
+             start:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2012%22%3E%3Cpath%20d%3D%22M7.26%206.26L12.00%201.53L16.74%206.26L21.47%2011.00L12.00%2011.00L2.53%2011.00L7.26%206.26Z%22%20fill%3D%22%2319b171%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',rep:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2012%22%3E%3Cpath%20d%3D%22M7.26%206.26L12.00%201.53L16.74%206.26L21.47%2011.00L12.00%2011.00L2.53%2011.00L7.26%206.26Z%22%20fill%3D%22%232e2b2c%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E',rad:'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cpath%20d%3D%22M88.00%20164.00%20L84.83%20160.00%20L75.99%20160.00%20C64.38%20160.00%2064.00%20159.62%2064.00%20147.97%20C64.00%20140.89%2064.34%20138.82%2065.65%20137.79%20C66.56%20137.08%2069.15%20134.64%2071.40%20132.37%20C73.66%20130.10%2076.49%20127.74%2077.70%20127.11%20C79.56%20126.16%2079.95%20125.00%2080.20%20119.77%20C80.45%20114.58%2080.85%20113.37%2082.64%20112.49%20C86.47%20110.59%2087.94%20108.86%2088.57%20105.50%20C89.18%20102.25%2087.82%2098.25%2085.60%2096.77%20C85.00%2096.36%2071.59%2096.02%2055.82%2096.02%20C31.10%2096.00%2026.93%2095.78%2025.57%2094.43%20C24.38%2093.24%2024.00%2090.75%2024.02%2084.18%20C24.02%2079.41%2024.36%2075.00%2024.77%2074.39%20C25.17%2073.78%2026.96%2072.53%2028.75%2071.61%20C31.87%2070.02%2032.00%2069.70%2032.00%2063.99%20C32.00%2058.06%2032.01%2058.04%2036.00%2056.00%20C39.99%2053.96%2040.00%2053.94%2040.00%2048.01%20C40.00%2042.48%2040.20%2041.95%2042.84%2040.58%20C44.40%2039.78%2046.89%2037.52%2048.39%2035.56%20C50.85%2032.33%2051.56%2032.00%2056.00%2032.00%20C60.44%2032.00%2061.15%2032.33%2063.61%2035.56%20C65.11%2037.52%2067.60%2039.78%2069.16%2040.58%20C71.80%2041.95%2072.00%2042.48%2072.00%2047.99%20C72.00%2053.14%2072.30%2054.08%2074.25%2055.09%20C75.49%2055.72%2078.34%2058.10%2080.60%2060.37%20C82.85%2062.64%2085.44%2065.08%2086.35%2065.79%20C87.48%2066.68%2088.00%2068.61%2088.00%2071.97%20C88.00%2078.32%2089.68%2080.00%2096.02%2080.00%20C100.44%2080.00%20101.16%2079.66%20103.61%2076.44%20C105.11%2074.48%20107.60%2072.22%20109.16%2071.42%20C111.80%2070.05%20112.00%2069.52%20112.00%2063.99%20C112.00%2058.06%20112.01%2058.04%20116.00%2056.00%20C119.99%2053.96%20120.00%2053.94%20120.00%2048.01%20C120.00%2042.48%20120.20%2041.95%20122.84%2040.58%20C124.40%2039.78%20126.89%2037.52%20128.39%2035.56%20C130.81%2032.39%20131.60%2032.00%20135.72%2032.00%20C140.17%2032.00%20140.60%2032.28%20147.92%2039.86%20C152.09%2044.19%20156.51%2048.25%20157.75%2048.90%20C159.70%2049.91%20160.00%2050.86%20160.00%2056.01%20C160.00%2061.70%20160.14%2062.02%20163.25%2063.61%20C165.04%2064.53%20166.83%2065.78%20167.23%2066.39%20C167.64%2067.00%20167.98%2073.21%20167.98%2080.18%20C168.00%2090.55%20167.70%2093.15%20166.38%2094.48%20C164.95%2095.90%20161.27%2096.08%20135.46%2095.94%20C119.35%2095.85%20105.68%2096.08%20105.08%2096.45%20C103.85%2097.21%20103.66%20100.95%20104.77%20102.60%20C105.17%20103.20%20106.85%20104.33%20108.50%20105.10%20C111.26%20106.40%20111.52%20106.99%20111.80%20112.26%20C112.07%20117.43%20112.38%20118.15%20114.97%20119.49%20C116.55%20120.30%20118.81%20122.33%20120.00%20124.00%20C121.19%20125.67%20123.45%20127.70%20125.03%20128.52%20C127.66%20129.88%20127.93%20130.52%20128.20%20136.17%20C128.48%20141.86%20128.73%20142.48%20131.50%20144.00%20C135.30%20146.10%20137.20%20149.67%20136.51%20153.43%20C135.49%20159.03%20133.62%20160.00%20123.93%20160.00%20L115.17%20160.00%20L112.00%20164.00%20L108.83%20168.00%20L100.00%20168.00%20L91.17%20168.00%20L88.00%20164.00%20Z%22%20fill%3D%22%231c1c1e%22%2F%3E%3C%2Fsvg%3E',
+             bul:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAECElEQVR4nLVWPUgsSRisnp3Z3XHFh+JidlwsKEZygSAHXvICMznQRM1eIqK5ehiZ+IMiiCBoIGYGBxeYqJm44APxD4SDDVQUf25ndGdmZ7rrgqWHWVfemVxDQ3dPd1dX1ddfjyAJAJBSQggBkkilUgjDEEIImKaJKIpgmibelzAMPxxPFiEEDKUUAIAkDMOIASzLqtugUqkAAN7e3gAAlmX9EEAXQ0pZN/h+sWma8DwP6XQa5XIZuVwOSilEUfQpEEGyjraUEqZpQkoJkh9KopSCEOK/AYSAAVRlEELEnkRRFHsjpUQQBCiVSvA8D09PT4iiKJ7/mWJoOQAgCAIYhoFsNgshBF5eXpDJZOD7PlZXV2nbNsbGxqjn+r7/ORApJTKZTLVjGAjDEDc3N3kAcBzn59vb2+YvX76gWCwiCALs7Ozg8vLyazabRTab/RQIlFLQvpDEzc1N89LSEu/u7hpJYmhoiK7rYmpqir29vQTA7u5u+r4PklBK/bCSrJqsAcrlMkji7Ozst46ODm5vb3+Pogi2bRMABwYGuLKywoaGBgLgwcHBHzo4Li4uevf392e3trauC4XCMEm8vb1VQTzPA0n4vg/HcWLTd3d3/2xtbWVXVxcBsKenhzMzM9ze3v7++PiI1tZWAmBfXx/7+/s5NzfHo6Ojb8/PzyCJIAhAsgqiaSfB9MfR0VECoGZimiYBcGJigo+PjwDA4eFhOo4T3xu9liQcx6mCJBGTgEEQYHp6mgAIgJlMhoZhxFKRRDabZRiGqFQqsa/JdswkiVwqlWr6hUJhGACFEATAVCpFAGxsbOTR0dE3ADGIUir2IMkiBkmy0Yscx8Hi4iIBMJfLEUANEwBsa2vjxsbGnd5QR1QSrEYupVQN3eXlZQLg4eHhlGVZTKfT1KwsyyIAnpyc/F4sFn+anZ3l+fn5r0lvScZpqSaNJI3b29tbJonr6+uutbW1clNTU7x5Z2cnBwYGCIBKKfi+jzAMY08rlUp82BqQMAxjZC2h67oYHx+n53mYnJzk8fHx6MjICNfX1/+pVCqYn5/n5ubm3/f39+mk2VEU1YNouZI0y+UyXl5eQBKDg4PU8a9DW2/68PBg6HGtxPtwNnRq0Y+XzmGZTAa2bePh4SHd0tKC5uZmuK4LoPoiep4H0zSRz+cVqjEdr6/L0Fqq9xdJ19PT069hGMJ13Tj1LCwsUM/3fR9BECAIgho1km0zlUp9mDi1bO3t7X+lUqk4U9u2jXw+f2EYBoDqK6rbel0dk49O/76+vr7GFyyKIlxdXf0ipYzZJU+f9CUOYS2VlLKGYvJy6rBMmquBdfjquXrjpAUiaVjyfUky1S+n/ovR8wzDgJQSWnItVfI7gHqQ/6P8C689Xjq8+XCPAAAAAElFTkSuQmCC'};
+const ICONAR={e:0.397,b:0.356,m:0.948,mech:0.652,hover:1.776,foot:1.286,q:2.138,atk:1,def:1,start:2,rep:2,rad:1,fac:1};
+ICONS.q='data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20171%2080%22%3E%3Cpath%20d%3D%22M3.00%2074.90C3.00%2068.76%2011.36%2062.32%2017.98%2063.38C22.50%2064.10%2045.05%2060.08%2049.54%2057.75C52.00%2056.47%2053.29%2054.39%2056.27%2046.90C58.30%2041.80%2059.79%2037.46%2059.58%2037.25C59.37%2037.04%2056.79%2040.31%2053.85%2044.53L48.50%2052.19L43.50%2051.57C28.87%2049.77%2030.38%2050.60%2028.07%2042.99C25.57%2034.77%2025.58%2035.00%2027.78%2035.00C28.75%2035.00%2032.68%2031.85%2036.50%2028.00L43.45%2021.00L53.57%2021.00C62.42%2021.00%2063.92%2020.75%2065.50%2019.00C66.69%2017.68%2068.58%2017.00%2071.03%2017.00C73.12%2017.00%2075.30%2016.34%2076.00%2015.50C77.09%2014.19%2076.28%2014.00%2069.62%2014.00C65.21%2014.00%2062.00%2013.58%2062.00%2013.00C62.00%2012.45%2059.75%2012.00%2057.00%2012.00C52.33%2012.00%2052.00%2011.83%2052.00%209.50C52.00%207.17%2052.33%207.00%2057.00%207.00C59.75%207.00%2062.00%206.55%2062.00%206.00C62.00%205.39%2066.81%205.00%2074.44%205.00C81.66%205.00%2087.14%204.58%2087.50%204.00C87.84%203.45%2089.79%203.00%2091.84%203.00C95.01%203.00%2096.34%203.78%20100.78%208.28C108.19%2015.78%20108.07%2018.52%2099.98%2026.52C96.40%2030.06%2094.18%2033.04%2094.50%2033.87C94.80%2034.63%2093.98%2036.67%2092.70%2038.38C91.41%2040.10%2089.97%2042.17%2089.49%2043.00C88.57%2044.58%20104.25%2030.65%20111.97%2023.02C115.78%2019.26%20117.12%2018.55%20120.41%2018.55C123.66%2018.55%20124.76%2019.11%20126.91%2021.87C135.18%2032.49%20153.00%2053.23%20157.61%2057.60C160.58%2060.41%20163.00%2063.43%20163.00%2064.31C163.00%2065.19%20164.12%2067.57%20165.50%2069.60C170.33%2076.72%20169.89%2077.00%20153.89%2077.00L139.78%2077.00L140.46%2074.31C140.83%2072.83%20142.00%2070.40%20143.07%2068.91C144.13%2067.41%20145.00%2065.53%20145.00%2064.72C145.00%2062.98%20120.44%2039.67%20119.13%2040.16C117.88%2040.63%20111.00%2048.99%20111.00%2050.04C111.00%2050.50%20111.50%2051.19%20112.10%2051.56C112.77%2051.98%20110.34%2055.14%20105.88%2059.62L98.55%2067.00L93.00%2067.00C87.51%2067.00%2087.37%2066.93%2081.20%2060.70L74.95%2054.40L76.49%2050.04C77.33%2047.65%2077.86%2045.53%2077.67%2045.33C77.26%2044.93%2065.06%2063.88%2062.62%2068.70C61.73%2070.46%2060.27%2072.31%2059.38%2072.81C58.48%2073.31%2051.44%2073.49%2043.72%2073.21C29.75%2072.71%2029.69%2072.72%2030.25%2074.85C30.81%2076.97%2030.63%2077.00%2016.91%2077.00C3.45%2077.00%203.00%2076.93%203.00%2074.90ZM53.75%2030.51C54.99%2030.21%2056.00%2029.30%2056.00%2028.50C56.00%2026.98%2054.33%2026.43%2047.35%2025.67C43.61%2025.26%2042.84%2025.58%2039.60%2028.90C37.62%2030.93%2036.00%2032.84%2036.00%2033.15C36.00%2033.66%2048.29%2031.83%2053.75%2030.51Z%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E';
+/* STEP and NSEG now derive from UNIT.life (above) */
+defs.innerHTML+=`<clipPath id="outer"><path d="${NSHAPE}"/></clipPath>`;
+const discG=el('g',{'clip-path':'url(#outer)'});
+el('path',{d:`M ${CX-234} ${CY} a 234 234 0 1 0 468 0 a 234 234 0 1 0 -468 0 Z`,fill:'#111114',stroke:'#0a0a0c','stroke-width':3},discG);
+/* value on the white strip: plain numerals, or an SE-colored cell behind them */
+/* Incr 29: Peter: center the numbers in the box. dominant-baseline:central centers the
+   EM box, but digit ink sits high within it (cap-to-baseline is ~72% of em and the baseline
+   hangs low), so glyphs rendered visually high in the chip. Fix: explicit baseline
+   placement — baseline = center + 0.355*fs puts the cap-height band optically centered. */
+function val(g,px,py,w,h,txt,fs,se,tipText){
+  if(se){el('rect',{x:px-w/2,y:py-h/2,width:w,height:h,rx:3,fill:SEC[se],stroke:'#3c3c44','stroke-width':1},g);}
+  el('text',{x:px,y:py+fs*0.355,'font-size':fs,'font-weight':'800',fill:(se==='k'?'#f2f2f4':'#16161a'),'text-anchor':'middle'},g).textContent=txt;
+  /* Peter 2026-10-20: per-VALUE tooltips — each cell carries its own hit rect (topmost within
+     the click group) so hovering a value is specific to that value + its SE, not the row. */
+  if(tipText){const r=el('rect',{x:px-w/2,y:py-h/2,width:w,height:h,fill:'transparent','pointer-events':'all'},g);tip(r,tipText);}}
+for(let i=0;i<NSEG;i++){
+  const g=el('g',{transform:`rotate(${-i*STEP} ${CX} ${CY})`},discG);
+  el('path',{d:STRIP_PATH,fill:'#f4f4f0'},g);
+  if(i>=UNIT.life){ /* KO'd clicks: the slot shows three bullet holes = eliminated (AoD p.2).
+    Peter 2026-10-20: actual hole art (Mocks/icons/bullet-hole.png, white->transparent) replaces
+    the old three-dot circles, which read as '***'. */
+    /* per-hole tooltips (Peter 2026-10-20): each hole names its count and the click */
+    /* Peter 2026-10-21: holes are VERTICAL — one in each of the three damage rows
+       (primary, secondary, speed), taking the place of the stat values, like the real
+       base's dial (was: a horizontal trio, Peter's correction). */
+    [[P_Y,0],[S_Y,1],[SPD_Y,2]].forEach(([ky,k])=>{
+      const im=el('image',{href:ICONS.bul,x:CX-13,y:ky-13,width:26,height:26},g);
+      tip(im,`Bullet hole ${k+1} of 3 — the unit is ELIMINATED: click ${i+1-UNIT.life} past its last click (AoD p.2)`);});
+    continue;}
+  /* per-value tooltip text (Peter 2026-10-20): value + click + SE name & description.
+     SE names come from the MWDA Game scrape (UNIT.primSEn etc.); configs without them
+     (the hand-built originals) simply show the value line. */
+  const seN=a=>(Array.isArray(a)?a[i]:null)||null;
+  const cellTip=(label,v,name)=>`${label} ${v} — click ${i+1} of ${UNIT.life}`+(name?` — ${seDesc(name)}`:'');
+  val(g,COLX,P_Y,28,28,P[i],22,primSE(i),cellTip('Primary damage',P[i],seN(UNIT.primSEn))); /* primary damage */
+  val(g,COLX,S_Y,28,28,S[i],22,null,cellTip('Secondary damage',S[i],seN(UNIT.secSEn)));      /* secondary damage */
+  val(g,COLX,SPD_Y,28,28,SPD[i],22,null,cellTip('Speed',SPD[i],seN(UNIT.spdSEn)));           /* speed */
+  const BAND_SHIFT=-5;   /* cells up 5px = marker visually 10px lower vs the numbers (Incr 28) */
+  val(g,ATK_X,BAND_Y+BAND_SHIFT,26,26,ATK[i],19,atkSE(i),cellTip('Attack',ATK[i],seN(UNIT.atkSEn))); /* attack */
+  val(g,DEF_X,BAND_Y+BAND_SHIFT,26,26,DEF[i],19,defSE(i),cellTip('Defense',DEF[i],seN(UNIT.defSEn))); /* defense */
+  /* starting / repair markers are printed on the dial in the band, BETWEEN the attack and
+     defense cells, sitting LOW: the gap between the cells is 16px wide, the marker is 15px
+     wide so it clears both cells, and its base rests at the cells' bottom edge (Incr 23,
+     per the user's own dial photo — the triangle only rises into the lower half of the gap,
+     never over the numbers). Green start @1, black repair @4/6/10. */
+  /* Incr 26: Peter: "now it looks smaller — make it more like rulebook p.11". The p.11
+     labeled diagram shows the marker as a WIDE, LOW triangle — its base spanning nearly the
+     full space between the two numbers, ~2x as wide as tall. The 15x15 spike had the mass
+     concentrated in a narrow column; the p.11 look is a broad flat triangle. The Warrenborn
+     gif is natively 24x12 (2:1), so rendering at 28x14 restores its true aspect AND doubles
+     the width. The triangle shape never touches the digits: its slanted edges only rise in
+     the middle, so at the digits' inner edge (x=CX-10, 10px off center) the surface has
+     risen just 4px from the bottom — below the glyph baseline. */
+  /* Incr 27: white outline stripped from the Warrenborn gifs (Peter: remove the outline
+     entirely). Marker art is now PNG with the outline alpha-ed out; geometry unchanged. */
+  /* Incr 28: Peter: lower the triangle 10px. A literal 10px drop put the base past the
+     white strip's bottom edge (BBOT=580) and the die-cut hid most of it — only 5px of white
+     exist below the cells. So the 10px is achieved RELATIVE TO THE NUMBERS: the band cells
+     (attack/defense) rise 5px within the horizontal arm, and the marker's base sits at the
+     strip's bottom edge (y=579). Marker top is now 10px lower against the digits than in
+     Incr 27, and the whole triangle stays visible inside the white strip. */
+  const MKW=28, MKH=14, MKY=BAND_Y+17-MKH;
+  if(i===0) tip(el('image',{href:ICONS.start,x:MK_X-MKW/2,y:MKY,width:MKW,height:MKH},g),
+    'Green starting marker — click 1 is this unit\u2019s starting position; the dial begins here');
+  else if(UNIT.repairClicks.includes(i)) tip(el('image',{href:ICONS.rep,x:MK_X-MKW/2,y:MKY,width:MKW,height:MKH},g),
+    `Repair marker — the damage on this click can be repaired (Warrenborn repair markers: ${UNIT.repairClicks.map(c=>c+1).join(', ')} on the ${UNIT.life}-click dial)`);
+  tip(g, i>=UNIT.life ? 'Eliminated — 3 clicks past the last click: bullet holes in the slot (AoD p.2)'
+    : `Click ${i+1} of ${UNIT.life} — Primary ${P[i]} · Secondary ${S[i]} · Speed ${SPD[i]} · Attack ${ATK[i]} · Defense ${DEF[i]}`+
+      (i===0?' — green start marker':(UNIT.repairClicks.includes(i)?' — repair marker':'')));
+}
+/* ==== cell overlay (Peter 2026-10-20, fix 4): neighbour strips poke into the window's TOP
+   corners when the disc rotates — at 20&deg; steps the white wedge crosses the SE-coloured
+   cells' top corners, lopsiding the squares (visible on Copperhead's Pulse-red primary;
+   Solitude never showed it because its column cells are plain white on white). Fix: a top
+   overlay re-draws the CURRENT click's five cells ABOVE all strips, so they always render as
+   clean rectangles. pointer-events:none keeps cell tooltips hitting the underlying cells. ==== */
+const cellOv=el('g',{'pointer-events':'none'},discG);
+function renderCellOv(idx){
+  cellOv.innerHTML='';
+  if(idx>=UNIT.life) return;
+  const g=el('g',{transform:`rotate(${-idx*STEP} ${CX} ${CY})`},cellOv);
+  /* Redraw the current strip ABOVE all strips, then the start/repair marker, then the
+     cells — kept from the ±42 experiment. Harmless with the fork restored: the strip is
+     again wider than the window, so neighbour cells can't poke through the aperture. */
+  el('path',{d:STRIP_PATH,fill:'#f4f4f0'},g);
+  const MKW=28, MKH=14, MKY=BAND_Y+17-MKH;
+  if(idx===0) el('image',{href:ICONS.start,x:MK_X-MKW/2,y:MKY,width:MKW,height:MKH},g);
+  else if(UNIT.repairClicks.includes(idx)) el('image',{href:ICONS.rep,x:MK_X-MKW/2,y:MKY,width:MKW,height:MKH},g);
+  const seN=a=>(Array.isArray(a)?a[idx]:null)||null;
+  const cellTip=(label,v,name)=>`${label} ${v} — click ${idx+1} of ${UNIT.life}`+(name?` — ${seDesc(name)}`:'');
+  val(g,COLX,P_Y,28,28,P[idx],22,primSE(idx),cellTip('Primary damage',P[idx],seN(UNIT.primSEn)));
+  val(g,COLX,S_Y,28,28,S[idx],22,null,cellTip('Secondary damage',S[idx],seN(UNIT.secSEn)));
+  val(g,COLX,SPD_Y,28,28,SPD[idx],22,null,cellTip('Speed',SPD[idx],seN(UNIT.spdSEn)));
+  const BAND_SHIFT=-5;
+  val(g,ATK_X,BAND_Y+BAND_SHIFT,26,26,ATK[idx],19,atkSE(idx),cellTip('Attack',ATK[idx],seN(UNIT.atkSEn)));
+  val(g,DEF_X,BAND_Y+BAND_SHIFT,26,26,DEF[idx],19,defSE(idx),cellTip('Defense',DEF[idx],seN(UNIT.defSEn)));
+}
+/* base top: the black capsule structure, die-cut with the L-shaped window (evenodd);
+   black outline on the die-cut edge (real capsule base's printed edge, TF Incr 3) */
+const TOP_D=NSHAPE+' '+L_PATH;
+tip(el('path',{d:TOP_D,fill:'url(#bg)','fill-rule':'evenodd',stroke:'#000','stroke-width':3}),
+  UNIT.baseTip);
+/* I44-matched coverage: I44's objectBoundingBox gradient on a 940px circle gives bright
+   zone from 169px above center, radius 799 = 1.70x base radius — no part of its dial reaches
+   the dark stop. Capsule equivalent: center (320,328), r=765 (scaled 0.957). */
+defs.innerHTML+=`<clipPath id="baseclip"><path d="${TOP_D}" clip-rule="evenodd"/></clipPath>`;
+const spk=el('g',{'clip-path':'url(#baseclip)'});
+for(let i=0;i<200;i++){const x=85+Math.random()*470,y=40+Math.random()*900;
+  el('circle',{cx:x,cy:y,r:Math.random()*1.3+.3,fill:'#fff',opacity:Math.random()*0.045},spk);}
+/* wall shadow inside the window edges. Peter 2026-10-21 18:14: the vL arm shadow
+   darkened the blue square's left edge — now masked OFF behind every cell and square
+   (wallMask: one mask, black where the printing sits), so the depth reads everywhere
+   except behind the values, like the real dial photo. */
+function vgrad(id,x1,y1,x2,y2){defs.innerHTML+=`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`;}
+vgrad('vT','0','0','0','1');vgrad('vB','0','1','0','0');vgrad('vL','0','0','1','0');vgrad('vR','1','0','0','0');
+defs.innerHTML+=`<mask id="wallMask" maskUnits="userSpaceOnUse" x="${CX-60}" y="${COLTOP-2}" width="120" height="${BBOT-COLTOP+4}"><rect x="${CX-60}" y="${COLTOP-2}" width="120" height="${BBOT-COLTOP+4}" fill="#fff"/><rect x="${CX-15}" y="${P_Y-15}" width="30" height="30" fill="#000"/><rect x="${CX-15}" y="${S_Y-15}" width="30" height="30" fill="#000"/><rect x="${CX-15}" y="${SPD_Y-15}" width="30" height="30" fill="#000"/><rect x="${CX-35}" y="${BAND_Y-20}" width="28" height="30" fill="#000"/><rect x="${CX+7}" y="${BAND_Y-20}" width="28" height="30" fill="#000"/></mask>`;
+el('rect',{x:CX-16,y:COLTOP,width:32,height:12,fill:'url(#vT)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX-16,y:COLBOT-12,width:32,height:12,fill:'url(#vB)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX-16,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vL)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX+8,y:COLTOP,width:8,height:COLBOT-COLTOP,fill:'url(#vR)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX-34.5,y:COLBOT,width:8,height:BBOT-COLBOT,fill:'url(#vL)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX+26.5,y:COLBOT,width:8,height:BBOT-COLBOT,fill:'url(#vR)',mask:'url(#wallMask)','pointer-events':'none'});
+el('rect',{x:CX-34.5,y:BBOT-12,width:69,height:12,fill:'url(#vB)',mask:'url(#wallMask)','pointer-events':'none'});
+/* window bezel: die-cut edge */
+tip(el('path',{d:L_PATH,fill:'none',stroke:'#4a4a52','stroke-width':1.5}),'Die-cut edge of the rectangular stat-slot window');
+/* center dot at the geometric center of the capsule, y=(40+940)/2=490, not the dial pivot */
+el('circle',{cx:CX,cy:490,r:4,fill:'#e8e8ec',opacity:.9});
+/* ==== vent rating above the column (nearest the center): white chevron + white box,
+   Thunder Fox Incr 3 geometry — chevron COLTOP-24..COLTOP-14, box COLTOP-30..COLTOP-2 ==== */
+el('path',{d:`M ${CX-24} ${COLTOP-24} L ${CX-14} ${COLTOP-14} L ${CX-4} ${COLTOP-24}`,stroke:'#f4f4f0','stroke-width':3.5,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'});
+el('rect',{x:CX-1,y:COLTOP-30,width:28,height:28,rx:3,fill:'#f4f4f0',stroke:'#4a4a52','stroke-width':1.2});
+el('text',{x:CX+13,y:(COLTOP-16)+19*0.355,'font-size':'19','font-weight':'800',fill:'#16161a','text-anchor':'middle'},svg).textContent=String(UNIT.vent);
+/* ==== range prints east of the column (per p.10 photo): the range-TYPE symbol is repeated
+   once per TARGET, then the min/max numbers left-aligned in a shared column (photo: Magnus
+   Jade Hawk shows one missile icon before "0/0" = 1 target; "III" bars before "0/8" = 3).
+   VG085 (Warrenborn): Primary = energy, 3 targets, 0/10; Secondary = ballistic, 2 targets, 2/14.
+   Icons are the EXACT Warrenborn table art (images/UnitStats/*), white glyphs with luminance alpha.
+   Incr 41 (Peter): symbols now repeated per target — 3 bolts / 2 missiles.
+   Incr 42 (Peter): icon size +40% (16→22.4px); row left-aligned at CX+35 (8px clear of
+   the stat column), min/max numbers in a shared column at CX+114.
+   Incr 43 (Peter): gaps 0px — symbols touch, back-to-back.
+   Incr 44 (Peter): symbol sizes +10% — range type icons 22.4→24.64px, movement glyph
+   24→26.4px. 0px gaps kept. */
+
+function wicon(kind,cx,cy,s){const ar=(typeof ICONAR!=='undefined'&&ICONAR[kind])||1,w=s*ar; return el('image',{href:ICONS[kind],x:cx-w/2,y:cy-s/2,width:w,height:s},svg);}
+function rangePrint(kind,n,min,max,y,label){
+  const IW=24.64, STEP=IW/2, left=CX+35; /* Incr 46: symbol step halved (Peter: 'too far apart') */
+  const KN={e:'energy',b:'ballistic',m:'melee'}[kind];
+  /* Peter 2026-10-20: per-GLYPH tooltips — each weapon symbol and the min/max print carry
+     their own tip, replacing the whole-row area(). */
+  for(let k=0;k<n;k++)
+    tip(wicon(kind,left+IW/2+k*STEP,y,IW),
+      `${label} weapon — ${KN} attack: one symbol per target (${k+1} of ${n}) · range ${min}\u2013${max}`);
+  tip(el('text',{x:CX+90,y:y+1, /* shared column for both rows; pulled in with the tighter row (Incr 46) */'font-size':'17','font-weight':'800',fill:'#f4f4f0','text-anchor':'start','dominant-baseline':'central'},svg),
+    `${label} weapon range — minimum ${min}, maximum ${max} (${KN} attack, ${n} target${n===1?'':'s'})`);
+}
+rangePrint(UNIT.prim.kind,UNIT.prim.n,UNIT.prim.min,UNIT.prim.max,P_Y,'Primary');
+rangePrint(UNIT.sec.kind,UNIT.sec.n,UNIT.sec.min,UNIT.sec.max,S_Y,'Secondary');
+/* ==== heat dial tumbler WEST of the column (Thunder Fox Incr 3 architecture): the whole
+   assembly hangs off HX/HY — housing, 3D window, drum, knob. HX=190/HY=750/HW=42/HH=132:
+   heat rows (775/811/847) sit EXACTLY on the combat-dial numbers they affect (primary /
+   secondary / speed — Peter 2026-10-21). The knob below the housing overhangs the capsule
+   rim's lower-west corner, matching the real Mangonel dial (AoD p.21 photo: the knob stub
+   pokes past the rim). The firing-arc curve (drawn later, at the rim prints) runs at
+   RIN=216 along the flank — the knob crosses its printed y-range at the rear, standing on
+   the base and occluding it. ==== */
+const HX=238,HY=750,HW=42,HH=132   /* Peter 2026-10-21 18:14: moved RIGHT to sit beside the stat window like the real photo (was 190 on the west flank) */;
+tip(el('rect',{x:HX-4,y:HY-4,width:HW+8,height:HH+8,rx:12,fill:'#000',filter:'url(#raised)'}),'Heat dial housing — twist the knob to add heat');
+tip(el('rect',{x:HX,y:HY,width:HW,height:HH,rx:10,fill:'#232327'}),'Heat dial housing — twist the knob to add heat');
+tip(el('rect',{x:HX+2.5,y:HY+2.5,width:HW-5,height:HH-5,rx:8,fill:'none',stroke:'#4a4a52','stroke-width':1.8}),'Heat dial housing frame');
+/* heat window: 3 stacked squares */
+const hWX=HX+HW/2-17,hWW=34,hWH=32,hGap=4;
+const hWinY=HY+9;   /* window 34x114 at y759-873; heat row centers 775/811/847 = combat rows */
+el('rect',{x:hWX-3,y:hWinY-3,width:hWW+6,height:114+6,rx:5,fill:'#000'});
+/* 3D heat drum: 6 panels (cols 2..7) form a closed cylinder — panel width 34 => 60° per
+   panel, radius r=(34/2)/tan(30°)≈29.4px. The drum spins about its pole (vertical) axis;
+   panel i faces the window when the drum is at rotateY(-i*60deg). Because the ring closes,
+   col7 (shutdown) is physically adjacent to col2 (green start) across the seam. */
+const stage=document.getElementById('stage');
+const heat3d=document.createElement('div');
+heat3d.id='heat3d';
+heat3d.style.left=hWX+'px';heat3d.style.top=hWinY+'px';
+stage.appendChild(heat3d);
+const drum=document.createElement('div');drum.id='drum';heat3d.appendChild(drum);
+const light=document.createElement('div');light.className='winLight';heat3d.appendChild(light);
+const RADIUS=(hWW/2)/Math.tan(Math.PI/HEAT.length);
+for(let i=0;i<6;i++){
+  const p=document.createElement('div');p.className='panel';
+  p.style.transform=`rotateY(${i*360/HEAT.length}deg) translateZ(${RADIUS}px)`;
+  /* Peter 2026-10-20: per-CELL titles with the official AoD SEC heat-effect wording.
+     UNIT.heatFx[i][r] carries the MW scrape's effect string for cell [i][r] (or null);
+     UNIT.heatRows[r].label names the physical row (primary/secondary/speed, which the
+     scraper orders by weapon type — Uziel's ballistic row is FIRST, matching the real
+     dial and AoD p.10 base photo). 'range type' in the card text is resolved to the
+     row's actual type: bolt = energy, bullets = ballistic. */
+  const HFXRULE={
+    'Heat Sink Overload Check (1-2: heat)':'AVOID HEAT SINK OVERLOAD — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit gains 1 heat. (AoD SEC)',
+    'Heat Sink Overload Critical Check (1-3: heat)':'AVOID HEAT SINK OVERLOAD: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit gains 2 heat. (AoD SEC)',
+    'Avoid Shutdown Check (1-2: shutdown)':'AVOID SHUTDOWN — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit is marked so that it has two order tokens. (optional) if this unit is shutdown, roll one six-sided die; on a result of 3–6, this unit restarts. (AoD SEC)',
+    'Avoid Shutdown Critical Check (1-3: shutdown)':'AVOID SHUTDOWN: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit is marked so that it has two order tokens. (optional) if this unit is shutdown, roll one six-sided die; on a result of 4–6, this unit restarts. (AoD SEC)',
+    'Ammo Explosion Check (1-2: heat)':'AVOID AMMUNITION EXPLOSION — if this unit is not shutdown, roll one six-sided die; on a result of 1 or 2, this unit is dealt pushing damage equal to its damage value with the range type –1, minimum 0. (AoD SEC)',
+    'Ammo Explosion Critical Check (1-3: heat)':'AVOID AMMUNITION EXPLOSION: CRITICAL — if this unit is not shutdown, roll one six-sided die; on a result of 1–3, this unit is dealt pushing damage equal to its damage value with the range type +1. (AoD SEC)',
+    'Weapons Offline':'WEAPONS OFFLINE — this unit cannot use special equipment with the range type or make ranged combat attacks using the range type. (AoD SEC)',
+    'Ammunition Jam':'AMMUNITION JAM — this unit cannot use special equipment with the range type or make ranged combat attacks using the range type. (AoD SEC)',
+    'Engine Overheat':'ENGINE OVERHEAT — this unit cannot use speed special equipment or the run option. (AoD SEC)',
+  };
+  const rowName=rt=>UNIT.heatRows?UNIT.heatRows[rt].label:['Primary damage','Secondary damage','Speed'][rt];
+  for(let r=0;r<3;r++){
+    const [c,valc]=HEAT[i][r];
+    const rowLab=rowName(r);
+    const cell=document.createElement('div');
+    cell.className='cell'+(c==='sh'?' rad':'');
+    cell.style.background=SEC[c];cell.style.color=TXTC[c];
+    if(c==='sh'){const im=document.createElement('img');im.src=ICONS.rad;im.style.width='25px';im.style.height='25px';cell.appendChild(im);}
+    else cell.textContent=valc;
+    const fx=(UNIT.heatFx&&UNIT.heatFx[i])?UNIT.heatFx[i][r]:null;
+    if(c==='sh'){
+      cell.title='Heat '+(i+1)+' — '+rowLab+': SHUTDOWN — the \'Mech shuts down: no orders; roll a die at the start of each of your turns — on 4–6 it restarts. (AoD SEC)';
+    }else if(c==='gr'&&i===0){
+      cell.title='Heat 1 — '+rowLab+': STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)';
+    }else if(fx&&HFXRULE[fx]){
+      let rt=HFXRULE[fx];
+      if(/range type/.test(rt)){
+        const rk=UNIT.heatRows?UNIT.heatRows[r].key:null;
+        rt=rt.replace(/range type/g,rk==='energy'?'energy type (bolt ⚡)':rk==='ballistic'?'ballistic type (bullets 🚀)':'range type');
+      }
+      cell.title='Heat '+(i+1)+' — '+rowLab+': '+rt;
+    }else{
+      cell.title='Heat '+(i+1)+' — '+rowLab+': modifier '+valc+' this turn';
+    }
+    if(UNIT.heatRows&&UNIT.heatRows[r]&&UNIT.heatRows[r].key===null){
+      cell.title='Heat '+(i+1)+' — this unit has no secondary weapon: the physical heat dial row is blank.';
+    }
+    p.appendChild(cell);
+  }
+  const md=HEAT[i].map(r=>r[1]);
+  /* Peter 2026-10-20: per-panel titles now carry the heat-EFFECT text (AoD SEC pp):
+     green = starting position, shutdown = restart rule, middle columns carry the
+     unit's own mods. The 1.0-era flavour words (ammunition explodes / heat sink /
+     engine) apply to the MW 1.0 card era; 2.0 CECs use the same effects. */
+  const HEFX=['STARTING POSITION — at the beginning of the game, this unit must have this green square showing on its heat dial. (AoD SEC)',
+    null,null,null,null,
+    'SHUTDOWN — the \u2019Mech shuts down: no orders; roll a die at the start of each of your turns — on 4\u20136 it restarts (AoD SEC)'];
+  p.title=`Heat panel ${i+1} of ${HEAT.length}: primary ${md[0]}, secondary ${md[1]}, speed ${md[2]}`+
+    (i===0?' — '+HEFX[0]:(i===HEAT.length-1?' — '+HEFX[HEAT.length-1]:''));
+  drum.appendChild(p);
+}
+/* ---- 3D twist knob: coaxial extension of the drum (Incr 22) ----
+   The knob IS the drum's cylinder continued south out of the housing's bottom edge as the
+   knurled grip — same pole axis (x=240), so it turns with rotateY exactly like the drum and
+   in sync with it (one mechanism). Static SVG collar + cap (below) never rotate.
+   KFL=11 (odd!): a 60° click = 1.83 flute slots, so the knurl pattern lands 27.3° off each
+   click and the revolve is VISIBLE at rest too (12 flutes would map onto itself every 60°). */
+const KR=15, KFL=11, KW=2*KR*Math.tan(Math.PI/KFL), KH=40, KTOP=HY+HH; /* knob emerges from the housing bottom (Thunder Fox: y=882) */
+const knob3d=document.createElement('div');knob3d.id='knob3d';
+knob3d.style.left=(HX+HW/2-15)+'px';knob3d.style.top=KTOP+'px';
+knob3d.title='Twist knob — click for a click of heat';
+stage.appendChild(knob3d);
+const knobDrum=document.createElement('div');knobDrum.id='knobdrum';knob3d.appendChild(knobDrum);
+for(let i=0;i<KFL;i++){
+  const fl=document.createElement('div');
+  fl.className='kflute '+(i%2?'b':'a');
+  fl.style.width=KW+'px';fl.style.left=(15-KW/2)+'px';
+  fl.style.transform=`rotateY(${i*360/KFL}deg) translateZ(${KR}px)`;
+  knobDrum.appendChild(fl);
+}
+const klight=document.createElement('div');klight.className='knobLight';knob3d.appendChild(klight);
+knob3d.addEventListener('click',()=>advanceHeat());
+function setStripPos(anim){
+  const tr=anim?'transform .3s cubic-bezier(.4,0,.3,1)':'none';
+  drum.style.transition=tr;drum.style.transform=`rotateY(${-heat*360/HEAT.length}deg)`;
+  knobDrum.style.transition=tr;knobDrum.style.transform=`rotateY(${-heat*360/HEAT.length}deg)`;
+}
+setStripPos(false);
+/* heat knob: since Incr 22 the knob is a REAL 3D CSS cylinder built in JS (#knob3d, above) —
+   a coaxial extension of the drum that rotates with it in sync. This advanceHeat() is shared
+   by the knob (div + SVG collar/cap) and the Heat button. */
+function advanceHeat(){if(destroyed){setStatus('Unit destroyed.');return false;}
+  if(heat>=HEAT.length-1){setStatus('Already shutdown.');return false;}
+  heat++;renderHeat(true);koVisual();
+  setStatus(heat>=HEAT.length-1?'Heat dial reaches ☢ SHUTDOWN — the \'Mech cannot be given orders':`Click of heat → now showing table col ${heat+2} (${heatMods()})`);
+  return true;}
+/* static SVG parts of the knob: flanged collar at emergence (top flush with the housing's
+   outer bottom edge, KTOP=HY+HH) and the rounded end cap — both rotationally symmetric, so
+   they never rotate. The 3D flutes (HTML, above) revolve in front of them. Clicks on the
+   collar or cap also count as a twist. */
+const knobG=tip(el('g',{cursor:'pointer'}),'Twist knob — click for a click of heat (drum revolves in sync, Incr 22)');
+const knobTitle=document.createElementNS(NS,'title');
+knobTitle.textContent='Twist knob — click for a click of heat';
+knobG.appendChild(knobTitle);
+knobG.innerHTML=`
+<ellipse cx="${HX+HW/2}" cy="${KTOP+9}" rx="19" ry="9" fill="#2c2c32" stroke="#0a0a0c" stroke-width="2"/>
+<ellipse cx="${HX+HW/2}" cy="${KTOP+7.5}" rx="14.5" ry="6.5" fill="#3d3d45"/>
+<ellipse cx="${HX+HW/2}" cy="${KTOP+43}" rx="13" ry="11" fill="#34343c" stroke="#000" stroke-width="2"/>
+<ellipse cx="${HX+HW/2}" cy="${KTOP+41}" rx="9" ry="7.5" fill="#55555f"/>
+<ellipse cx="${HX+HW/2}" cy="${KTOP+39.5}" rx="5.5" ry="4" fill="#6d6d79"/>`;
+el('rect',{x:HX+HW/2-19,y:KTOP,width:38,height:60,rx:10,fill:'transparent','pointer-events':'all'},knobG);
+knobG.addEventListener('click',()=>advanceHeat());
+/* ==== rim prints (Thunder Fox Incr 3): unit name + rank star + point value along the
+   FRONT dome arc (r=185 about the front dome center), set symbol + collector's number on
+   the REAR dome reading down the left flank (r=203 about the rear dome center) ==== */
+const NAME_ARC_D=`M 158.2 185.3 A 185 185 0 0 1 481.8 185.3`;
+defs.innerHTML+=`<path id="nameArc" d="${NAME_ARC_D}"/>`;
+const tn=el('text',{fill:'#e8e8ec','font-size':'20','font-weight':'800','letter-spacing':'2'});
+/* Peter 2026-10-21 18:14: rank goes BETWEEN name and point value (Osiris 'Thunder Thighs'
+   photo: OSIRIS 'THUNDER THIGHS' ★ 112). Split UNIT.nameHtml at the trailing &#160;&#160;NNN:
+   name stays centered on the arc, rank stack hugs the name end, point value is a second
+   textPath that starts after the rank. */
+/* Peter 2026-10-21 18:40 ROOT CAUSE of the mash: UNIT.nameHtml stores LITERAL entity text
+   ('&#160;' = 6 ASCII chars). The parser only decodes it at innerHTML time, so NAME_ONLY
+   carried a trailing literal '&#160;' that trim() can't remove — it then decoded to an
+   extra nbsp in the arc, shifting every char index by one (the DOM text read
+   'THUNDER FOX\u00a0\u00a0\u2303\u2303...' while the index math assumed one nbsp).
+   Fix: decode ONCE via a detached div, then split on the real nbsp character. */
+const _dec=document.createElement('div');
+_dec.innerHTML=UNIT.nameHtml;
+const _toks=_dec.textContent.split('\u00a0').map(t=>t.trim()).filter(Boolean);
+_dec.remove();
+const NAME_ONLY=_toks[0]||UNIT.nameHtml;
+const PT_VAL=_toks.length>1?_toks[_toks.length-1]:'';
+/* ==== Peter 2026-10-21 18:38: DRAWN GLYPHS (not unicode). History: the combined name+rank
+   textPath with getStartPositionOfChar was the one genuinely broken call (Peter saw the
+   unicode placeholders instead of the drawn stack). getComputedTextLength on textPath text is
+   FINE (proven live in Peter's Chrome — see the 18:56 comment below); getBBox().width is fine
+   for hit areas but understates arc length on steeply curved arcs. Canvas2D measureText
+   (textLen) was for the set-symbol arc — retired 19:49 when the glyph moved off the arc to
+   a fixed dome position. ==== */
+/* (textLen canvas helper removed 2026-10-21 19:49 — its only consumer, the rim set glyph,
+   moved to a fixed dome position; arc lengths now all come from getComputedTextLength.) */
+/* ==== Peter 2026-10-21 18:56: match the BIPED template's arc layout. Bridge measurement of
+   the biped in Peter's REAL Chrome (job biped-arc-measure-003) proved getComputedTextLength
+   WORKS there (359.28 for 'ATLAS  "SOLITUDE"  300') — the earlier 'Chrome quirk' theory was
+   wrong. The real difference: the biped centers NAME+VALUE as ONE composite run (nbsp gaps
+   inside the string), while the quad centered the NAME alone and hung rank+value tightly off
+   its end. Fix: center the whole composite (name + gap + rank + gap + value) and widen the
+   gaps. ==== */
+const RANKN0={Green:1,Veteran:2,Elite:3};
+const RANK_W=UNIT.rank?(RANKN0[UNIT.rank]?13:20):0;   /* chevron stack ~13 wide, star ~20 */
+const ARC_GAP=15;                                     /* space either side of the rank glyphs */
+const nArc=document.getElementById('nameArc'), NA_TOT=nArc.getTotalLength();
+/* Peter 2026-10-21 18:56: match the BIPED's composite-centered arc. ROOT CAUSE CHAIN (bridge
+   measurements in Peter's real Chrome, jobs biped-arc-measure-003/004 + quad-arc-measure-001):
+   (1) The quad centered the NAME alone and hung rank+value tightly off its end — composite sat
+   right of center with ~5px gaps. The biped centers NAME+VALUE as one run with nbsp gaps.
+   (2) getBBox().width on textPath text UNDERSTATES the arc length on this steeply curved arc
+   (measured 174.7 vs true ~193), which right-shifted the composite ~10px. getBBox is fine for
+   hit areas, not for arc-length centering.
+   (3) getComputedTextLength() on textPath text WORKS in Peter's Chrome (biped measures 359.3
+   live) — the earlier 'Chrome quirk' theory was wrong; the only genuinely broken call was
+   getStartPositionOfChar on the combined run (the unicode-placeholder incident).
+   So: measure TRUE arc lengths with getComputedTextLength (before moving the text), then
+   offset name/rank/value so the composite centers at NA_TOT/2 with 15px gaps. */
+tn.innerHTML='<textPath href="#nameArc" startOffset="50%" text-anchor="middle">'+NAME_ONLY+'</textPath>';
+const NAME_LEN=tn.getComputedTextLength();
+let tv=null, PT_LEN=0;
+if(PT_VAL){
+  tv=el('text',{fill:'#e8e8ec','font-size':'20','font-weight':'800','letter-spacing':'2'});
+  tv.innerHTML='<textPath href="#nameArc" startOffset="'+(NA_TOT/2+999)+'" text-anchor="start">'+PT_VAL+'</textPath>';
+  PT_LEN=tv.getComputedTextLength();
+}
+const RUN_LEN=NAME_LEN+(UNIT.rank?ARC_GAP+RANK_W+ARC_GAP:0)+(PT_VAL?ARC_GAP+PT_LEN:0);
+const RUN_START=NA_TOT/2-RUN_LEN/2;
+tn.firstChild.setAttribute('startOffset',RUN_START.toFixed(1));
+tn.firstChild.setAttribute('text-anchor','start');
+if(PT_VAL) tv.firstChild.setAttribute('startOffset',(RUN_START+NAME_LEN+(UNIT.rank?ARC_GAP+RANK_W+ARC_GAP:0)+ARC_GAP).toFixed(1));
+
+/* rank glyphs after the name (AoD rulebook p.10 RANK box): stacked chevrons = Green (1) /
+   Veteran (2) / Elite (3), a single star = Unique. Positioned along the arc by the canvas
+   measurement above; rotation from two sampled arc points (tangent), +180 so the apex
+   points outward (Peter 2026-10-21: "right-side up" approved on this formula). */
+if(UNIT.rank){
+  const rkStart=RUN_START+NAME_LEN+ARC_GAP;            /* rank slot begins after the name gap */
+  const rp=nArc.getPointAtLength(rkStart+RANK_W/2);    /* chevron group is centered on its own width */
+  const rq=nArc.getPointAtLength(rkStart+RANK_W/2+6);
+  const tang=Math.atan2(rp.y-rq.y,rp.x-rq.x)*180/Math.PI+180;
+  const RANKN={Green:1,Veteran:2,Elite:3};
+  if(RANKN[UNIT.rank]){
+    const NR=RANKN[UNIT.rank];
+    /* Peter 19:21: align chevrons with the arc text. Text on the path rides its BASELINE on
+       the arc — the glyph visual center sits ~half cap-height ABOVE the path (~9px for 20px
+       font), so the stack is raised 7px in the rotated frame to match. */
+    const g=el('g',{transform:`translate(${rp.x} ${rp.y}) rotate(${tang}) translate(0 -9)`});
+    for(let k=0;k<NR;k++){const ry=(NR-1)*2.75-k*5.5;
+      const p=document.createElementNS(NS,'path');
+      p.setAttribute('d',`M -6.5 ${ry+2.6} L 0 ${ry-2.6} L 6.5 ${ry+2.6}`);
+      p.setAttribute('stroke','#e8e8ec');p.setAttribute('stroke-width',3);
+      p.setAttribute('fill','none');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');
+      g.appendChild(p);}
+    area(rp.x-9,rp.y-9,18,18,'Rank chevrons — '+UNIT.rank+' (AoD p.10 RANK box: 1 chevron Green / 2 Veteran / 3 Elite)');
+  }else{
+    const g=el('g',{transform:`translate(${rp.x} ${rp.y}) rotate(${tang}) translate(0 -9)`});
+    const st=document.createElementNS(NS,'text');
+    st.setAttribute('y',0);st.setAttribute('font-size',20);st.setAttribute('fill','#e8e8ec');
+    st.setAttribute('text-anchor','middle');st.textContent='★';g.appendChild(st);
+    area(rp.x-10,rp.y-10,20,20,'Unique star (AoD p.10 RANK box)');
+  }
+}
+/* Peter 2026-10-21 20:27 arrows: collector print UP the rim — start moved 185°→206°
+   (start point (117.8,687.3)→(137.5,616.0)); text still reads down the left flank from its
+   start, now spanning ~206°→188° so it sits above the crest's new spot. */
+/* Peter 2026-10-21 20:33: ID NOT curved — straight text. 20:36 refinement: the visible left
+   edge at this spot is the straight FLANK (x=117, y 185–705 between dome centers), so the run
+   is VERTICAL: rotate(90), baseline x=120 (3px in from the edge), centered at y=647.4 where
+   the curved run's midpoint sat. Reads top→bottom like the original left-flank print.
+   (Tangent-to-dome 106.6° was wrong — the dome curve only starts below y=705.)
+   Arc path removed. Tooltip hit area still auto-follows the bbox in the loop below. */
+const _st=el('text',{fill:'#c9c9cf','font-size':'16','font-weight':'800',transform:'translate(120 647.4) rotate(90)'});
+_st.setAttribute('text-anchor','middle');
+_st.textContent=UNIT.collector;
+/* Peter 2026-10-21 19:49: expansion glyph OFF the rim — Peter's Solitude photo shows it on
+   the dome just below-right of the faction crest, exactly like the approved biped placement
+   (Incr 36-39: "just below and to the right of that icon", +10% size, 5px down → center
+   (176,458) = crest center (157.5,395) + (18.5,63), 33px). Quad crest centers (174.65,644.65),
+   so the glyph centers (193.15,707.65): x 176.65-209.65, y 691.15-724.15 — 11.85px below the
+   crest (same gap as the biped), 28px clear of the heat housing (HX=238), deep inside the
+   dome print area. Painted after the crest below (painted-last rule); the rim keeps only
+   the collector ID. */
+/* variant name on the rear-right rim, reading up the rim — mirrors the set arc (skipped for
+   units without a chassis designation; Warrenborn gives quads' variants as '' by default) */
+if(UNIT.variantHtml){
+  const vp=(deg)=>{const a=deg*Math.PI/180;return `${320+203*Math.cos(a)} ${705+203*Math.sin(a)}`;};
+  defs.innerHTML+=`<path id="varArc" d="M ${vp(64)} A 203 203 0 0 1 ${vp(120)}"/>`;
+  const vn=el('text',{fill:'#c9c9cf','font-size':'16','font-weight':'800'});
+  vn.innerHTML='<textPath href="#varArc" startOffset="8" text-anchor="start">'+UNIT.variantHtml+'</textPath>';
+}
+/* Quad 'Mech speed-mode glyph, right of the speed row (AoD rulebook p.11 Speed Mode Symbols —
+   quad art, aligned with the SPD row exactly as the mech glyph sits with the speed row on
+   the biped base). ICONS.q is the quad glyph traced from the p.11 diagram (Thunder Fox Incr 3). */
+wicon('q',CX+58,SPD_Y,13);
+drawFrontArc();
+/* ==== KO / shutdown overlays ==== */
+const koTint=el('path',{d:NSHAPE,fill:'#5c0808',opacity:0,'pointer-events':'none'});
+const koTxt=el('text',{x:CX,y:CY+8,'font-size':'36','font-weight':'900','letter-spacing':'5',fill:'#ff9d94','text-anchor':'middle',opacity:0,'pointer-events':'none'});
+koTxt.textContent='DESTROYED';
+const shGlow=el('g',{opacity:0,'pointer-events':'none'});
+el('rect',{x:HX-8,y:HY-8,width:HW+16,height:HH+16,rx:15,fill:'none',stroke:'#39d439','stroke-width':3},shGlow);
+const shTxt=el('text',{x:HX+HW/2,y:HY-18,'font-size':'15','font-weight':'800',fill:'#7fe07f','text-anchor':'middle'},shGlow);
+shTxt.textContent='☢ SHUTDOWN';
+/* ==== rendering ==== */
+function renderCombat(anim){
+  const idx=destroyed?NSEG-1:cur;
+  discG.style.transition=anim?'transform .28s cubic-bezier(.4,0,.3,1)':'none';
+  discG.style.transformBox='view-box';
+  discG.style.transformOrigin=`${CX}px ${CY}px`;
+  discG.style.transform=`rotate(${idx*STEP}deg)`;
+  renderCellOv(idx);
+}
+function renderHeat(anim){ setStripPos(anim);
+  heat3d.title=`Heat dial — heat ${heat} of ${HEAT.length-1}`+(destroyed?' — DESTROYED':`: primary/secondary/speed ${heatMods()}`); }
+function koVisual(){
+  koTint.setAttribute('opacity',destroyed?0.5:0);
+  koTxt.setAttribute('opacity',destroyed?1:0);
+  shGlow.setAttribute('opacity',(!destroyed&&heat>=5)?1:0);
+}
+function setStatus(m){document.getElementById('status').textContent=m;}
+document.getElementById('bDmg').onclick=()=>{if(destroyed){setStatus('Unit already destroyed.');return;}
+  if(cur===UNIT.life-1){destroyed=true;renderCombat(true);koVisual();setStatus('DESTROYED — dial clicked past the last click; bullet holes in the slot.');return;}
+  cur++;renderCombat(true);koVisual();
+  setStatus(`Click of damage → click ${cur+1} of ${UNIT.life} — disc turned clockwise one step (${(360/NSEG).toFixed(1)}\u00B0)`);};
+document.getElementById('bRep').onclick=()=>{if(destroyed||cur<=0){setStatus('Nothing to repair.');return;}
+  cur--;renderCombat(true);koVisual();
+  setStatus(`Click of repair → click ${cur+1} of ${UNIT.life} — disc turned counter-clockwise one step`);};
+function heatMods(){
+  const r=HEAT[heat];
+  const f=(v)=>v==='☢'?'☢':v;
+  return `primary ${f(r[0][1])}, secondary ${f(r[1][1])}, speed ${f(r[2][1])}`;
+}
+document.getElementById('bHeat').onclick=advanceHeat;
+document.getElementById('bCool').onclick=()=>{if(destroyed){setStatus('Unit destroyed.');return;}
+  if(heat>=5){setStatus('Shutdown — it can only lose heat at end of turn (Cool 1).');return;}
+  if(heat<=0){setStatus('At green starting squares (col2) — vent cannot pass the start.');return;}
+  heat=Math.max(0,heat-2);renderHeat(true);koVisual();
+  setStatus(heat===0?'Restarted — back to green starting squares (col2).':'Vent order → now showing table col '+(heat+2)+': '+heatMods());};
+document.getElementById('bCool1').onclick=()=>{if(destroyed){setStatus('Unit destroyed.');return;}
+  if(heat<=0){setStatus('Already at green starting squares (col2) — cannot cool past start.');return;}
+  heat--;renderHeat(true);koVisual();
+  setStatus(heat===0?'Auto-restart — green squares reappeared (col2).':'End of turn, no order → now showing table col '+(heat+2)+': '+heatMods());};
+document.getElementById('bRes').onclick=()=>{if(!destroyed&&heat<5){setStatus('Nothing to restart.');return;}
+  heat=0;renderHeat(true);koVisual();setStatus('Restart successful — heat dial back to green starting squares (col2).');};
+document.getElementById('bRst').onclick=()=>{cur=0;heat=0;destroyed=false;renderCombat(false);renderHeat(false);koVisual();
+  setStatus('Reset to starting position: click 1, heat 0.');};
+/* faction symbol painted LAST so the face speckles never cover it (Thunder Fox Incr 3
+   position: west flank between the dome centers, clear of the arc ring at x=104 and of the
+   heat housing at x>=190). Peter 2026-10-21: nudged up 14px; then down x2 (close-out 2026-10-21);
+   20:27 arrows: DOWN ~53px to y=663 (AOD098 took the upper-rim spot) — blob (crest+glyph) moves as a unit;
+   20:40 arrow: DOWN another ~45px to y=708 (Peter, annotated crop). */
+el('image',{href:UNIT.crestURI,x:140,y:708,width:69.3,height:69.3,class:'faclogo','pointer-events':'none'});
+/* Warrenborn set logo (expansion glyph) — Peter 2026-10-21 19:49: restored at the BIPED's
+   approved spot (Incr 36-39): just below and to the right of the faction crest, 33px,
+   unrotated. x 176.65-209.65, y 691.15-724.15 (crest center 174.65,644.65 + the biped's
+   (18.5,63) offset). Painted after the crest so the face speckles never cover it. */
+el('image',{href:UNIT.setURI,x:176.65,y:789.15,width:33,height:33,class:'faclogo','pointer-events':'none'});
+/* ==== Incr 40: tooltips on everything (Peter). Native hover tooltips: HTML .title on the
+   3D heat assembly (panels, window, knob), SVGElement.title on SVG art, and transparent hit
+   areas over flat face prints. Areas sit only over face art — never over the L-window (the
+   dial panels show through the die-cut and must keep hover), the knob, or click targets.
+   Wall-shadow strips in the window got pointer-events:none so panel tooltips reach edges. ==== */
+function area(x,y,w,h,t){const r=el('rect',{x,y,width:w,height:h,fill:'none','pointer-events':'all'});tip(r,t);return r;}
+const BTN={bDmg:'Click of Damage — turn the combat dial clockwise one click (20°)',
+  bRep:'Click of Repair — turn the combat dial counter-clockwise one click',
+  bHeat:'Click of Heat — turn the heat dial one click clockwise (or click the 3D twist knob on the base)',
+  bCool:'Vent Order — reduce heat by 2 (cannot pass the green starting squares; locked in shutdown)',
+  bCool1:'Cool 1 (end of turn) — reduce heat by 1',
+  bRes:'Restart — from shutdown, clear heat back to the green starting squares',
+  bRst:'Reset — dial to click 1, heat to 0'};
+for(const id in BTN){const b=document.getElementById(id);if(b)b.title=BTN[id];}
+document.getElementById('status').title='Status — describes the result of the last dial action';
+area(140,708,69.3,69.3,UNIT.facTip);   /* crest hit area follows the crest (was stale at 122.85,360.35) */
+area(176.65,789.15,33,33,UNIT.setTip);  /* expansion glyph hit area follows the glyph */
+area(CX-27,COLTOP-32,26,34,'Vent chevron — marks the vent stat above the stat column');
+area(CX-1,COLTOP-32,30,34,`Vent rating ${UNIT.vent} — a vent order removes ${UNIT.vent} heat (Vent button); end of turn without orders removes 1 heat (Cool 1)`);
+area(CX+58-13,SPD_Y-8,26,16,"Quad 'Mech speed-mode glyph — the unit fights in Quad 'Mech mode, aligned with the speed row (AoD rulebook p.11 Speed Mode Symbols)");
+area(CX-6,490-6,12,12,"Dial center — the disc pivots at (320,675) beneath the fixed base; the capsule's geometric center is (320,490)");
+/* the old whole-row range areas (CX+28..CX+144) were replaced by per-glyph tips in
+   rangePrint() — Peter 2026-10-20: tooltips specific to the glyph or value */
+for(const t of svg.querySelectorAll('text')){
+  if(!t.querySelector('textPath')) continue;
+  const b=t.getBBox(); if(b.width<=0) continue;
+  const txt=t.textContent;
+  if(UNIT.nameTok&&txt.includes(UNIT.nameTok)) area(b.x-3,b.y-3,b.width+6,b.height+6,UNIT.nameTip);
+  else if(UNIT.collector&&txt.includes(UNIT.collector)) area(b.x-3,b.y-3,b.width+6,b.height+6,UNIT.collectorTip);
+  else if(UNIT.variantTok&&txt.includes(UNIT.variantTok)) area(b.x-3,b.y-3,b.width+6,b.height+6,UNIT.variantTip);
+}
+renderCombat(false);renderHeat(false);setStatus(`Starting position: click 1 of ${UNIT.life}, heat dial col2 (green starting squares). Disc at 0\u00B0.`);
+</script>
+</body></html>
