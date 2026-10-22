@@ -1,0 +1,12 @@
+{
+  "id": "quad-blob-down-001",
+  "mode": "interact",
+  "url": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r14.html",
+  "settleMs": 1200,
+  "steps": [
+    {"act": "clickText", "selector": "button", "text": "Open the page", "optional": true},
+    {"act": "wait", "selector": "image", "timeoutMs": 8000, "optional": true},
+    {"act": "pause", "ms": 900},
+    {"act": "js", "expr": "(() => { const imgs=[...document.querySelectorAll('image.faclogo')].map(i=>({x:+i.getAttribute('x'),y:+i.getAttribute('y'),w:+i.getAttribute('width')})); const st=[...document.querySelectorAll('text')].find(t=>t.textContent==='AOD098'); const b=st?st.getBBox():null; return JSON.stringify({imgs, idInk:b?[+b.x.toFixed(1),+b.y.toFixed(1),+b.width.toFixed(1),+b.height.toFixed(1)]:null}); })()"}
+  ]
+}
