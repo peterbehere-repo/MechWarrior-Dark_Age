@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "error": "no match for button with text ~ Open the page",
+      "ok": false,
+      "step": 0,
+      "act": "clickText"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "step": 1,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"ok\":false,\"why\":\"no rank g\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r7.html",
+  "id": "quad-arc-measure-008",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/quad-r7.html",
+  "fetchedAt": "2026-10-22T00:25:43.099Z"
+}
