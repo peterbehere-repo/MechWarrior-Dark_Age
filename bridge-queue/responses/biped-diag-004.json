@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"href\":\"https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html\",\"links\":[{\"t\":\"rawgit.hack\",\"h\":\"/\"},{\"t\":\"Status\",\"h\":\"https://status.githack.com/?r=neoascetic/raw.githack.com-monitor\"},{\"t\":\"Source code\",\"h\":\"https://github.com/neoascetic/rawgithack\"},{\"t\":\"Report abuse\",\"h\":\"mailto:admin@githack.com?subject=Abuse\"},{\"t\":\"raw.githubusercontent.com\",\"h\":\"https://raw.githubusercontent.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html\"},{\"t\":\"Go to homepage\",\"h\":\"/\"},{\"t\":\"Sushi icon\",\"h\":\"http://thenounproject.com/noun/sushi/#icon-No14497\"},{\"t\":\"Linda Yuki Nakanishi\",\"h\":\"http://thenounproject.com/lnakanishi\"}],\"btns\":[\"Open the page\"],\"bodyText\":\" rawgit.hack\\nStatus Source code Report abuse\\n\\nOne more step\\nThis HTML page is hosted on raw.githubusercontent.com and proxied as-is.\\nrawgit.hack does not review third-party content.\\n\\nYou're going to open: \\nOpen the page\\nGo to homepage\\n\\nNot sure about the source? Avoid entering passwords, personal details, or payment information on the page.\\n\\n© 2013 — 2026 Pavel Puchkin\\nSushi icon designed by Linda Yuki Nakanishi from The Noun Project.\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "id": "biped-diag-004",
+  "mode": "interact",
+  "requestedUrl": "https://raw.githack.com/peterbehere-repo/MechWarrior-Dark_Age/battletech-queue/mocks/biped.html",
+  "fetchedAt": "2026-10-22T00:03:58.638Z"
+}
