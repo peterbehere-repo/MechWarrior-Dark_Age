@@ -1,0 +1,29 @@
+{
+  "ok": false,
+  "error": "step 2 (wait) failed: wait timeout: undefined not found in 10s",
+  "results": [
+    {
+      "ok": true,
+      "matched": true,
+      "step": 0,
+      "act": "wait"
+    },
+    {
+      "label": "Click of Damage",
+      "matched": true,
+      "ok": true,
+      "step": 1,
+      "act": "click"
+    },
+    {
+      "ok": false,
+      "error": "wait timeout: undefined not found in 10s",
+      "step": 2,
+      "act": "wait"
+    }
+  ],
+  "id": "biped-wallmask-verify-002",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/MechWarrior-Dark_Age/Bases/Night%20Stalker%20'Jack'%20AN071%20(built).html",
+  "fetchedAt": "2026-10-22T14:59:24.742Z"
+}
