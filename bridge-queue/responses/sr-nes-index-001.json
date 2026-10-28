@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"title\":\"Just a moment...\",\"url\":\"https://www.spriters-resource.com/nes/\",\"links\":[]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://www.spriters-resource.com/nes/",
+  "id": "sr-nes-index-001",
+  "mode": "interact",
+  "requestedUrl": "https://www.spriters-resource.com/nes/",
+  "fetchedAt": "2026-10-28T02:43:11.233Z"
+}
