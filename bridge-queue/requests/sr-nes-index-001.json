@@ -1,1 +1,0 @@
-{"id": "sr-nes-index-001", "mode": "interact", "url": "https://www.spriters-resource.com/nes/", "settleMs": 2000, "steps": [{"act": "js", "expr": "JSON.stringify({title:document.title,url:location.href,links:[...document.querySelectorAll('a')].map(a=>a.getAttribute('href')).filter(h=>h&&/^\\/nes\\/[a-z0-9\\-]+\\/$/.test(h)).filter((v,i,s)=>s.indexOf(v)===i)})"}]}
