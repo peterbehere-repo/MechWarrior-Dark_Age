@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"https://retroachievements.org/searchresults.php?q=Contra\":{\"status\":200,\"len\":110513,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/search?q=Contra\":{\"status\":200,\"len\":110561,\"gameCount\":2,\"hasContra\":true,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/gameList.php?system=7\":{\"status\":200,\"len\":194978,\"gameCount\":52,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[\"/game/17166\",\"/game/19015\",\"/game/19016\",\"/game/19017\",\"/game/19021\",\"/game/20344\",\"/game/3470\",\"/game/19012\"]},\"https://retroachievements.org/sitemap.xml\":{\"status\":404,\"len\":94622,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"https://retroachievements.org/searchresults.php?q=Contra\":{\"status\":200,\"len\":110513,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/search?q=Contra\":{\"status\":200,\"len\":110561,\"gameCount\":2,\"hasContra\":true,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/gameList.php?system=7\":{\"status\":200,\"len\":194978,\"gameCount\":52,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[\"/game/17166\",\"/game/19015\",\"/game/19016\",\"/game/19017\",\"/game/19021\",\"/game/20344\",\"/game/3470\",\"/game/19012\"]},\"https://retroachievements.org/sitemap.xml\":{\"status\":404,\"len\":94622,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"https://retroachievements.org/searchresults.php?q=Contra\":{\"status\":200,\"len\":110513,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/search?q=Contra\":{\"status\":200,\"len\":110561,\"gameCount\":2,\"hasContra\":true,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/gameList.php?system=7\":{\"status\":200,\"len\":194978,\"gameCount\":52,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[\"/game/17166\",\"/game/19015\",\"/game/19016\",\"/game/19017\",\"/game/19021\",\"/game/20344\",\"/game/3470\",\"/game/19012\"]},\"https://retroachievements.org/sitemap.xml\":{\"status\":404,\"len\":94622,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"https://retroachievements.org/searchresults.php?q=Contra\":{\"status\":200,\"len\":110513,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/search?q=Contra\":{\"status\":200,\"len\":110561,\"gameCount\":2,\"hasContra\":true,\"sitemapLocs\":[],\"sample\":[]},\"https://retroachievements.org/gameList.php?system=7\":{\"status\":200,\"len\":194978,\"gameCount\":52,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[\"/game/17166\",\"/game/19015\",\"/game/19016\",\"/game/19017\",\"/game/19021\",\"/game/20344\",\"/game/3470\",\"/game/19012\"]},\"https://retroachievements.org/sitemap.xml\":{\"status\":404,\"len\":94622,\"gameCount\":2,\"hasContra\":false,\"sitemapLocs\":[],\"sample\":[]}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-endpoints-003",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:46:48.444Z"
+}
