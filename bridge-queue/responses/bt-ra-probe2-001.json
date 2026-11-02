@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-probe2-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:38:17.542Z"
+}
