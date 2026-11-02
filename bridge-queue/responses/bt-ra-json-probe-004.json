@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":110561,\"hasJson\":true,\"keys\":[\"errors\",\"csrfToken\",\"flash\",\"auth\",\"config\",\"metaKey\",\"ziggy\",\"initialQuery\",\"initialScope\",\"initialPage\"],\"hrefCount\":2,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\"],\"jsonStr\":1175,\"jsonHasContra\":true,\"propsKeysDeep\":\"errors,csrfToken,flash,auth,config,metaKey,ziggy,initialQuery,initialScope,initialPage\"},\"list\":{\"len\":194978,\"hasJson\":false,\"keys\":null,\"hrefCount\":52,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/17166\",\"https://retroachievements.org/game/19015\",\"https://retroachievements.org/game/19016\"],\"jsonStr\":0,\"jsonHasContra\":false,\"propsKeysDeep\":\"\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":110561,\"hasJson\":true,\"keys\":[\"errors\",\"csrfToken\",\"flash\",\"auth\",\"config\",\"metaKey\",\"ziggy\",\"initialQuery\",\"initialScope\",\"initialPage\"],\"hrefCount\":2,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\"],\"jsonStr\":1175,\"jsonHasContra\":true,\"propsKeysDeep\":\"errors,csrfToken,flash,auth,config,metaKey,ziggy,initialQuery,initialScope,initialPage\"},\"list\":{\"len\":194978,\"hasJson\":false,\"keys\":null,\"hrefCount\":52,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/17166\",\"https://retroachievements.org/game/19015\",\"https://retroachievements.org/game/19016\"],\"jsonStr\":0,\"jsonHasContra\":false,\"propsKeysDeep\":\"\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":110561,\"hasJson\":true,\"keys\":[\"errors\",\"csrfToken\",\"flash\",\"auth\",\"config\",\"metaKey\",\"ziggy\",\"initialQuery\",\"initialScope\",\"initialPage\"],\"hrefCount\":2,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\"],\"jsonStr\":1175,\"jsonHasContra\":true,\"propsKeysDeep\":\"errors,csrfToken,flash,auth,config,metaKey,ziggy,initialQuery,initialScope,initialPage\"},\"list\":{\"len\":194978,\"hasJson\":false,\"keys\":null,\"hrefCount\":52,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/17166\",\"https://retroachievements.org/game/19015\",\"https://retroachievements.org/game/19016\"],\"jsonStr\":0,\"jsonHasContra\":false,\"propsKeysDeep\":\"\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":110561,\"hasJson\":true,\"keys\":[\"errors\",\"csrfToken\",\"flash\",\"auth\",\"config\",\"metaKey\",\"ziggy\",\"initialQuery\",\"initialScope\",\"initialPage\"],\"hrefCount\":2,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\"],\"jsonStr\":1175,\"jsonHasContra\":true,\"propsKeysDeep\":\"errors,csrfToken,flash,auth,config,metaKey,ziggy,initialQuery,initialScope,initialPage\"},\"list\":{\"len\":194978,\"hasJson\":false,\"keys\":null,\"hrefCount\":52,\"hrefSample\":[\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/random\",\"https://retroachievements.org/game/17166\",\"https://retroachievements.org/game/19015\",\"https://retroachievements.org/game/19016\"],\"jsonStr\":0,\"jsonHasContra\":false,\"propsKeysDeep\":\"\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-json-probe-004",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:47:48.049Z"
+}
