@@ -1,5 +1,0 @@
-{
- "url": "http://192.168.1.169/api/v2/version",
- "mode": "fetch",
- "maxChars": 1000
-}
