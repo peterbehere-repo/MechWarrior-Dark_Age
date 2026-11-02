@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "status": 401,
+  "statusText": "Unauthorized",
+  "finalUrl": "http://192.168.1.169/api/resources/rgj?override=true",
+  "contentType": "text/plain; charset=utf-8",
+  "title": null,
+  "text": "401 Unauthorized",
+  "id": "bt-g350-mkdir-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.169/api/resources/rgj?override=true",
+  "fetchedAt": "2026-11-02T21:34:10.581Z"
+}
