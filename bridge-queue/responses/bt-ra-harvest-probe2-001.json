@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 13,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 14,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 17,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"listCount\":52,\"games\":{\"Contra\":{\"missing\":true},\"Mega Man 2\":{\"missing\":true}}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 18,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-harvest-probe2-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:39:41.408Z"
+}
