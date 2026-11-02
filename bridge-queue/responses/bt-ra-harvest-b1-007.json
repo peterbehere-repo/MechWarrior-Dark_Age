@@ -1,0 +1,29 @@
+{
+  "ok": false,
+  "error": "step 2 (js) failed: No tab with id: 1202043934",
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": false,
+      "error": "No tab with id: 1202043934",
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "id": "bt-ra-harvest-b1-007",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:51:51.947Z"
+}
