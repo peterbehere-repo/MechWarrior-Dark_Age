@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "status": 500,
+  "statusText": "Internal Server Error",
+  "finalUrl": "http://192.168.1.169/api/resources/rgj/rgj-device.json?override=true",
+  "contentType": "text/plain; charset=utf-8",
+  "title": null,
+  "text": "500 Internal Server Error",
+  "id": "bt-g350-put-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.169/api/resources/rgj/rgj-device.json?override=true",
+  "fetchedAt": "2026-11-02T21:42:49.935Z"
+}
