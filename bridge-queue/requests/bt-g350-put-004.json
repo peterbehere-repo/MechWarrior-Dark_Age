@@ -1,0 +1,11 @@
+{
+ "url": "http://192.168.1.169/api/resources/rgj-aaa.json?override=true",
+ "mode": "fetch",
+ "method": "PUT",
+ "headers": {
+  "X-Auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjp0cnVlLCJleGVjdXRlIjp0cnVlLCJjcmVhdGUiOnRydWUsInJlbmFtZSI6dHJ1ZSwibW9kaWZ5Ijp0cnVlLCJkZWxldGUiOnRydWUsInNoYXJlIjp0cnVlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjpmYWxzZSwiaGlkZURvdGZpbGVzIjpmYWxzZSwiZGF0ZUZvcm1hdCI6ZmFsc2V9LCJpc3MiOiJGaWxlIEJyb3dzZXIiLCJleHAiOjE3OTM2NjI0MTMsImlhdCI6MTc5MzY1NTIxM30.QLqHQW0x2SIe_gZzH6_cC-EmUFZz-5kifpi3xgSpzws",
+  "Content-Type": "text/plain"
+ },
+ "body": "{\"schema\":1,\"device_id\":\"g350_hw01\"}\n",
+ "maxChars": 500
+}
