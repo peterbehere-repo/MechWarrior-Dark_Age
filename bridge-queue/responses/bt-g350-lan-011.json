@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 13,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 14,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"steps\":[[\"login\",200,\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbiIsInZ\"],[\"root\",200,\"{\\\"items\\\":[{\\\"path\\\":\\\"/3do\\\",\\\"name\\\":\\\"3do\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2021-01-03T00:32:08-05:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"isSymlink\\\":false,\\\"type\\\":\\\"\\\"},{\\\"path\\\":\\\"/advision\\\",\\\"name\\\":\\\"advision\\\",\\\"size\\\":8192,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2023-09-30T11:41:44-04:00\\\",\\\"mode\\\":2147484159,\\\"isDir\\\":true,\\\"\"],[\"rgj\",200,\"{\\\"path\\\":\\\"/rgj\\\",\\\"name\\\":\\\"rgj\\\",\\\"size\\\":19,\\\"extension\\\":\\\"\\\",\\\"modified\\\":\\\"2026-11-02T16:35:38-05:00\\\",\\\"mode\\\":511,\\\"isDir\\\":false,\\\"isSymlink\\\":false,\\\"type\\\":\\\"text\\\",\\\"content\\\":\\\"{\\\\\\\"action\\\\\\\": \\\\\\\"mkdir\\\\\\\"}\\\"}\"],[\"marker\",404,\"404 Not Found\\n\"],[\"queue\",500,\"500 Internal Server Error\\n\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "bt-g350-lan-011",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-02T22:49:59.805Z"
+}
