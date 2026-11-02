@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "OK",
+  "finalUrl": "http://192.168.1.68:8080/api/v2/user/dirs?path=%2F",
+  "contentType": "application/json",
+  "title": null,
+  "text": "[{\"last_modified\":\"2026-11-01T20:49:40Z\",\"mode\":2147484141,\"name\":\"System Volume Information\"},{\"last_modified\":\"2026-10-26T02:50:00Z\",\"mode\":2147484141,\"name\":\".tmp_update\"},{\"last_modified\":\"2026-10-26T02:50:06Z\",\"mode\":2147484141,\"name\":\"Persistent\"},{\"last_modified\":\"2025-01-05T06:52:02Z\",\"mode\":2147484141,\"name\":\"RetroArch\"},{\"last_modified\":\"2026-11-01T17:18:01Z\",\"mode\":2147484141,\"name\":\"Roms\"},{\"last_modified\":\"2026-11-02T04:23:24Z\",\"mode\":2147484141,\"name\":\"Saves\"},{\"last_modified\":\"2026-10-26T02:50:14Z\",\"mode\":2147484141,\"name\":\"spruce\"},{\"last_modified\":\"2026-11-02T03:48:52Z\",\"mode\":2147484141,\"name\":\"Themes\"},{\"last_modified\":\"2026-10-26T02:50:06Z\",\"mode\":493,\"name\":\"LICENSE\",\"size\":2674},{\"last_modified\":\"2026-11-01T17:18:00Z\",\"mode\":493,\"name\":\".system.json.log\",\"size\":330},{\"last_modified\":\"2026-11-01T17:01:12Z\",\"mode\":493,\"name\":\".wget-hsts\",\"size\":215},{\"last_modified\":\"2026-10-26T02:50:10Z\",\"mode\":2147484141,\"name\":\"miyoo\"},{\"last_modified\":\"2026-10-26T02:50:36Z\",\"mode\":493,\"name\":\"Licenses.7z\",\"size\":71895},{\"last_modified\":\"2026-10-26T02:50:10Z\",\"mode\":2147484141,\"name\":\"miyoo355\"},{\"last_modified\":\"2026-10-26T02:50:14Z\",\"mode\":2147484141,\"name\":\"trimui\"},{\"last_modified\":\"2026-07-02T13:25:12Z\",\"mode\":493,\"name\":\"sync.bat\",\"size\":10404},{\"last_modified\":\"2026-11-02T04:23:24Z\",\"mode\":493,\"name\":\"update.log\",\"size\":46554},{\"last_modified\":\"2026-10-26T02:50:06Z\",\"mode\":493,\"name\":\"README.md\",\"size\":8793},{\"last_modified\":\"2026-10-26T02:50:02Z\",\"mode\":2147484141,\"name\":\"App\"},{\"last_modified\":\"2026-01-02T21:29:48Z\",\"mode\":2147484141,\"name\":\"BIOS\"},{\"last_modified\":\"2026-11-01T20:49:22Z\",\"mode\":2147484141,\"name\":\"Collections\"},{\"last_modified\":\"2026-11-01T17:12:58Z\",\"mode\":2147484141,\"name\":\"Emu\"},{\"last_modified\":\"2026-10-26T02:50:10Z\",\"mode\":493,\"name\":\"autorun.inf\",\"size\":62}]",
+  "id": "bt-a30-dirs-root",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/api/v2/user/dirs?path=%2F",
+  "fetchedAt": "2026-11-02T04:35:35.629Z"
+}
