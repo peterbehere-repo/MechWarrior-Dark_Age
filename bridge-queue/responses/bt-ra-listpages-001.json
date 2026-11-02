@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "0 types | 52 links | pager:0",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/gameList.php?system=7",
+  "id": "bt-ra-listpages-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/gameList.php?system=7",
+  "fetchedAt": "2026-11-02T21:42:55.935Z"
+}
