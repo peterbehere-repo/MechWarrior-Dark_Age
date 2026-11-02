@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "status": 401,
+  "statusText": "Unauthorized",
+  "finalUrl": "http://192.168.1.68:8080/api/v2/version",
+  "contentType": "application/json",
+  "title": null,
+  "text": "{\"error\":\"no token found\",\"message\":\"Unauthorized\"}",
+  "id": "bt-probe-002-apiversion",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/api/v2/version",
+  "fetchedAt": "2026-11-02T04:22:24.698Z"
+}
