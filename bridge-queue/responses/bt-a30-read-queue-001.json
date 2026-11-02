@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "OK",
+  "finalUrl": "http://192.168.1.68:8080/api/v2/user/files?path=/rgj/rgj-queue.jsonl",
+  "contentType": "application/octet-stream",
+  "title": null,
+  "text": "{\"game_hash\": \"46df1a0646df1a0646df1a0646df1a06\", \"achievement_id\": \"ra:contra-test-1\", \"timestamp\": 1793594159, \"hardcore\": true, \"source\": \"a30-http-test\", \"game\": \"Contra\"}",
+  "id": "bt-a30-read-queue-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/api/v2/user/files?path=/rgj/rgj-queue.jsonl",
+  "fetchedAt": "2026-11-02T04:37:40.427Z"
+}
