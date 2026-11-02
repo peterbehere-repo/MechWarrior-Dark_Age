@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "wrapped",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "matched": true,
+      "ok": true,
+      "valueLen": 6,
+      "step": 1,
+      "act": "type"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "press"
+    },
+    {
+      "ok": true,
+      "step": 4,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"urls\":[[\"XHR https://retroachievements.org/internal-api/search?q=Con&scope=users%2Cgames%2Chubs%2Cevents%2Cachievements%2Cforum_comments%2Ccomments\",\"GET\",\"\"],[\"XHR https://retroachievements.org/internal-api/search?q=Cont&scope=users%2Cgames%2Chubs%2Cevents%2Cachievements%2Cforum_comments%2Ccomments\",\"GET\",\"\"],[\"XHR https://retroachievements.org/internal-api/search?q=Contr&scope=users%2Cgames%2Chubs%2Cevents%2Cachievements%2Cforum_comments%2Ccomments\",\"GET\",\"\"],[\"XHR https://retroachievements.org/internal-api/search?q=Contra&scope=users%2Cgames%2Chubs%2Cevents%2Cachievements%2Cforum_comments%2Ccomments\",\"GET\",\"\"]],\"hrefs\":[\"https://retroachievements.org/game/random|Random Set\",\"https://retroachievements.org/game/random|Random Set\",\"https://retroachievements.org/game/1447|ContraNES4053323,049\",\"https://retroachievements.org/game/344|Contra III: The Alien War\",\"https://retroachievements.org/game/120|Contra: Hard CorpsMD80905\",\"https://retroachievements.org/game/1989|Super CNES434235,375\",\"https://retroachievements.org/game/690|Contra: The Alien WarsGB3\",\"https://retroachievements.org/game/1632|Contra ForceNES324252,459\",\"https://retroachievements.org/game/12394|ContraARC221282,240\",\"https://retroachievements.org/game/2424|Contra Advance: The Alien\"],\"loc\":\"https://retroachievements.org/search?query=Contra\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 5,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/search?query=Contra",
+  "id": "bt-ra-inertia-probe-005",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/search",
+  "fetchedAt": "2026-11-02T21:48:24.993Z"
+}
