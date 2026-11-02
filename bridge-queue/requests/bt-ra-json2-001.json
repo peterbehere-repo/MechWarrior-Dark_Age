@@ -1,0 +1,15 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 2500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "document.querySelector('script[type=\\\"application/json\\\"]').textContent.slice(0,600)"
+  },
+  {
+   "act": "js",
+   "expr": "(()=>{const s=document.querySelector('script[type=\\\"application/json\\\"]').textContent; return s.length+' | '+['TrueRatio','Achievements','Shock Trooper'].map(k=>k+':'+s.includes(k)).join(' ');})()"
+  }
+ ]
+}
