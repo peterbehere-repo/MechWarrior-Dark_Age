@@ -1,0 +1,11 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 800,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "(async () => { const want = [\"Contra\", \"Super Mario Bros. 3\", \"Mega Man 2\", \"Ninja Gaiden\", \"Castlevania III\"]; return 'want='+want.length; })()"
+  }
+ ]
+}
