@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "__zod_globalConfig,__SENTRY__,__sentry_instrumentation_handlers__,__zod_globalRegistry,__cfBeacon",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "1 | 17 |  <nav class=\"relative z-30 flex flex-col w-full justify-center bg-embedded lg:sticky lg:top-0 has-banner bg-transparent!\"> <div class=\"container lg:max-w-none xl:max-w-(--breakpoint-xl)\"> <div class=\"bg-transparent! flex items-center flex-wrap\"> <div id=\"nav-bran",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-json-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:35:50.119Z"
+}
