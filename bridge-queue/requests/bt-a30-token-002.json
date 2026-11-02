@@ -1,8 +1,0 @@
-{
- "url": "http://192.168.1.68:8080/api/v2/user/token",
- "mode": "fetch",
- "headers": {
-  "Authorization": "Basic c3BydWNlOmhhcHB5Z2FtaW5n"
- },
- "maxChars": 4000
-}
