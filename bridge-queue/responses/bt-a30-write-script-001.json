@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 201,
+  "statusText": "Created",
+  "finalUrl": "http://192.168.1.68:8080/api/v2/user/files/upload?path=%2Frgj-sync&mkdir_parents=true",
+  "contentType": "application/json",
+  "title": null,
+  "text": "{\"message\":\"Upload completed\"}",
+  "id": "bt-a30-write-script-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/api/v2/user/files/upload?path=%2Frgj-sync&mkdir_parents=true",
+  "fetchedAt": "2026-11-02T04:36:42.111Z"
+}
