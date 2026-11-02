@@ -1,0 +1,148 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 13,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 14,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 17,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 18,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 19,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Punch-Out!!\":{\"raId\":1489,\"raTitle\":\"Mike Tyson's Punch-Out!!\",\"n\":28,\"matchScore\":20,\"picks\":[{\"id\":87859,\"title\":\"Help! Doc!!\",\"desc\":\"Gain health between rounds\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":8390,\"title\":\"Flame Off!\",\"desc\":\"TKO Don Flamenco II\",\"points\":10,\"ratio\":41,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":8395,\"title\":\"Iron Mac\",\"desc\":\"KO Mike Tyson\",\"points\":100,\"ratio\":1842,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Duck Tales\":{\"raId\":1472,\"raTitle\":\"DuckTales\",\"n\":63,\"matchScore\":120,\"picks\":[{\"id\":3546,\"title\":\"Superduck!\",\"desc\":\"Find a Magic Coin\",\"points\":1,\"ratio\":1,\"type\":\"\",\"tier\":\"easy\"},{\"id\":45118,\"title\":\"Lunar Treasure Hunter II\",\"desc\":\"Find the second secret area on the Moon\",\"points\":5,\"ratio\":16,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":3541,\"title\":\"The Curse of Flintheart Glomgold\",\"desc\":\"Beat the game with a final total wealth of $0\",\"points\":50,\"ratio\":214,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 20,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-fixup-010",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T22:46:50.097Z"
+}
