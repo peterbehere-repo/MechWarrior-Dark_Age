@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"rgj-state-v1\":\"{\\\"statuses\\\":{},\\\"unlocks\\\":{},\\\"lastSync\\\":null,\\\"queued\\\":[{\\\"game_hash\\\":\\\"435205cb435205cb435205cb435205cb\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792981267,\\\"hardcore\\\":true},{\\\"game_hash\\\":\\\"d0c9fb92d0c9fb92d0c9fb92d0c9fb92\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792983371,\\\"hardcore\\\":true}]}\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"rgj-state-v1\":\"{\\\"statuses\\\":{},\\\"unlocks\\\":{},\\\"lastSync\\\":null,\\\"queued\\\":[{\\\"game_hash\\\":\\\"435205cb435205cb435205cb435205cb\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792981267,\\\"hardcore\\\":true},{\\\"game_hash\\\":\\\"d0c9fb92d0c9fb92d0c9fb92d0c9fb92\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792983371,\\\"hardcore\\\":true}]}\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"rgj-state-v1\":\"{\\\"statuses\\\":{},\\\"unlocks\\\":{},\\\"lastSync\\\":null,\\\"queued\\\":[{\\\"game_hash\\\":\\\"435205cb435205cb435205cb435205cb\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792981267,\\\"hardcore\\\":true},{\\\"game_hash\\\":\\\"d0c9fb92d0c9fb92d0c9fb92d0c9fb92\\\",\\\"achievement_id\\\":\\\"manual_complete\\\",\\\"timestamp\\\":1792983371,\\\"hardcore\\\":true}]}\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "bt-site-ls-001",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-02T21:45:20.925Z"
+}
