@@ -1,0 +1,91 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 1500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__rgjF=null; window.__rgjErr=null;\n(async () => { try {\n  const want = [\"Punch-Out!!\", \"Duck Tales\"];\n  const alnum = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,'');\n  const toks  = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(Boolean);\n  const isJunk = t => /^~|hack|subset|prototype|bootleg|unlicensed|translat|demake/i.test(String(t));\n  const findAch = (n,d) => { if(!n||typeof n!=='object'||d>8) return null;\n    if (Array.isArray(n)&&n.length&&n[0]&&typeof n[0]==='object'&&'title' in n[0]&&'points' in n[0]) return n;\n    for (const k in n){ const r=findAch(n[k],d+1); if(r) return r; } return null; };\n  const pick = (rows) => {\n    const r = rows.filter(a => Number(a.points) > 0).sort((a,b)=> a.ratio-b.ratio || a.points-b.points || a.id-b.id);\n    if (!r.length) return [];\n    if (r.length <= 3) return r.map((x,i)=>({...x, tier:['easy','intermediate','advanced'][i]}));\n    const easy=r[0], hard=r[r.length-1];\n    const mid=Math.sqrt(Math.max(easy.ratio,1)*Math.max(hard.ratio,1));\n    const dist=x=>Math.abs(Math.log(Math.max(x.ratio,1))-Math.log(mid));\n    let m=r[1]; for (const x of r.slice(1,-1)) if (dist(x)<dist(m)) m=x;\n    return [{...easy,tier:'easy'},{...m,tier:'intermediate'},{...hard,tier:'advanced'}];\n  };\n  const score = (q, cand) => {\n    if (isJunk(cand)) return -1;\n    if (alnum(q) === alnum(cand)) return 120;\n    const ta = toks(q), tb = toks(cand);\n    const hit = ta.filter(x => tb.includes(x)).length;\n    let s = hit * 10;\n    if (alnum(cand).startsWith(alnum(q)) || alnum(q).startsWith(alnum(cand))) s += 10;\n    if (alnum(cand).includes(alnum(q)) && alnum(q).length > 4) s += 6;\n    return s - Math.abs(ta.length - tb.length) - Math.max(0, tb.length - ta.length);\n  };\n  const out = {};\n  for (const t of want) {\n    let games = [];\n    for (const q of [t, t.replace(/[^A-Za-z0-9 ]+/g,' ')]) {\n      try {\n        const j = await (await fetch('https://retroachievements.org/internal-api/search?q='+encodeURIComponent(q)+'&scope=games')).json();\n        games = games.concat((j.results && j.results.games) || []);\n      } catch(e) {}\n      await new Promise(r=>setTimeout(r,150));\n    }\n    const seen = new Map();\n    for (const g of games) if (g.system && g.system.id === 7 && !seen.has(g.id)) seen.set(g.id, g);\n    let best = null, bs = 0;\n    for (const g of seen.values()) { const s = score(t, g.title); if (s > bs) { bs = s; best = g; } }\n    if (!best || bs < 14) { out[t] = { unmatched: true, near: [...seen.values()].map(g=>g.title).slice(0,8) }; continue; }\n    try {\n      const h = await (await fetch('https://retroachievements.org/game/'+best.id)).text();\n      const j2 = JSON.parse(new DOMParser().parseFromString(h,'text/html').querySelector('script[type=\"application/json\"]').textContent);\n      const rows = (findAch(j2,0)||[]).map(a => ({ id:a.id, title:a.title, desc:a.description||'', points:Number(a.points)||0,\n                                   ratio:Number(a.pointsWeighted)||Number(a.points)||0, type:a.type||'' }));\n      out[t] = { raId: best.id, raTitle: best.title, n: rows.length, matchScore: bs, picks: pick(rows), unmatched: false };\n    } catch(e) { out[t] = { raId: best.id, raTitle: best.title, error: String(e.message), picks: [] }; }\n    await new Promise(r=>setTimeout(r,150));\n  }\n  window.__rgjF = JSON.stringify(out);\n} catch(e){ window.__rgjErr = String(e && e.stack || e); } })();\n'kicked'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjF || 'pending'"
+  }
+ ]
+}
