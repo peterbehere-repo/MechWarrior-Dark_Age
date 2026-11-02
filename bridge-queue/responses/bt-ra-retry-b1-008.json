@@ -1,0 +1,205 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "pending",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "pending",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "pending",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 13,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 14,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 17,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 18,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 19,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 20,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 21,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 22,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 23,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 24,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 25,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 26,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 27,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"Might and Magic Book One\":{\"unmatched\":true,\"near\":[]},\"Tombs & Treasure\":{\"raId\":2036,\"raTitle\":\"Tombs and Treasure\",\"n\":19,\"matchScore\":19,\"picks\":[{\"id\":239297,\"title\":\"The First Guardian\",\"desc\":\"Defeat Skorpor\",\"points\":2,\"ratio\":3,\"type\":\"progression\",\"tier\":\"easy\"},{\"id\":239299,\"title\":\"The Riddle\",\"desc\":\"View the pictographs in Castillo Pyramid\",\"points\":5,\"ratio\":10,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":239314,\"title\":\"Heroes for Another Time\",\"desc\":\"Rescue the girl and escape\",\"points\":10,\"ratio\":24,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Columns\":{\"unmatched\":true,\"near\":[]},\"The Uninvited\":{\"unmatched\":true,\"near\":[\"The Legend of Zelda\"]},\"Déjà Vu\":{\"unmatched\":true,\"near\":[\"Deja Vu: A Nightmare Comes True\"]},\"Portopia Serial Murder Case\":{\"unmatched\":true,\"near\":[\"Portopia Renzoku Satsujin Jiken\"]},\"Famicom Detective Club Part II\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Famicom Detective Club\":{\"unmatched\":true,\"near\":[\"Tetris\",\"Metroid\",\"Excitebike\",\"Super Mario Bros.\"]},\"Jesus: Dreadful Bio-Monster\":{\"raId\":6295,\"raTitle\":\"Jesus: Kyoufu no Bio Monster\",\"n\":12,\"matchScore\":29,\"picks\":[{\"id\":399116,\"title\":\"Terrible End\",\"desc\":\"Find out what happened to Vargas\",\"points\":1,\"ratio\":2,\"type\":\"missable\",\"tier\":\"easy\"},{\"id\":399117,\"title\":\"Cold Bothered Him Anyway\",\"desc\":\"Use the Valve to make the Monster flee\",\"points\":3,\"ratio\":6,\"type\":\"progression\",\"tier\":\"intermediate\"},{\"id\":399123,\"title\":\"Remembering Love\",\"desc\":\"The Monster has been dealt with, but is it truly the end?\",\"points\":10,\"ratio\":20,\"type\":\"win_condition\",\"tier\":\"advanced\"}],\"unmatched\":false},\"Linus Spacehead's Cosmic Crusade\":{\"raId\":6147,\"raTitle\":\"~Unlicensed~ Linus Spacehead's Cosmic Crusade\",\"n\":56,\"matchScore\":54.5,\"picks\":[{\"id\":44676,\"title\":\"Cosmic Candies of Cape Carnival\",\"desc\":\"On the way to Cape Carnival, get every Cosmic Candy.\",\"points\":5,\"ratio\":19,\"type\":\"\",\"tier\":\"easy\"},{\"id\":44678,\"title\":\"When You Grab Every Candy Down By The River\",\"desc\":\"On the way to the River Bank, get every Cosmic Candy.\",\"points\":10,\"ratio\":81,\"type\":\"\",\"tier\":\"intermediate\"},{\"id\":44688,\"title\":\"Sittin On The Dock of Can-day\",\"desc\":\"On the way to Linoville's shore, get every Cosmic Candy.\",\"points\":25,\"ratio\":346,\"type\":\"\",\"tier\":\"advanced\"}],\"unmatched\":false}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 28,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 29,
+      "act": "pause"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-retry-b1-008",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T22:45:28.277Z"
+}
