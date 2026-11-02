@@ -1,8 +1,0 @@
-{
- "url": "http://192.168.1.68:8080/api/v2/user/dirs?path=%2Froms%2FFC",
- "mode": "fetch",
- "headers": {
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiQVBJVXNlciIsIjE5Mi4xNjguMS4yMTciXSwiZXhwIjoxNzkzNTk1MjcyLCJqdGkiOiJkYmsxNW01MjllaWc2anBnMG1nZyIsIm5iZiI6MTc5MzU5NDA0MiwicGVybWlzc2lvbnMiOm51bGwsInN1YiI6IjcwMjg1MDgwNzciLCJ1c2VybmFtZSI6InNwcnVjZSJ9.ux7QOp32opNydOJaZbLW4qsHHG5hCH-vvU0iC18nVzg"
- },
- "maxChars": 40000
-}
