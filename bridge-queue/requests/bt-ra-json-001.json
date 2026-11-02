@@ -1,0 +1,15 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 2500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "Object.keys(window).filter(k=>k.startsWith('__')||k.includes('INITIAL')).join(',')"
+  },
+  {
+   "act": "js",
+   "expr": "document.querySelectorAll('script[type=\\\"application/json\\\"]').length + ' | ' + document.querySelectorAll('script').length + ' | ' + document.body.innerHTML.slice(0,300).replace(/\\s+/g,' ')"
+  }
+ ]
+}
