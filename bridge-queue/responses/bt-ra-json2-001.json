@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "{\"component\":\"game\\/[game]\",\"props\":{\"errors\":{},\"csrfToken\":\"ysnbNjF4X9V6BayttoWploecO3LUfHJjK2xntynq\",\"flash\":[],\"auth\":{\"user\":{\"displayName\":\"peterbehere\",\"avatarUrl\":\"https:\\/\\/media.retroachievements.org\\/UserPic\\/peterbehere.png?v=0\",\"enableBetaFeatures\":false,\"id\":2234892,\"isEmailVerified\":true,\"isMuted\":false,\"isNew\":true,\"legacyPermissions\":1,\"locale\":\"en_US\",\"playerPreferredMode\":\"hardcore\",\"points\":0,\"pointsSoftcore\":29,\"preferencesBitfield\":127,\"unreadMessages\":0,\"username\":\"peterbehere\",\"preferences\":{\"isGloballyOptedOutOfSubsets\":false,\"prefersAbsoluteDates\":false,\"shouldAlwaysB",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "56947 | TrueRatio:false Achievements:true Shock Trooper:true",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-json2-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:36:20.605Z"
+}
