@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "pending",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":264359,\"n\":27,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/834\",\"Tempest 2000\"],[\"https://retroachievements.org/game/15090\",\"Star Force\"],[\"https://retroachievements.org/game/22131\",\"DoDonPachi DaiFukkatsu Black Label\"],[\"https://retroachievements.org/game/10934\",\"MACE: The Dark Age\"],[\"https://retroachievements.org/game/15570\",\"Gain Ground\"],[\"https://retroachievements.org/game/19125\",\"DoDonPachi DaiOuJou\"]],\"title\":\"All Games · RetroAchievements\"},\"list\":{\"len\":194978,\"n\":52,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/17166\",\"...Iru!\"],[\"https://retroachievements.org/game/19015\",\".hack//G.U. Vol. 1: Rebirth\"],[\"https://retroachievements.org/game/19016\",\".hack//G.U. Vol. 2: Reminisce\"],[\"https://retroachievements.org/game/19017\",\".hack//G.U. Vol. 3: Redemption\"],[\"https://retroachievements.org/game/19021\",\".hack//Infection\"],[\"https://retroachievements.org/game/20344\",\".hack//Infection\\n\\n    \\n            \\n            Subset\\n            \\n            Book of 1000\"]],\"title\":\"All Games · RetroAchievements\"},\"list2\":{\"len\":194978,\"n\":52,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/17166\",\"...Iru!\"],[\"https://retroachievements.org/game/19015\",\".hack//G.U. Vol. 1: Rebirth\"],[\"https://retroachievements.org/game/19016\",\".hack//G.U. Vol. 2: Reminisce\"],[\"https://retroachievements.org/game/19017\",\".hack//G.U. Vol. 3: Redemption\"],[\"https://retroachievements.org/game/19021\",\".hack//Infection\"],[\"https://retroachievements.org/game/20344\",\".hack//Infection\\n\\n    \\n            \\n            Subset\\n            \\n            Book of 1000\"]],\"title\":\"All Games · RetroAchievements\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"search\":{\"len\":264359,\"n\":27,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/834\",\"Tempest 2000\"],[\"https://retroachievements.org/game/15090\",\"Star Force\"],[\"https://retroachievements.org/game/22131\",\"DoDonPachi DaiFukkatsu Black Label\"],[\"https://retroachievements.org/game/10934\",\"MACE: The Dark Age\"],[\"https://retroachievements.org/game/15570\",\"Gain Ground\"],[\"https://retroachievements.org/game/19125\",\"DoDonPachi DaiOuJou\"]],\"title\":\"All Games · RetroAchievements\"},\"list\":{\"len\":194978,\"n\":52,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/17166\",\"...Iru!\"],[\"https://retroachievements.org/game/19015\",\".hack//G.U. Vol. 1: Rebirth\"],[\"https://retroachievements.org/game/19016\",\".hack//G.U. Vol. 2: Reminisce\"],[\"https://retroachievements.org/game/19017\",\".hack//G.U. Vol. 3: Redemption\"],[\"https://retroachievements.org/game/19021\",\".hack//Infection\"],[\"https://retroachievements.org/game/20344\",\".hack//Infection\\n\\n    \\n            \\n            Subset\\n            \\n            Book of 1000\"]],\"title\":\"All Games · RetroAchievements\"},\"list2\":{\"len\":194978,\"n\":52,\"links\":[[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/random\",\"Random Set\"],[\"https://retroachievements.org/game/17166\",\"...Iru!\"],[\"https://retroachievements.org/game/19015\",\".hack//G.U. Vol. 1: Rebirth\"],[\"https://retroachievements.org/game/19016\",\".hack//G.U. Vol. 2: Reminisce\"],[\"https://retroachievements.org/game/19017\",\".hack//G.U. Vol. 3: Redemption\"],[\"https://retroachievements.org/game/19021\",\".hack//Infection\"],[\"https://retroachievements.org/game/20344\",\".hack//Infection\\n\\n    \\n            \\n            Subset\\n            \\n            Book of 1000\"]],\"title\":\"All Games · RetroAchievements\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-probe-list-002",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:44:09.257Z"
+}
