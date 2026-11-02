@@ -2,13 +2,12 @@
   "ok": true,
   "status": 200,
   "statusText": "OK",
-  "finalUrl": "http://192.168.1.169/api/v2/version",
-  "contentType": "text/html; charset=utf-8",
-  "title": "ArkOS Browser by Filebrowser",
-  "html": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1, user-scalable=no\"\n    />\n\n    \n\n    <title>\n      ArkOS Browser by Filebrowser\n    </title>\n\n    <meta name=\"robots\" content=\"noindex,nofollow\" />\n\n    <link\n      rel=\"icon\"\n      type=\"image/png\"\n      sizes=\"32x32\"\n      href=\"/static/img/icons/favicon-32x32.png\"\n    />\n    <link\n      rel=\"icon\"\n      type=\"image/png\"\n      sizes=\"16x16\"\n      href=\"/static/img/icons/favicon-16x16.png\"\n    />\n\n    <!-- Add to home screen for Android and modern mobile browsers -->\n    <link\n      rel=\"manifest\"\n      id=\"manifestPlaceholder\"\n      crossorigin=\"use-credentials\"\n    />\n    <meta\n      name=\"theme-color\"\n      content=\"#2979ff\"\n    />\n\n    <!-- Add to home screen for Safari on iOS/iPadOS -->\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n    <meta name=\"apple\n[TRUNCATED]",
-  "text": "ArkOS Browser by Filebrowser",
+  "finalUrl": "http://192.168.1.169/api/settings",
+  "contentType": "application/json; charset=utf-8",
+  "title": null,
+  "text": "{\"signup\":false,\"createUserDir\":false,\"userHomeBasePath\":\"/users\",\"defaults\":{\"scope\":\"/roms\",\"locale\":\"en\",\"viewMode\":\"mosaic\",\"singleClick\":false,\"sorting\":{\"by\":\"\",\"asc\":false},\"perm\":{\"admin\":false,\"execute\":true,\"create\":true,\"rename\":true,\"modify\":true,\"delete\":true,\"share\":true,\"download\":true},\"commands\":[],\"hideDotfiles\":false,\"dateFormat\":false},\"rules\":[],\"branding\":{\"name\":\"ArkOS Browser by Filebrowser\",\"disableExternal\":false,\"disableUsedPercentage\":false,\"files\":\"/home/ark/.config\",\"theme\":\"dark\",\"color\":\"\"},\"tus\":{\"chunkSize\":10485760,\"retryCount\":5},\"shell\":[],\"commands\":{\"after_copy\":[],\"after_delete\":[],\"after_rename\":[],\"after_save\":[],\"after_upload\":[],\"before_copy\":[],\"before_delete\":[],\"before_rename\":[],\"before_save\":[],\"before_upload\":[]}}",
   "id": "bt-g350-ver-001",
   "mode": "fetch",
-  "requestedUrl": "http://192.168.1.169/api/v2/version",
-  "fetchedAt": "2026-11-02T21:31:29.892Z"
+  "requestedUrl": "http://192.168.1.169/api/settings",
+  "fetchedAt": "2026-11-02T21:43:27.475Z"
 }
