@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 201,
+  "statusText": "Created",
+  "finalUrl": "http://192.168.1.169/api/tus/rgj-ccc.json?override=true",
+  "contentType": "text/plain; charset=utf-8",
+  "title": null,
+  "text": "201 Created",
+  "id": "bt-g350-put-006",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.169/api/tus/rgj-ccc.json?override=true",
+  "fetchedAt": "2026-11-02T21:43:25.396Z"
+}
