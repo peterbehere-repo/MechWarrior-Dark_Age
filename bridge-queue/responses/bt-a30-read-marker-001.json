@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "OK",
+  "finalUrl": "http://192.168.1.68:8080/api/v2/user/files?path=/rgj-device.json",
+  "contentType": "application/json",
+  "title": null,
+  "text": "{ \"device_id\": \"a30_hw01\", \"model\": \"Miyoo A30\", \"os\": \"SpruceOS\", \"schema\": 1, \"queue\": \"rgj/rgj-queue.jsonl\", \"ack\": \"rgj/rgj-ack.json\", \"transport\": \"sftpgo-http\", \"base_url\": \"http://192.168.1.68:8080\" }",
+  "id": "bt-a30-read-marker-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/api/v2/user/files?path=/rgj-device.json",
+  "fetchedAt": "2026-11-02T04:37:38.727Z"
+}
