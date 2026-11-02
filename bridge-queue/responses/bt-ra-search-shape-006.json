@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"status\":200,\"len\":3262,\"body\":\"{\\\"results\\\":{\\\"games\\\":[{\\\"id\\\":1447,\\\"title\\\":\\\"Contra\\\",\\\"achievementsPublished\\\":40,\\\"playersTotal\\\":23049,\\\"pointsTotal\\\":533,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/079383.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/nes.png\\\",\\\"nameShort\\\":\\\"NES\\\"}},{\\\"id\\\":344,\\\"title\\\":\\\"Contra III: The Alien Wars\\\",\\\"achievementsPublished\\\":30,\\\"playersTotal\\\":9712,\\\"pointsTotal\\\":665,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/110814.png\\\",\\\"system\\\":{\\\"id\\\":3,\\\"name\\\":\\\"SNES\\\\/Super Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/snes.png\\\",\\\"nameShort\\\":\\\"SNES\\\"}},{\\\"id\\\":120,\\\"title\\\":\\\"Contra: Hard Corps\\\",\\\"achievementsPublished\\\":80,\\\"playersTotal\\\":6934,\\\"pointsTotal\\\":905,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/093812.png\\\",\\\"system\\\":{\\\"id\\\":1,\\\"name\\\":\\\"Genesis\\\\/Mega Drive\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/md.png\\\",\\\"nameShort\\\":\\\"MD\\\"}},{\\\"id\\\":1989,\\\"title\\\":\\\"Super C\\\",\\\"achievementsPublished\\\":43,\\\"playersTotal\\\":5375,\\\"pointsTotal\\\":423,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/125066.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\"\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"status\":200,\"len\":3262,\"body\":\"{\\\"results\\\":{\\\"games\\\":[{\\\"id\\\":1447,\\\"title\\\":\\\"Contra\\\",\\\"achievementsPublished\\\":40,\\\"playersTotal\\\":23049,\\\"pointsTotal\\\":533,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/079383.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/nes.png\\\",\\\"nameShort\\\":\\\"NES\\\"}},{\\\"id\\\":344,\\\"title\\\":\\\"Contra III: The Alien Wars\\\",\\\"achievementsPublished\\\":30,\\\"playersTotal\\\":9712,\\\"pointsTotal\\\":665,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/110814.png\\\",\\\"system\\\":{\\\"id\\\":3,\\\"name\\\":\\\"SNES\\\\/Super Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/snes.png\\\",\\\"nameShort\\\":\\\"SNES\\\"}},{\\\"id\\\":120,\\\"title\\\":\\\"Contra: Hard Corps\\\",\\\"achievementsPublished\\\":80,\\\"playersTotal\\\":6934,\\\"pointsTotal\\\":905,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/093812.png\\\",\\\"system\\\":{\\\"id\\\":1,\\\"name\\\":\\\"Genesis\\\\/Mega Drive\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/md.png\\\",\\\"nameShort\\\":\\\"MD\\\"}},{\\\"id\\\":1989,\\\"title\\\":\\\"Super C\\\",\\\"achievementsPublished\\\":43,\\\"playersTotal\\\":5375,\\\"pointsTotal\\\":423,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/125066.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\"\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"status\":200,\"len\":3262,\"body\":\"{\\\"results\\\":{\\\"games\\\":[{\\\"id\\\":1447,\\\"title\\\":\\\"Contra\\\",\\\"achievementsPublished\\\":40,\\\"playersTotal\\\":23049,\\\"pointsTotal\\\":533,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/079383.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/nes.png\\\",\\\"nameShort\\\":\\\"NES\\\"}},{\\\"id\\\":344,\\\"title\\\":\\\"Contra III: The Alien Wars\\\",\\\"achievementsPublished\\\":30,\\\"playersTotal\\\":9712,\\\"pointsTotal\\\":665,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/110814.png\\\",\\\"system\\\":{\\\"id\\\":3,\\\"name\\\":\\\"SNES\\\\/Super Famicom\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/snes.png\\\",\\\"nameShort\\\":\\\"SNES\\\"}},{\\\"id\\\":120,\\\"title\\\":\\\"Contra: Hard Corps\\\",\\\"achievementsPublished\\\":80,\\\"playersTotal\\\":6934,\\\"pointsTotal\\\":905,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/093812.png\\\",\\\"system\\\":{\\\"id\\\":1,\\\"name\\\":\\\"Genesis\\\\/Mega Drive\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/static.retroachievements.org\\\\/assets\\\\/images\\\\/system\\\\/md.png\\\",\\\"nameShort\\\":\\\"MD\\\"}},{\\\"id\\\":1989,\\\"title\\\":\\\"Super C\\\",\\\"achievementsPublished\\\":43,\\\"playersTotal\\\":5375,\\\"pointsTotal\\\":423,\\\"badgeUrl\\\":\\\"https:\\\\/\\\\/media.retroachievements.org\\\\/Images\\\\/125066.png\\\",\\\"system\\\":{\\\"id\\\":7,\\\"name\\\":\\\"NES\\\\/Famicom\\\",\\\"iconUrl\\\"\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-search-shape-006",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:49:16.861Z"
+}
