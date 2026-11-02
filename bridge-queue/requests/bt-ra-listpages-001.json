@@ -1,0 +1,11 @@
+{
+ "url": "https://retroachievements.org/gameList.php?system=7",
+ "mode": "interact",
+ "settleMs": 1500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "(()=>{const s=[...document.querySelectorAll('script[type=\\\"application/json\\\"]')]; return s.length+' types | '+document.querySelectorAll('a[href*=\"/game/\"]').length+' links | pager:'+document.querySelectorAll('a[href*=page]').length;})()"
+  }
+ ]
+}
