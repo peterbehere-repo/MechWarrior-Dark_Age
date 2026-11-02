@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "[{\"badgeLockedUrl\":\"https://media.retroachievements.org/Badge/03641_lock.png\",\"badgeUnlockedUrl\":\"https://media.retroachievements.org/Badge/03641.png\",\"id\":3160,\"title\":\"That Old Classic\",\"createdAt\":\"2013-10-06T01:47:41+00:00\",\"description\":\"Enter the Konami Code on the title screen.\",\"developer\":{\"displayName\":\"Scott\",\"avatarUrl\":\"https://media.retroachievements.org/UserPic/Scott.png?v=0\"},\"orderColumn\":40,\"points\":0,\"pointsWeighted\":0,\"unlockedAt\":\"2026-11-02T17:54:00+00:00\",\"unlockPercentage\":0.478372164,\"unlocksHardcore\":5916,\"unlocksTotal\":11026},{\"badgeLockedUrl\":\"https://media.retroachievements.org/Badge/52853_lock.png\",\"badgeUnlockedUrl\":\"https://media.retroachievements.org/Badge/52853.png\",\"id\":4266,\"title\":\"Off to the Tropics\",\"createdAt\":\"2013-12-30T20:53:54+00:00\",\"description\":\"Clear Stage 1: Jungle.\",\"developer\":{\"displayName\":\"Rdannylor2\",\"avatarUrl\":\"https://media.retroachievements.org/UserPic/Rdannylor2.png?v=0\"},\"orderColumn\":1,\"points\":5,\"pointsWeighted\":5,\"type\":\"progression\",\"unlockedAt\":\"2026-11-02T17:56:14+00:00\",\"unlockPercentage\":0.918564797,\"unlocksHardcore\":10930,\"unlocksTotal\":21172}]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-json3-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:36:48.023Z"
+}
