@@ -1,0 +1,123 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__rgjB=null; window.__rgjErr=null;\n(async () => { try {\n  const want = [\"Contra\", \"Super Mario Bros. 3\", \"Mega Man 2\", \"Ninja Gaiden\", \"Castlevania III\", \"Double Dragon II\", \"Bionic Commando\", \"Duck Tales\", \"Blaster Master\", \"River City Ransom\", \"Life Force\", \"Gradius\", \"Jackal\", \"Skate or Die!\", \"Punch-Out!!\", \"Bubble Bobble\", \"Rygar\", \"Ikari Warriors\", \"Strider\", \"Section Z\"];\n  const norm = s => String(s).toLowerCase().replace(/&amp;/g,'&').replace(/[^a-z0-9]+/g,' ').trim();\n  const findAch = (n,d) => { if(!n||typeof n!=='object'||d>8) return null;\n    if (Array.isArray(n)&&n.length&&n[0]&&typeof n[0]==='object'&&'title' in n[0]&&'points' in n[0]) return n;\n    for (const k in n){ const r=findAch(n[k],d+1); if(r) return r; } return null; };\n  const pick = (rows) => {\n    const r = rows.filter(a => Number(a.points) > 0 && Number(a.ratio) >= 0)\n                  .sort((a,b)=> a.ratio-b.ratio || a.points-b.points || a.id-b.id);\n    if (!r.length) return [];\n    if (r.length <= 3) return r.map((x,i)=>({...x, tier: ['easy','intermediate','advanced'][i]}));\n    const easy=r[0], hard=r[r.length-1];\n    const mid=Math.sqrt(Math.max(easy.ratio,1)*Math.max(hard.ratio,1));\n    let m=r[1];\n    for (const x of r.slice(1,-1)) if (Math.abs(Math.log(Math.max(x.ratio,1))-Math.log(mid)) < Math.abs(Math.log(Math.max(m.ratio,1))-Math.log(mid))) m=x;\n    return [{...easy,tier:'easy'},{...m,tier:'intermediate'},{...hard,tier:'advanced'}];\n  };\n  const out = {};\n  for (const t of want) {\n    const nx = norm(t);\n    let hit = null;\n    try {\n      const res = await fetch('https://retroachievements.org/internal-api/search?q='+encodeURIComponent(t)+'&scope=games');\n      const j = await res.json();\n      const games = (j.results && j.results.games) || [];\n      hit = games.find(g => g.system && g.system.id === 7 && norm(g.title) === nx)\n         || games.find(g => g.system && g.system.id === 7 && (norm(g.title).startsWith(nx) || nx.startsWith(norm(g.title))));\n    } catch(e) { out[t] = { error: 'search: '+String(e.message) }; continue; }\n    if (!hit) { out[t] = { unmatched: true, picks: [] }; continue; }\n    try {\n      const h = await (await fetch('https://retroachievements.org/game/'+hit.id)).text();\n      const d2 = new DOMParser().parseFromString(h,'text/html');\n      const blob = d2.querySelector('script[type=\"application/json\"]');\n      const j2 = JSON.parse(blob.textContent);\n      const arr = findAch(j2,0) || [];\n      const rows = arr.map(a => ({ id:a.id, title:a.title, desc:a.description||'', points:Number(a.points)||0,\n                                   ratio:Number(a.pointsWeighted)||Number(a.points)||0, type:a.type||'' }));\n      out[t] = { raId: hit.id, raTitle: hit.title, n: rows.length, picks: pick(rows), unmatched: false };\n    } catch(e) { out[t] = { raId: hit.id, raTitle: hit.title, error: 'game: '+String(e.message), picks: [] }; }\n    await new Promise(r=>setTimeout(r,120));\n  }\n  window.__rgjB = JSON.stringify(out);\n} catch(e){ window.__rgjErr = String(e && e.stack || e); } })();\n'kicked'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjB || 'pending'"
+  }
+ ]
+}
