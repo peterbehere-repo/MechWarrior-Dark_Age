@@ -1,0 +1,75 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+ "mode": "interact",
+ "settleMs": 2500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__rgjG=null; window.__rgjErr=null;\n(async () => { try {\n  const relay = (req) => new Promise(res => {\n    const id = 'p' + Math.random().toString(36).slice(2);\n    const t = setTimeout(() => { window.removeEventListener('message', h); res({ ok:false, status:0, text:'relay timeout' }); }, 9000);\n    function h(ev) { const d = ev.data; if (!d || d.__rgjLan !== 1 || d.id !== id || !d.res) return;\n      clearTimeout(t); window.removeEventListener('message', h); res(d.res); }\n    window.addEventListener('message', h);\n    window.postMessage({ __rgjLan: 1, id, req }, location.origin);\n  });\n  const base = 'http://192.168.1.169';\n  const out = { steps: [] };\n  const login = await relay({ method:'POST', url: base + '/api/login', headers:{'Content-Type':'application/json'},\n                              body: JSON.stringify({ username:'ark', password:'ark' }) });\n  const tok = String(login.text||'').replace(/^\"|\"$/g,'').trim();\n  const H = { 'X-Auth': tok };\n  const note = (label, r) => out.steps.push([label, r.status, String(r.text).slice(0,160)]);\n\n  // 1. mkdir by trailing slash\n  note('mkdir-trailing', await relay({ method:'POST', url: base + '/api/resources/rgjtest?override=false', headers: H, body: '' }));\n  note('mkdir-plain',    await relay({ method:'POST', url: base + '/api/resources/rgjtest2', headers: H, body: '' }));\n  note('mkdir-json',     await relay({ method:'POST', url: base + '/api/resources/rgjtest3', headers: H, body: JSON.stringify({action:'mkdir'}) }));\n  // 2. inspect\n  const ls = await relay({ method:'GET', url: base + '/api/resources/?override=true', headers: H });\n  try { const j = JSON.parse(ls.text); out.items = j.items.filter(i=>/^rgj/.test(i.name)).map(i=>[i.name, i.isDir]); } catch(e) { out.items = String(ls.text).slice(0,80); }\n  // 3. write + read raw\n  note('write-json', await relay({ method:'POST', url: base + '/api/resources/rgjtest/rgj-device.json?override=true',\n     headers: { ...H, 'Content-Type': 'application/octet-stream' }, body: JSON.stringify({ schema:1, device_id:'g350_hw01', probe:true }) }));\n  note('read-raw', await relay({ method:'GET', url: base + '/api/raw/rgjtest/rgj-device.json', headers: H }));\n  // 4. stray-file delete of the rgj artifact (my own, content {\"action\": \"mkdir\"})\n  note('del-stray', await relay({ method:'DELETE', url: base + '/api/resources/rgj?override=true', headers: H }));\n  note('mkdir-rgj', await relay({ method:'POST', url: base + '/api/resources/rgj?override=false', headers: H, body: '' }));\n  window.__rgjG = JSON.stringify(out);\n} catch(e) { window.__rgjErr = String(e && e.stack || e); } })();\n'kicked'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjErr || window.__rgjG || 'pending'"
+  }
+ ]
+}
