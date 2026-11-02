@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "OK",
+  "finalUrl": "http://192.168.1.169/api/version",
+  "contentType": "text/html; charset=utf-8",
+  "title": "ArkOS Browser by Filebrowser",
+  "html": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1, user-scalable=no\"\n    />\n\n    \n\n    <title>\n      ArkOS Browser by Filebrowser\n    </title>\n\n    <meta name=\"robots\" content=\"noindex,nofollow\" />\n\n    <link\n      rel=\"icon\"\n      type=\"image/png\"\n      sizes=\"32x32\"\n      href=\"/static/img/icons/favicon-32x32.png\"\n    />\n    <link\n      rel=\"icon\"\n      type=\"image/png\"\n      sizes=\"16x16\"\n      href=\"/static/img/icons/favicon-16x\n[TRUNCATED]",
+  "text": "ArkOS Browser by Filebrowser",
+  "id": "bt-g350-api-001",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.169/api/version",
+  "fetchedAt": "2026-11-02T21:32:07.830Z"
+}
