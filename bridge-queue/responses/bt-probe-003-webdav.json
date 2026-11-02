@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "status": 404,
+  "statusText": "Not Found",
+  "finalUrl": "http://192.168.1.68:8080/webdav/",
+  "contentType": "application/json",
+  "title": null,
+  "text": "{\"message\":\"Not Found\"}",
+  "id": "bt-probe-003-webdav",
+  "mode": "fetch",
+  "requestedUrl": "http://192.168.1.68:8080/webdav/",
+  "fetchedAt": "2026-11-02T04:22:26.734Z"
+}
