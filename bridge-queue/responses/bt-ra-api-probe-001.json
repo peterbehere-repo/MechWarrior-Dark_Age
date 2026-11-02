@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "[[\"/api/v1/games?filter[systemId]=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/games?system=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/games/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/game/1447/achievements\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/game/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"]]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "[[\"/api/v1/games?filter[systemId]=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/games?system=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/games/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/game/1447/achievements\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/game/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"]]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "[[\"/api/v1/games?filter[systemId]=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/games?system=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/games/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/game/1447/achievements\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/game/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"]]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "[[\"/api/v1/games?filter[systemId]=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/games?system=7\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/search?q=contra\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/v1/games/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/game/1447/achievements\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"],[\"/api/game/1447\",404,\"{\\\"message\\\":\\\"Not Found\\\",\\\"errors\\\":[{\\\"status\\\":\\\"404\\\",\\\"code\\\":\\\"not_found\\\",\\\"title\\\":\\\"Not Found\\\"}]}\"]]",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://retroachievements.org/game/1447",
+  "id": "bt-ra-api-probe-001",
+  "mode": "interact",
+  "requestedUrl": "https://retroachievements.org/game/1447",
+  "fetchedAt": "2026-11-02T21:40:40.226Z"
+}
