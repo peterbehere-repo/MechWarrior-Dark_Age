@@ -1,0 +1,29 @@
+{
+  "ok": false,
+  "error": "step 2 (js) failed: No tab with id: 1202044132",
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": false,
+      "error": "No tab with id: 1202044132",
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "id": "bt-g350-lan-012",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-02T22:51:17.406Z"
+}
