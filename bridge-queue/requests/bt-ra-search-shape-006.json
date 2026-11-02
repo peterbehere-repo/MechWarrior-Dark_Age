@@ -1,0 +1,35 @@
+{
+ "url": "https://retroachievements.org/game/1447",
+ "mode": "interact",
+ "settleMs": 600,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__rgjRes=null;\n(async () => {\n  const r = await fetch('https://retroachievements.org/internal-api/search?q=' + encodeURIComponent('Contra') + '&scope=games');\n  const t = await r.text();\n  window.__rgjRes = JSON.stringify({ status: r.status, len: t.length, body: t.slice(0, 1200) });\n})();\n'kicked'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjRes || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjRes || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__rgjRes || 'pending'"
+  }
+ ]
+}
