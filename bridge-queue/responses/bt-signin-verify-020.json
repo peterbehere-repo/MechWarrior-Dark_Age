@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"resumedHeader\":\"peterbehere\",\"resumedWho\":\"Showing peterbehere's journey · switch account\",\"resumedHint\":\"peterbehere · signed in on this device · 1 game tracked · pulled 11/2/2026, 7:15:18 PM\",\"tracked\":1,\"lastPull\":\"2026-11-03T01:15:18.178Z\",\"achCache\":{\"filled\":1,\"unmatched\":0,\"total\":1},\"cardCount\":100,\"contraHtml\":\" <div class=\\\"gname\\\">Contra</div> <div class=\\\"gra\\\">RA #1447</div> <div class=\\\"ach-tiers\\\"> <div class=\\\"ach-tier easy \\\"> <span class=\\\"tag\\\">easy</span> <div> <div class=\\\"atitle\\\">Shock Trooper</div> <div class=\\\"adesc\\\">Get zapped by an electric barrier.</div> <div class=\\\"apoints\\\">1 pts · ratio 1</div> </d\",\"firstCardNames\":[\"Contra\",\"Super Mario Bros. 3\",\"Mega Man 2\"],\"bundleSize\":545,\"badKeyError\":\"That API key was rejected (401 Unauthorized).\",\"stillSignedOut\":true}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin4",
+  "id": "bt-signin-verify-020",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin4",
+  "fetchedAt": "2026-11-03T01:15:42.609Z"
+}
