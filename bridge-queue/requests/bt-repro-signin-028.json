@@ -1,0 +1,58 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=repro3",
+ "mode": "interact",
+ "settleMs": 4000,
+ "steps": [
+  {
+   "act": "wait",
+   "selector": "#btn-signin",
+   "timeoutMs": 15000
+  },
+  {
+   "act": "js",
+   "expr": "window.__errs=[];window.addEventListener('error',e=>__errs.push('ERR '+e.message));\nwindow.addEventListener('unhandledrejection',e=>__errs.push('REJ '+(e.reason&&e.reason.message||e.reason)));\nconst oe=window.fetch;window.fetch=function(...a){const s=Date.now();const u=a[0];\n return oe.apply(this,a).then(r=>{__errs.push('OK '+r.status+' '+String(u).slice(30,80)+' '+(Date.now()-s)+'ms');return r;},\n e=>{__errs.push('FETCHFAIL '+String(u).slice(30,80)+' '+(Date.now()-s)+'ms '+e.message);throw e;});};\n'ok'"
+  },
+  {
+   "act": "pause",
+   "ms": 300
+  },
+  {
+   "act": "click",
+   "selector": "#btn-signin"
+  },
+  {
+   "act": "pause",
+   "ms": 900
+  },
+  {
+   "act": "type",
+   "selector": "#auth-ra-user",
+   "text": "peterbehere"
+  },
+  {
+   "act": "type",
+   "selector": "#auth-ra-key",
+   "text": "eM0PNDK2PVBgXiLFk08fbVHmKHdhFdVH"
+  },
+  {
+   "act": "js",
+   "expr": "document.querySelector('#auth-submit').click(),'clicked'"
+  },
+  {
+   "act": "pause",
+   "ms": 2500
+  },
+  {
+   "act": "js",
+   "expr": "JSON.stringify({\n status:document.querySelector('#auth-error').textContent,\n btnDisabled:document.querySelector('#auth-submit').disabled,\n dlg:document.querySelector('#auth-dialog').open,\n header:document.querySelector('#auth-status').textContent,\n who:(document.querySelector('#who-line')||{}).textContent,\n session:(localStorage.getItem('rgj-session-v1')||'').slice(0,80),\n errs:window.__errs.slice(0,10)})"
+  },
+  {
+   "act": "pause",
+   "ms": 6000
+  },
+  {
+   "act": "js",
+   "expr": "JSON.stringify({\n status:document.querySelector('#auth-error').textContent,\n btnDisabled:document.querySelector('#auth-submit').disabled,\n dlg:document.querySelector('#auth-dialog').open,\n header:document.querySelector('#auth-status').textContent,\n who:(document.querySelector('#who-line')||{}).textContent,\n session:(localStorage.getItem('rgj-session-v1')||'').slice(0,80),\n errs:window.__errs.slice(0,10)})"
+  }
+ ]
+}
