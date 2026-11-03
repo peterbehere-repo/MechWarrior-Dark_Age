@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"first\":{\"header\":\"peterbehere\",\"who\":\"Showing peterbehere's journey · switch account\",\"unlocks\":\"3\",\"played\":\"1\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"consoles\":{\"nes\":2}},\"asPeter\":{\"header\":\"Peter\",\"who\":\"Showing Peter's journey · 16 games on consoles this iteration does not show yet (SNES 6 · TurboGrafx-16 4 · GBA 3) · switch account\",\"unlocks\":\"0\",\"played\":\"0\",\"stateKey\":\"rgj-state-v1:u:peter\",\"consoles\":{\"gba\":3,\"snes\":6,\"tg16\":4,\"genesis\":3}},\"backToPeterbehere\":{\"header\":\"peterbehere\",\"who\":\"Showing peterbehere's journey · switch account\",\"unlocks\":\"3\",\"played\":\"1\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"consoles\":{\"nes\":2}},\"chips\":[\"Peter\",\"peterbehere\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=switch1",
+  "id": "bt-switch-verify-025",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=switch1",
+  "fetchedAt": "2026-11-03T01:24:08.100Z"
+}
