@@ -1,0 +1,140 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "pending",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 13,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 14,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 17,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"guest\",\"dialogOpen\":true,\"signedIn\":true,\"name\":\"peterbehere\",\"headerAfter\":\"peterbehere\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"raUser\":\"peterbehere\",\"pulled\":\"2026-11-03T00:57:33.407Z\",\"tracked\":1,\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\"}}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 18,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 19,
+      "act": "pause"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin1",
+  "id": "bt-signin-verify-016",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin1",
+  "fetchedAt": "2026-11-03T00:58:53.903Z"
+}
