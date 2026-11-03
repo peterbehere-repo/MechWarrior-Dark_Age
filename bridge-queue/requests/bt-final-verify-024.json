@@ -1,0 +1,19 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=final2",
+ "mode": "interact",
+ "settleMs": 5000,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async()=>{ try{\n await new Promise(r=>setTimeout(r,6000));\n const cards=[...document.querySelectorAll('.ach-game')];\n const contra=cards.find(n=>/Contra$/.test((n.querySelector('.gname')||{textContent:''}).textContent.trim()));\n window.__v=JSON.stringify({\n  header:document.querySelector('#auth-status').textContent,\n  overall:document.querySelector('#stat-overall').textContent,\n  unlocks:(document.querySelector('#stat-unlocks')||{}).textContent,\n  played:document.querySelector('#stat-playing')?document.querySelector('#stat-playing').textContent:null,\n  unlockKeys:Object.entries(state.unlocks||{}).map(([k,v])=>[k,v.count]),\n  statuses:state.statuses,\n  tiers: contra?[...contra.querySelectorAll('.ach-tier')].map(n=>n.className.replace('ach-tier ','').trim()):null,\n  stars: contra?[...contra.querySelectorAll('.ach-tier.earned .atitle')].map(n=>n.textContent):null,\n  log:[...document.querySelectorAll('#sync-log li')].slice(0,3).map(n=>n.textContent.slice(0,100))\n });\n}catch(e){window.__v='ERR '+(e&&e.stack||e);} })();\n'go'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 8000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v||'pending'"
+  }
+ ]
+}
