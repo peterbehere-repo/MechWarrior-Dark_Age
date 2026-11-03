@@ -1,0 +1,59 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+ "mode": "interact",
+ "settleMs": 2500,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async () => { try {\n  const out = {};\n  const K = 'eM0PNDK2PVBgXiLFk08fbVHmKHdhFdVH', U = 'peterbehere';\n  localStorage.setItem('rgj-ra-v1', JSON.stringify({ user:U, key:K, lastPull:null, games:{}, unmatched:[] }));\n  window.RA.configure(U, K);\n  out.configured = RA.configured();\n  // 1. achievement picks for Contra, straight from the shipped bundle\n  const g = ACH.get('nes','Contra');\n  out.bundle = g ? { raId:g.raId, picks:(g.picks||[]).map(p=>[p.tier,p.title,p.id]) } : 'no bundle entry';\n  // 2. the account's own progress\n  const r = await RA.pullIntoState(ACTIVE_GAMES, state);\n  out.pull = { matched:r.matched, applied:r.applied, scanned:r.scanned };\n  // 3. which of Contra's three are earned, and does the card mark them\n  const e = await ACH.ensureEarned('nes','Contra');\n  out.earned = e;\n  out.shockTrooperEarned = !!e[6850];\n  renderAchievements();\n  const card = [...document.querySelectorAll('.ach-game')].find(n => /Contra$/.test(n.querySelector('.gname').textContent.trim()));\n  out.card = card ? [...card.querySelectorAll('.ach-tier')].map(n => [n.className.replace('ach-tier ',''), n.textContent.replace(/\\s+/g,' ').trim().slice(0,60)]) : 'no card';\n  window.__v = JSON.stringify(out);\n} catch(err) { window.__v = 'ERR ' + (err && err.stack || err); } })();\n'kicked'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  },
+  {
+   "act": "pause",
+   "ms": 3000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v || 'pending'"
+  }
+ ]
+}
