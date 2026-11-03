@@ -1,0 +1,61 @@
+{
+  "ok": false,
+  "error": "step 7 (click) failed: target not visible: #auth-submit",
+  "results": [
+    {
+      "ok": true,
+      "matched": true,
+      "step": 0,
+      "act": "wait"
+    },
+    {
+      "ok": true,
+      "value": "ok",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "label": "Sign in",
+      "matched": true,
+      "ok": true,
+      "step": 3,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 4,
+      "act": "pause"
+    },
+    {
+      "matched": true,
+      "ok": true,
+      "valueLen": 11,
+      "step": 5,
+      "act": "type"
+    },
+    {
+      "matched": true,
+      "ok": true,
+      "valueLen": 32,
+      "step": 6,
+      "act": "type"
+    },
+    {
+      "error": "target not visible: #auth-submit",
+      "ok": false,
+      "step": 7,
+      "act": "click"
+    }
+  ],
+  "id": "bt-repro-signin-026",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=repro1",
+  "fetchedAt": "2026-11-03T03:47:24.404Z"
+}
