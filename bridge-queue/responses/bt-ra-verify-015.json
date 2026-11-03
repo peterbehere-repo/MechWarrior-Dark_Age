@@ -1,0 +1,96 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "kicked",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 11,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"configured\":true,\"bundle\":{\"raId\":1447,\"picks\":[[\"easy\",\"Shock Trooper\",6850],[\"intermediate\",\"Forward March\",6771],[\"advanced\",\"Walking Tall\",51295]]},\"pull\":{\"matched\":80,\"applied\":1,\"scanned\":2},\"earned\":{\"3160\":\"2026-11-02 17:54:00\",\"4266\":\"2026-11-02 17:56:14\",\"6850\":\"2026-11-02 17:56:25\"},\"shockTrooperEarned\":true,\"card\":[[\"easy earned\",\"easy ★ Shock Trooper Get zapped by an electric barrier. 1 pt\"],[\"intermediate \",\"mid Forward March Clear Stage 1 without pressing left and wi\"],[\"advanced \",\"advanced Walking Tall Beat the game without crouching, excep\"]]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 12,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "bt-ra-verify-015",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-03T00:49:59.292Z"
+}
