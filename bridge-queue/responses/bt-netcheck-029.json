@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "started",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"ok\":true,\"status\":200,\"ms\":588,\"len\":366,\"head\":\"{\\\"User\\\":\\\"peterbehere\\\",\\\"ULID\\\":\\\"01M6CJ956XFPNVTDDR9M4M58VZ\\\",\\\"UserPic\\\":\\\"\\\\/UserPic\\\\/\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=net1",
+  "id": "bt-netcheck-029",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=net1",
+  "fetchedAt": "2026-11-03T03:52:30.748Z"
+}
