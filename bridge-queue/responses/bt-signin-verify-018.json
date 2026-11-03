@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "filled",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"signedIn\":true,\"name\":\"peterbehere\",\"header\":\"peterbehere\",\"btn\":\"Sign out\",\"pic\":\"https://retroachievements.org/UserPic/peterbehere.png\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"adoptedContra\":\"completed\",\"adoptedAlt\":null,\"raUser\":\"peterbehere\",\"tracked\":1,\"acctButtons\":[],\"raHint\":\"Not signed in. Progress stays in this browser until you sign in with your RetroAchievements account.\",\"accounts\":[\"peterbehere\"],\"afterSignOut\":{\"signedIn\":false,\"header\":\"guest\",\"stateKey\":\"rgj-state-v1\",\"raUser\":\"\"},\"guestStillThere\":\"completed\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin2",
+  "id": "bt-signin-verify-018",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin2",
+  "fetchedAt": "2026-11-03T01:00:36.874Z"
+}
