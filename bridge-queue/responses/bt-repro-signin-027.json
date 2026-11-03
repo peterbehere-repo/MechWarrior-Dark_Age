@@ -1,0 +1,58 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "matched": true,
+      "step": 0,
+      "act": "wait"
+    },
+    {
+      "label": "Sign in",
+      "matched": true,
+      "ok": true,
+      "step": 1,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"open\":true,\"rect\":{\"x\":39.72916793823242,\"y\":389.07293701171875,\"w\":105.30208587646484,\"h\":37.583335876464844},\"visible\":\"visible/block\",\"count\":1,\"active\":\"auth-ra-user\",\"typed\":\"|0\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    },
+    {
+      "matched": true,
+      "ok": true,
+      "valueLen": 11,
+      "step": 4,
+      "act": "type"
+    },
+    {
+      "matched": true,
+      "ok": true,
+      "valueLen": 32,
+      "step": 5,
+      "act": "type"
+    },
+    {
+      "ok": true,
+      "value": "{\"open\":true,\"rect\":{\"x\":39.72916793823242,\"y\":389.07293701171875,\"w\":105.30208587646484,\"h\":37.583335876464844},\"visible\":\"visible/block\",\"count\":1,\"active\":\"auth-ra-key\",\"typed\":\"peterbehere|32\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=repro2",
+  "id": "bt-repro-signin-027",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=repro2",
+  "fetchedAt": "2026-11-03T03:48:25.718Z"
+}
