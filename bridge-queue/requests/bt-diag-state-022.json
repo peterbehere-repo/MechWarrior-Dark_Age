@@ -1,0 +1,19 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=diag1",
+ "mode": "interact",
+ "settleMs": 4000,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async()=>{ try{\n await new Promise(r=>setTimeout(r,3000));\n const out={\n  header:document.querySelector('#auth-status').textContent,\n  stateKey:IDENT.stateKey(),\n  unlockKeys:Object.keys(state.unlocks||{}),\n  unlockVals:Object.entries(state.unlocks||{}).map(([k,v])=>[k,v.count]),\n  raGameKeys:Object.keys((state.ra&&state.ra.games)||{}),\n  localStorageKeys:Object.keys(localStorage),\n  achFilled:(typeof ACH!=='undefined')?ACH.summary('nes',['Contra']):null,\n  log:[...document.querySelectorAll('#sync-log li')].slice(0,4).map(n=>n.textContent.slice(0,110))\n };\n const cards=[...document.querySelectorAll('.ach-game')];\n const contra=cards.find(n=>/Contra$/.test((n.querySelector('.gname')||{textContent:''}).textContent.trim()));\n out.contraTiers=contra?contra.querySelectorAll('.ach-tier').length:'no card';\n window.__v=JSON.stringify(out);\n}catch(e){window.__v='ERR '+(e&&e.stack||e);} })();\n'go'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 5000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v||'pending'"
+  }
+ ]
+}
