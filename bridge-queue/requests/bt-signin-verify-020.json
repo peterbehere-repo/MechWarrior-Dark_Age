@@ -1,0 +1,19 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin4",
+ "mode": "interact",
+ "settleMs": 4000,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async()=>{ try{\n await new Promise(r=>setTimeout(r,4000));\n const out={\n  resumedHeader:document.querySelector('#auth-status').textContent,\n  resumedWho:(document.querySelector('#who-line')||{}).textContent,\n  resumedHint:(document.querySelector('#ra-hint')||{}).textContent,\n  tracked:RA.summary().tracked,\n  lastPull:RA.summary().lastPull\n };\n // achievements cache + the Contra card\n out.achCache = (typeof ACH!=='undefined' && ACH.summary) ? ACH.summary('nes',['Contra']) : null;\n const cards=[...document.querySelectorAll('.ach-game')];\n out.cardCount=cards.length;\n const contra=cards.find(n=>/Contra$/.test((n.querySelector('.gname')||{textContent:''}).textContent.trim()));\n out.contraHtml= contra? contra.innerHTML.replace(/\\s+/g,' ').slice(0,300) : 'no contra card';\n out.firstCardNames=cards.slice(0,3).map(n=>(n.querySelector('.gname')||{textContent:''}).textContent.trim());\n out.bundleSize=Object.keys(ACH.dump?ACH.dump().games||{}:{}).length;\n // sign out, then try a deliberately wrong key\n document.querySelector('#btn-signin').click();\n await new Promise(r=>setTimeout(r,600));\n document.querySelector('#btn-signin').click();\n const f=document.querySelector('#auth-form');\n f.rauser.value='peterbehere'; f.rakey.value='thisisnotavalidkey0000000000000';\n f.requestSubmit(document.querySelector('#auth-submit'));\n await new Promise(r=>setTimeout(r,3000));\n out.badKeyError=document.querySelector('#auth-error').textContent;\n out.stillSignedOut=!IDENT.signedIn();\n window.__v=JSON.stringify(out);\n}catch(e){window.__v='ERR '+(e&&e.stack||e);} })();\n'go'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 9000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v||'pending'"
+  }
+ ]
+}
