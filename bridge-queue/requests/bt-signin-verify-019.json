@@ -1,0 +1,19 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin3",
+ "mode": "interact",
+ "settleMs": 4000,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async()=>{ try{\n localStorage.clear();\n document.querySelector('#btn-signin').click();\n const f=document.querySelector('#auth-form');\n f.rauser.value='peterbehere';\n f.rakey.value='eM0PNDK2PVBgXiLFk08fbVHmKHdhFdVH';\n f.requestSubmit(document.querySelector('#auth-submit'));\n for(let i=0;i<20 && !IDENT.signedIn();i++) await new Promise(r=>setTimeout(r,400));\n await new Promise(r=>setTimeout(r,5000));\n const wl=document.querySelector('#who-line');\n const card=[...document.querySelectorAll('.ach-game')].find(n=>/Contra$/.test(n.querySelector('.gname').textContent.trim()));\n window.__v=JSON.stringify({\n   signedIn:IDENT.signedIn(), header:document.querySelector('#auth-status').textContent,\n   whoHidden:wl.hidden, who:wl.textContent.replace(/\\s+/g,' ').trim(),\n   overall:document.querySelector('#stat-overall').textContent,\n   raHint:(document.querySelector('#ra-hint')||{}).textContent,\n   tracked:RA.summary().tracked,\n   raFieldsDisabled:document.querySelector('#ra-user').disabled,\n   contra: card?[...card.querySelectorAll('.ach-tier')].map(n=>n.className.replace('ach-tier ','')):null,\n   log:[...document.querySelectorAll('#sync-log li')].slice(0,3).map(n=>n.textContent.slice(0,90))\n });\n}catch(e){window.__v='ERR '+(e&&e.stack||e);} })();\n'go'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 4000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v||'pending'"
+  }
+ ]
+}
