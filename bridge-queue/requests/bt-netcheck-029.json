@@ -1,0 +1,19 @@
+{
+ "url": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=net1",
+ "mode": "interact",
+ "settleMs": 3000,
+ "steps": [
+  {
+   "act": "js",
+   "expr": "\nwindow.__v=null;\n(async()=>{const t=Date.now();const c=new AbortController();const to=setTimeout(()=>c.abort(),12000);\ntry{const r=await fetch('https://retroachievements.org/API/API_GetUserProfile.php?u=peterbehere&y=eM0PNDK2PVBgXiLFk08fbVHmKHdhFdVH',{cache:'no-store',signal:c.signal});\n const txt=await r.text();\n window.__v=JSON.stringify({ok:true,status:r.status,ms:Date.now()-t,len:txt.length,head:txt.slice(0,80)});\n}catch(e){window.__v=JSON.stringify({ok:false,name:e.name,msg:e.message,ms:Date.now()-t});}\nfinally{clearTimeout(to);}})();\n'started'\n"
+  },
+  {
+   "act": "pause",
+   "ms": 14000
+  },
+  {
+   "act": "js",
+   "expr": "window.__v||'pending'"
+  }
+ ]
+}
