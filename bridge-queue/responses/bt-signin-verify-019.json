@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"signedIn\":true,\"header\":\"peterbehere\",\"whoHidden\":false,\"who\":\"Showing peterbehere's journey · switch account\",\"overall\":\"0%\",\"raHint\":\"peterbehere · signed in on this device · 1 game tracked · pulled 11/2/2026, 7:14:21 PM\",\"tracked\":1,\"raFieldsDisabled\":true,\"contra\":[],\"log\":[\"7:14:21 PM — RA pull: 1 game updated (80 matched of 100 in scope, 2 rows scanned).\",\"7:14:21 PM — Signed in as peterbehere. Showing this account's progress.\",\"7:14:21 PM — peterbehere · member since 2026-11-01 · 29 softcore points.\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin3",
+  "id": "bt-signin-verify-019",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=signin3",
+  "fetchedAt": "2026-11-03T01:14:36.748Z"
+}
