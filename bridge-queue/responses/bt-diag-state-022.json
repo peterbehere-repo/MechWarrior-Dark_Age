@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"peterbehere\",\"stateKey\":\"rgj-state-v1:u:peterbehere\",\"unlockKeys\":[],\"unlockVals\":[],\"raGameKeys\":[\"action__nes__contra\"],\"localStorageKeys\":[\"rgj-session-v1\",\"rgj-state-v1:u:peterbehere\",\"rgj-ra-map-v1\",\"rgj-ra-v1\",\"rgj-ach-v1\",\"rgj-accounts-v1\"],\"achFilled\":{\"filled\":1,\"unmatched\":0,\"total\":1},\"log\":[\"7:17:22 PM — RA pull: 1 game updated (80 matched of 100 in scope, 2 rows scanned).\",\"Ready. No sync performed this session.\"],\"contraTiers\":3}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=diag1",
+  "id": "bt-diag-state-022",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=diag1",
+  "fetchedAt": "2026-11-03T01:17:42.885Z"
+}
