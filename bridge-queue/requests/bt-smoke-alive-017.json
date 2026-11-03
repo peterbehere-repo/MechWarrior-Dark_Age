@@ -1,0 +1,5 @@
+{
+ "url": "https://example.com",
+ "mode": "fetch",
+ "settleMs": 800
+}
