@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "value": "go",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 0,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 1,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"header\":\"peterbehere\",\"overall\":\"0%\",\"unlocks\":\"3\",\"played\":\"1\",\"unlockKeys\":[[\"action__nes__contra\",3]],\"statuses\":{\"action__nes__contra\":\"playing\"},\"tiers\":[\"easy earned\",\"intermediate\",\"advanced\"],\"stars\":[\"★ Shock Trooper\"],\"log\":[\"7:20:27 PM — RA pull: 1 game updated (80 matched of 100 in scope, 2 rows scanned).\",\"Ready. No sync performed this session.\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=final2",
+  "id": "bt-final-verify-024",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/?v=final2",
+  "fetchedAt": "2026-11-03T01:20:53.771Z"
+}
