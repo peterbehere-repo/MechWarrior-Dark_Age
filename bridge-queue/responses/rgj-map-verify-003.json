@@ -1,0 +1,152 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "ok",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "scrollY": 0,
+      "step": 3,
+      "act": "scroll"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"start\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 208,
+      "y": 136,
+      "trusted": true,
+      "step": 5,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 6,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"Adventure\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 7,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 333,
+      "y": 136,
+      "trusted": true,
+      "step": 8,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"RPG\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 447,
+      "y": 136,
+      "trusted": true,
+      "step": 11,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 12,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"Puzzle\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 13,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 606,
+      "y": 136,
+      "trusted": true,
+      "step": 14,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 15,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"AdventureGames\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 16,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 71,
+      "y": 136,
+      "trusted": true,
+      "step": 17,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 18,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"Action\",\"saved\":\"nes-action\",\"pill\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"title\":\"Journey Map · Retro Gaming Journey\",\"pts\":20}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 19,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "rgj-map-verify-003",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-04T23:58:58.537Z"
+}
