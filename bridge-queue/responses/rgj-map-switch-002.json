@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"armed\":true,\"ready\":\"complete\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"T\",\"ls\":\"nes-action\",\"active\":\"nes-action\",\"src\":null,\"innerTitle\":\"\",\"hasFn\":\"function\",\"hasLoad\":\"function\",\"hasPicker\":\"function\",\"hasMaps\":\"object\",\"tabs\":[[\"dashboard\",\"tab active\"],[\"journey\",\"tab\"],[\"library\",\"tab\"],[\"achievements\",\"tab\"],[\"sync\",\"tab\"]],\"panel\":\"panel\",\"pillCount\":5,\"err\":[]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 2,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"rect\":[0,0,0,0],\"hit\":\"topbar\",\"isPill\":false}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"clickedTab\":true}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 5,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"T\",\"ls\":\"nes-action\",\"active\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\",\"loaded\":\"nes-action\",\"innerTitle\":\"Journey Map · Retro Gaming Journey\",\"hasFn\":\"function\",\"hasLoad\":\"function\",\"hasPicker\":\"function\",\"hasMaps\":\"object\",\"tabs\":[[\"dashboard\",\"tab\"],[\"journey\",\"tab active\"],[\"library\",\"tab\"],[\"achievements\",\"tab\"],[\"sync\",\"tab\"]],\"panel\":\"panel active\",\"pillCount\":5,\"err\":[]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 6,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "{\"clickedPill\":true}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 7,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 8,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"T\",\"ls\":\"nes-adventure\",\"active\":\"nes-adventure\",\"src\":\"journey-map-adventure.html?v=iter1\",\"loaded\":\"nes-adventure\",\"innerTitle\":\"Journey Map 4 - NES Adventure\",\"hasFn\":\"function\",\"hasLoad\":\"function\",\"hasPicker\":\"function\",\"hasMaps\":\"object\",\"tabs\":[[\"dashboard\",\"tab\"],[\"journey\",\"tab active\"],[\"library\",\"tab\"],[\"achievements\",\"tab\"],[\"sync\",\"tab\"]],\"panel\":\"panel active\",\"pillCount\":5,\"err\":[]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 9,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "rgj-map-switch-002",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-04T23:55:01.299Z"
+}
