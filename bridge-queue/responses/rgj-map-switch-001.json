@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"landing\",\"hash\":\"\",\"lsMap\":\"nes-action\",\"activePill\":\"nes-action\",\"blurb\":\"The NES action route as one continuous trail — twenty path points from the Contra jungle to the final fortress, each with its own artwork and three achievement tiers.\",\"frameSrc\":null,\"inner\":{\"title\":\"\",\"pts\":0,\"firstGame\":null},\"scripts\":[\"https://peterbehere-repo.github.io/retro-gaming-journey/js/data.js?v=iter2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/supabase-config.js\",\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/retroachievements.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/achievements.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/identity.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/app.js?v=iter24\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/sdcard.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/httpsync.js?v=5\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/mtp.js?v=1\"],\"sw\":null}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 205,
+      "y": 101,
+      "trusted": true,
+      "step": 2,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 3,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"after-journey-tab\",\"hash\":\"\",\"lsMap\":\"nes-action\",\"activePill\":\"nes-action\",\"blurb\":\"The NES action route as one continuous trail — twenty path points from the Contra jungle to the final fortress, each with its own artwork and three achievement tiers.\",\"frameSrc\":null,\"inner\":{\"title\":\"\",\"pts\":0,\"firstGame\":null},\"scripts\":[\"https://peterbehere-repo.github.io/retro-gaming-journey/js/data.js?v=iter2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/supabase-config.js\",\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/retroachievements.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/achievements.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/identity.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/app.js?v=iter24\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/sdcard.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/httpsync.js?v=5\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/mtp.js?v=1\"],\"sw\":null}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 0,
+      "y": 0,
+      "trusted": true,
+      "step": 5,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 6,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"after-click-adventure\",\"hash\":\"\",\"lsMap\":\"nes-action\",\"activePill\":\"nes-action\",\"blurb\":\"The NES action route as one continuous trail — twenty path points from the Contra jungle to the final fortress, each with its own artwork and three achievement tiers.\",\"frameSrc\":null,\"inner\":{\"title\":\"\",\"pts\":0,\"firstGame\":null},\"scripts\":[\"https://peterbehere-repo.github.io/retro-gaming-journey/js/data.js?v=iter2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/supabase-config.js\",\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/retroachievements.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/achievements.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/identity.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/app.js?v=iter24\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/sdcard.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/httpsync.js?v=5\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/mtp.js?v=1\"],\"sw\":null}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 7,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 0,
+      "y": 0,
+      "trusted": true,
+      "step": 8,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 9,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"tag\":\"after-click-puzzle\",\"hash\":\"\",\"lsMap\":\"nes-action\",\"activePill\":\"nes-action\",\"blurb\":\"The NES action route as one continuous trail — twenty path points from the Contra jungle to the final fortress, each with its own artwork and three achievement tiers.\",\"frameSrc\":null,\"inner\":{\"title\":\"\",\"pts\":0,\"firstGame\":null},\"scripts\":[\"https://peterbehere-repo.github.io/retro-gaming-journey/js/data.js?v=iter2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/supabase-config.js\",\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/retroachievements.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/achievements.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/identity.js?v=2\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/app.js?v=iter24\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/sdcard.js?v=4\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/httpsync.js?v=5\",\"https://peterbehere-repo.github.io/retro-gaming-journey/js/mtp.js?v=1\"],\"sw\":null}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 10,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "rgj-map-switch-001",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-04T23:54:23.496Z"
+}
