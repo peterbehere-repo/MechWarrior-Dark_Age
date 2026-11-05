@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "ok",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"blurbRight\":1226,\"wrapRight\":1823,\"blurbH\":52,\"fits\":true,\"loader\":true,\"css\":[\"https://peterbehere-repo.github.io/retro-gaming-journey/css/styles.css?v=iter21\"]}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 3,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/index.html?cb=1793837579",
+  "id": "rgj-map-verify-007",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/index.html?cb=1793837579",
+  "fetchedAt": "2026-11-05T00:13:50.307Z"
+}
