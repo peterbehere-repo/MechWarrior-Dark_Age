@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ok": true,
+      "step": 0,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "ok",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 1,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "step": 2,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "scrollY": 0,
+      "step": 3,
+      "act": "scroll"
+    },
+    {
+      "ok": true,
+      "value": "{\"pills\":[{\"map\":\"nes-action\",\"rect\":[12,122,118,28],\"offsetParent\":\"panel-journey\",\"vis\":\"visible\",\"pe\":\"auto\"},{\"map\":\"nes-adventure\",\"rect\":[137,122,140,28],\"offsetParent\":\"panel-journey\",\"vis\":\"visible\",\"pe\":\"auto\"},{\"map\":\"nes-rpg\",\"rect\":[285,122,96,28],\"offsetParent\":\"panel-journey\",\"vis\":\"visible\",\"pe\":\"auto\"},{\"map\":\"nes-puzzle\",\"rect\":[388,122,118,28],\"offsetParent\":\"panel-journey\",\"vis\":\"visible\",\"pe\":\"auto\"},{\"map\":\"nes-vn\",\"rect\":[513,122,185,28],\"offsetParent\":\"panel-journey\",\"vis\":\"visible\",\"pe\":\"auto\"}],\"hits\":[],\"clickPoint\":[208,136],\"topEl\":{\"tag\":\"BUTTON\",\"cls\":\"map-pill\",\"id\":\"\"},\"stack\":[\"BUTTON.map-pill\",\"DIV.map-picker\",\"DIV.journey-head\",\"DIV.journey-frame-wrap\",\"SECTION.panel active\"],\"pickerCount\":1,\"tabCount\":5}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 4,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "value": "armed",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 5,
+      "act": "js"
+    },
+    {
+      "ok": true,
+      "matched": true,
+      "x": 208,
+      "y": 136,
+      "trusted": true,
+      "step": 6,
+      "act": "click"
+    },
+    {
+      "ok": true,
+      "step": 7,
+      "act": "pause"
+    },
+    {
+      "ok": true,
+      "value": "{\"hits\":[],\"saved\":\"nes-action\",\"src\":\"journey-map.html?v=iter1\"}",
+      "trusted": true,
+      "viaCdp": true,
+      "step": 8,
+      "act": "js"
+    }
+  ],
+  "finalUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "id": "rgj-map-verify-004",
+  "mode": "interact",
+  "requestedUrl": "https://peterbehere-repo.github.io/retro-gaming-journey/",
+  "fetchedAt": "2026-11-05T00:00:28.838Z"
+}
