@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dossier Folders — MechWarrior: Dark Age</title><style>body{background:#14171c;color:#d8dde3;font:14px/1.5 system-ui,sans-serif;margin:0;padding:24px}
+h1{color:#fff;font-size:22px;margin:0 0 4px}h2{color:#7ec8ff;font-size:16px;margin:26px 0 8px;border-bottom:1px solid #2a2f38;padding-bottom:5px}
+a{color:#7ec8ff;text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{color:#666;font-size:13px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.card{background:#1c2129;border:1px solid #2a2f38;border-radius:8px;padding:8px;text-align:center}
+.card img{width:100%;border-radius:4px}
+.card .nm{font-size:12px;margin-top:6px;line-height:1.3}
+.card .pt{color:#888;font-size:11px}
+ul{list-style:none;margin:0;padding:0;columns:3;column-gap:32px}li{break-inside:avoid}
+span{color:#888;font-size:12px;margin-right:6px;display:inline-block;min-width:44px;text-align:right}
+.cnt{color:#666;font-size:12px;font-weight:normal}
+footer{margin-top:40px;color:#555;font-size:12px;border-top:1px solid #2a2f38;padding-top:12px}
+.fbar{margin:0 0 18px}
+.srow{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.srow input{flex:1 1 240px;min-width:0;background:#1c2129;border:1px solid #2a2f38;border-radius:8px;
+  color:#d8dde3;font:inherit;font-size:13px;padding:8px 11px;outline:none}
+.srow input:focus{border-color:#7ec8ff}
+.srow input::placeholder{color:#5c6672}
+.srow select{background:#1c2129;border:1px solid #2a2f38;border-radius:8px;color:#aab6c4;font:inherit;
+  font-size:12.5px;padding:8px 9px;outline:none}
+.grp{display:flex;align-items:flex-start;gap:8px;padding:1px 0}
+.glab{flex:0 0 54px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666;
+  font-weight:600;padding-top:6px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:5px;flex:1 1 auto;scrollbar-width:thin}
+@media(min-width:760px){.chips{flex-wrap:wrap;overflow:visible;padding-bottom:0}}
+.grid .card .nm{text-wrap:pretty}
+.grid .card .pt{text-wrap:balance}
+.chips::-webkit-scrollbar{height:5px}
+.chips::-webkit-scrollbar-thumb{background:#2a2f38;border-radius:3px}
+.chip{flex:0 0 auto;font:inherit;font-size:11.5px;line-height:1;padding:6px 9px;border-radius:6px;
+  background:#1c2129;border:1px solid #2a2f38;color:#a2aebb;cursor:pointer;white-space:nowrap;
+  transition:background .12s,border-color .12s,color .12s}
+.chip:hover{border-color:#3d4a5a;color:#d8dde3}
+.chip.on{background:#16303c;border-color:#7ec8ff;color:#cfeaff}
+.chip .c{opacity:.55;margin-left:5px;font-size:10.5px}
+.chip[disabled]{opacity:.3;cursor:default}
+.chip[disabled]:hover{border-color:#2a2f38;color:#a2aebb}
+.fsum{display:flex;align-items:center;gap:10px;border-top:1px solid #222831;margin-top:7px;
+  padding-top:9px;font-size:12px;color:#888}
+.fsum b{color:#d8dde3;font-weight:600}
+.lnk{margin-left:auto;background:none;border:0;color:#7ec8ff;font:inherit;font-size:12px;
+  cursor:pointer;padding:0}
+.lnk[hidden]{display:none}
+a.cardlink{display:block;color:inherit;text-decoration:none}
+.grid .card .nm{color:#d8dde3}
+.grid .card:hover{border-color:#3d4a5a}
+.nav{display:flex;align-items:center;gap:14px;margin:22px 0 0;font-size:13px}
+.nav .sp{margin-left:auto}
+.facts{margin:0 0 16px;font-size:13px;color:#8a94a0;display:flex;flex-wrap:wrap;
+  gap:4px 0;align-items:baseline}
+.facts>span{white-space:nowrap}
+.facts>span+span::before{content:"|";color:#3d4a5a;margin:0 9px}
+.facts b{color:#d8dde3;font-weight:600}
+.folder{width:100%;max-width:980px;margin:0 auto;height:min(78vh,720px)}
+@media(max-width:640px){.folder{height:min(62vh,560px)}}
+.tip{font-size:12px;color:#666;margin:10px 0 0}
+</style></head><body>
+
+<p class="crumbs"><a href="index.html">Home</a> › Dossiers</p>
+<h1>Dossier Folders <span class="cnt">(211)</span></h1>
+<p>Personnel dossiers from all six Dark Age-era sets, rebuilt as the printed bi-fold folder —
+open it, flip the four pages, turn it over to read the filing notes.</p>
+<div class="fbar">
+  <div class="srow">
+    <input id="q" type="search" autocomplete="off" aria-label="Search dossiers"
+           placeholder="Search name, &#x27;Mech, regiment or faction…">
+    <select id="sort" aria-label="Sort by">
+      <option value="name">Name A–Z</option>
+      <option value="era">Era</option>
+      <option value="faction">Faction</option>
+      <option value="series">Series</option>
+      <option value="unit">Unit</option>
+    </select>
+  </div>
+  <div id="filters"></div>
+  <div class="fsum"><span id="n"></span><button class="lnk" id="clear" hidden>Clear filters</button></div>
+</div>
+<div class="grid" id="grid"></div>
+<script>window.ERAS=["3060s", "3070s", "3080s", "3090s", "3100s", "3110s", "3120s", "3130s+", "Unknown"];window.SERIES=["Dark Age", "Counterassault", "Death From Above", "Falcon's Prey", "Fire For Effect", "Liao Incursion"];</script>
+<script src="Dossiers/manifest.js"></script>
+<script>
+(function(){
+  var DATA=window.DOSSIERS, ERAS=window.ERAS, SERIES=window.SERIES;
+  var $=function(s){return document.querySelector(s)};
+  var F={q:'',era:new Set(),t:new Set(),f:new Set(),s:new Set()};
+  function pass(d){
+    if(F.era.size&&!F.era.has(d.era))return false;
+    if(F.t.size  &&!F.t.has(d.t))  return false;
+    if(F.f.size  &&!F.f.has(d.f))  return false;
+    if(F.s.size  &&!F.s.has(d.s))  return false;
+    if(F.q){var h=(d.n+' '+d.u+' '+d.r+' '+d.f+' '+d.s+' '+d.era+' '+d.dob).toLowerCase();
+            if(h.indexOf(F.q)<0)return false;}
+    return true;
+  }
+  // counts hold the OTHER facets fixed, so a chip that would empty the grid
+  // dims out instead of leaving the visitor staring at nothing
+  function count(key,val){var save=F[key];F[key]=new Set();var n=0;
+    for(var i=0;i<DATA.length;i++)if(DATA[i][key]===val&&pass(DATA[i]))n++;
+    F[key]=save;return n;}
+  function values(key,order){var m={},out=[];
+    DATA.forEach(function(d){if(!m[d[key]]){m[d[key]]=1;out.push(d[key]);}});
+    if(order)out.sort(function(a,b){var ia=order.indexOf(a),ib=order.indexOf(b);
+      if(ia<0)ia=99;if(ib<0)ib=99;return ia-ib||(a<b?-1:1);});
+    else out.sort(function(a,b){return a<b?-1:1;});
+    return out;}
+  function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function row(label,key,items,order){
+    var box=document.createElement('div');box.className='grp';
+    var lb=document.createElement('span');lb.className='glab';lb.textContent=label;
+    var ch=document.createElement('div');ch.className='chips';
+    items.forEach(function(v){
+      var n=count(key,v),b=document.createElement('button');
+      b.className='chip'+(F[key].has(v)?' on':'');b.type='button';
+      b.innerHTML=esc(v)+'<span class="c">'+n+'</span>';
+      b.disabled=(n===0&&!F[key].has(v));
+      b.onclick=function(){F[key].has(v)?F[key].delete(v):F[key].add(v);render();};
+      ch.appendChild(b);
+    });
+    box.appendChild(lb);box.appendChild(ch);return box;
+  }
+  var sort='name';
+  function ordered(a){
+    a.sort(function(x,y){
+      if(sort==='era'){var ix=ERAS.indexOf(x.era),iy=ERAS.indexOf(y.era);
+        if(ix!==iy)return ix-iy;return x.n<y.n?-1:1;}
+      if(sort==='faction'){if(x.f!==y.f)return x.f<y.f?-1:1;return x.n<y.n?-1:1;}
+      if(sort==='series'){var sx=SERIES.indexOf(x.s),sy=SERIES.indexOf(y.s);
+        if(sx!==sy)return sx-sy;return x.n<y.n?-1:1;}
+      if(sort==='unit'){if(x.u!==y.u)return x.u<y.u?-1:1;return x.n<y.n?-1:1;}
+      return x.n<y.n?-1:1;});
+    return a;
+  }
+  function render(){
+    var fh=$('#filters');fh.innerHTML='';
+    fh.appendChild(row('Era','era',values('era',ERAS)));
+    fh.appendChild(row('Type','t',values('t')));
+    fh.appendChild(row('Faction','f',values('f')));
+    fh.appendChild(row('Series','s',values('s',SERIES)));
+    var list=ordered(DATA.filter(pass));
+    var out=[],i,d;
+    for(i=0;i<list.length;i++){
+      d=list[i];
+      out.push('<div class="card"><a class="cardlink" href="Dossiers/Viewer.html?id='+d.i+'">'+
+        '<img loading="lazy" width="214" height="300" alt="'+esc(d.n)+'" src="Dossiers/Thumbs/'+d.i+'.webp">'+
+        '</a><div class="nm"><a class="cardlink" href="Dossiers/Viewer.html?id='+d.i+'">'+esc(d.n)+'</a>'+
+        '<br><span class="pt">'+esc(d.u)+'</span>'+
+        '<br><span class="pt">'+esc(d.f)+'</span>'+
+        '<br><span class="pt">'+esc(d.s)+' &middot; '+esc(d.era)+'</span></div></div>');
+    }
+    var g=$('#grid');
+    g.innerHTML=out.length?out.join(''):
+      '<p class="cnt" style="grid-column:1/-1;text-align:center;padding:50px 0">Nothing matches those filters.</p>';
+    var any=F.q||F.era.size||F.t.size||F.f.size||F.s.size;
+    $('#n').innerHTML=any?('<b>'+list.length+'</b> of <b>'+DATA.length+'</b> dossiers'):
+                          ('<b>'+list.length+'</b> dossiers');
+    $('#clear').hidden=!any;
+  }
+  $('#q').addEventListener('input',function(e){F.q=e.target.value.trim().toLowerCase();render();});
+  $('#sort').addEventListener('change',function(e){sort=e.target.value;render();});
+  $('#clear').onclick=function(){F.q='';$('#q').value='';
+    [F.era,F.t,F.f,F.s].forEach(function(s){s.clear();});render();};
+  render();
+})();
+</script>
+
+<footer>MechWarrior: Dark Age fan project — not affiliated with WizKids or Catalyst Game Labs.</footer>
+</body></html>
