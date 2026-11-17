@@ -101,13 +101,14 @@ const NSEG=UNIT.life+UNIT.ko, STEP=360/NSEG;
 document.getElementById('foot').innerHTML = UNIT.footHtml;
 document.title = UNIT.title;
 document.getElementById('h1').textContent = UNIT.h1;
-const atkSE=i=>UNIT.atkSE[i], defSE=i=>UNIT.defSE[i], primSE=i=>UNIT.primSE[i];
+const atkSE=i=>UNIT.atkSE[i], defSE=i=>UNIT.defSE[i], primSE=i=>UNIT.primSE[i],
+      secSE=i=>UNIT.secSE?UNIT.secSE[i]:null, spdSE=i=>UNIT.spdSE?UNIT.spdSE[i]:null;
 /* Warrenborn heat dial table: first panel = green starting squares (heat 0); each click of
    heat rolls the drum one panel — all three boxes change together. A number on the heat dial
    modifies the combat value in the same row (energy->primary, ballistic->secondary,
    'Mech->speed); colored squares mark SEC effects. Last panel = shutdown. */
 const HEAT=UNIT.heat;
-const SEC={gr:'#2f7d32',gy:'#9a9aa2',w:'#f4f4f0',y:'#f2f200',k:'#15151a',r:'#c0453c',bl:'#1d4fd8',sh:'#f4f4f0'};
+const SEC={gr:'#2f7d32',gy:'#9a9aa2',w:'#f4f4f0',y:'#f2f200',k:'#15151a',r:'#c0453c',bl:'#1d4fd8',pu:'#c412ba',sh:'#f4f4f0'};
 const TXTC={gr:'#ffffff',w:'#16161a',y:'#111114',k:'#f2f2f2',r:'#ffffff',bl:'#ffffff',sh:'#16161a'};
 let cur=0, heat=0, destroyed=false;
 const NS='http://www.w3.org/2000/svg';
