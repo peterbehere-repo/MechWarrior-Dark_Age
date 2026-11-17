@@ -84,8 +84,15 @@ const UNIT={
   ATK:[9,9,9,8,8,8,7,7,7,6,6,6,5,5,4],
   DEF:[20,20,19,19,19,19,18,18,18,17,17,17,16,16,15],
   primSE:['r','r','r','r',null,null,null,null,null,null,null,null,null,null,null],
+  primSEn:['Pulse','Pulse','Pulse','Pulse',null,null,null,null,null,null,null,null,null,null,null],
+  secSE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  secSEn:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
   atkSE:[null,null,null,null,null,null,null,null,null,null,null,null,'k','k','k'],
+  atkSEn:[null,null,null,null,null,null,null,null,null,null,null,null,'Salvage','Salvage','Salvage'],
   defSE:['r','r',null,null,null,null,null,null,null,null,null,null,null,null,null],
+  defSEn:['Reflective Armor','Reflective Armor',null,null,null,null,null,null,null,null,null,null,null,null,null],
+  spdSE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+  spdSEn:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
   heat:[
   [['gr','0'],['gr','0'],['gr','0']],
   [['w','0'],['w','0'],['w','0']],
@@ -103,7 +110,7 @@ const atkSE=i=>UNIT.atkSE[i], defSE=i=>UNIT.defSE[i], primSE=i=>UNIT.primSE[i],
    modifies the combat value in the same row (energy->primary, ballistic->secondary,
    'Mech->speed); colored squares mark SEC effects. Last panel = shutdown. */
 const HEAT=UNIT.heat;
-const SEC={gr:'#2f7d32',gy:'#9a9aa2',w:'#f4f4f0',y:'#f2f200',k:'#15151a',r:'#c0453c',bl:'#1d4fd8',pu:'#c412ba',sh:'#f4f4f0'};
+const SEC={gr:'#339933',gy:'#a9a9a8',w:'#f4f4f0',y:'#f2f200',k:'#000000',r:'#ff350a',bl:'#00ade2',pu:'#c412ba',sh:'#f4f4f0'};
 const TXTC={gr:'#ffffff',w:'#16161a',y:'#111114',k:'#f2f2f2',r:'#ffffff',bl:'#ffffff',sh:'#16161a'};
 let cur=0, heat=0, destroyed=false;
 const NS='http://www.w3.org/2000/svg';

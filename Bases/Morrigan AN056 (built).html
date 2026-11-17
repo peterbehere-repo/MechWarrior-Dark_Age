@@ -87,15 +87,15 @@ const UNIT={
   ATK:[9,9,9,8,8,8,7,7,7],
   DEF:[21,20,20,19,19,19,18,17,16],
   primSE:['gr','gr','gr','gr','gr','gr','gr',null,null],
-  atkSE:[null,null,null,null,null,null,null,'k','k'],
-  defSE:['gr',null,null,null,null,null,null,null,null],
   primSEn:['TSEMP','TSEMP','TSEMP','TSEMP','TSEMP','TSEMP','TSEMP',null,null],
-  atkSEn:[null,null,null,null,null,null,null,'Salvage','Salvage'],
-  defSEn:['Decoy',null,null,null,null,null,null,null,null],
-  spdSEn:[null,null,null,null,null,null,null,null,null],
-  spdSE:[null,null,null,null,null,null,null,null,null],
-  secSEn:[null,null,null,null,null,null,null,null,null],
   secSE:[null,null,null,null,null,null,null,null,null],
+  secSEn:[null,null,null,null,null,null,null,null,null],
+  atkSE:[null,null,null,null,null,null,null,'k','k'],
+  atkSEn:[null,null,null,null,null,null,null,'Salvage','Salvage'],
+  defSE:['gr',null,null,null,null,null,null,null,null],
+  defSEn:['Decoy',null,null,null,null,null,null,null,null],
+  spdSE:['bl','bl','bl','bl',null,null,null,null,null],
+  spdSEn:['Jump Jets','Jump Jets','Jump Jets','Jump Jets',null,null,null,null,null],
   heat:[[['gr','0'],['gr','0'],['gr','0']],[['w','0'],['w','0'],['w','0']],[['w','0'],['w','0'],['w','0']],[['y','-1'],['w','0'],['w','0']],[['y','-1'],['w','0'],['w','0']],[['sh','☢'],['sh','☢'],['sh','☢']]],
   heatFx:[['Start','Start','Start'],[null,null,null],[null,null,null],['Heat Sink Overload Check (1-2: heat)',null,null],['Heat Sink Overload Check (1-2: heat)',null,null],[null,null,null]],
   heatRows:[{key:'energy',label:'Primary damage (energy)'},{key:'ballistic',label:'Secondary damage (ballistic)'},{key:'mech',label:'Speed'}],
@@ -119,7 +119,7 @@ const atkSE=i=>UNIT.atkSE[i], defSE=i=>UNIT.defSE[i], primSE=i=>UNIT.primSE[i],
    modifies the combat value in the same row (energy->primary, ballistic->secondary,
    'Mech->speed); colored squares mark SEC effects. Last panel = shutdown. */
 const HEAT=UNIT.heat;
-const SEC={gr:'#2f7d32',gy:'#9a9aa2',w:'#f4f4f0',y:'#f2f200',k:'#15151a',r:'#c0453c',bl:'#1d4fd8',pu:'#c412ba',sh:'#f4f4f0'};
+const SEC={gr:'#339933',gy:'#a9a9a8',w:'#f4f4f0',y:'#f2f200',k:'#000000',r:'#ff350a',bl:'#00ade2',pu:'#c412ba',sh:'#f4f4f0'};
 const TXTC={gr:'#ffffff',w:'#16161a',y:'#111114',k:'#f2f2f2',r:'#ffffff',bl:'#ffffff',sh:'#16161a'};
 let cur=0, heat=0, destroyed=false;
 /* ==== SE glossary (Peter 2026-10-20: tooltips name + describe special equipment).
@@ -208,13 +208,19 @@ function val(g,px,py,w,h,txt,fs,se,tipText){
      single-use SE is a CIRCLE inside it, and either way the numeral prints white on the
      colour. Codes are the colour ('gr','r','bl','k','gy','pu'); a trailing 'c' means circle
      ('rc','blc','puc'). */
+  let rad=0;
   if(se){
     const circ=se.charAt(se.length-1)==='c';
     const col=SEC[circ?se.slice(0,-1):se]||'#444';
-    if(circ){el('circle',{cx:px,cy:py,r:Math.min(w,h)/2-3,fill:col,stroke:'#2a2a30','stroke-width':1},g);}
-    else    {el('rect',{x:px-w/2,y:py-h/2,width:w,height:h,rx:3,fill:col,stroke:'#3c3c44','stroke-width':1},g);}
+    /* Warrenborn's own gifs are 27px in a 27px cell: the circle nearly fills it, the square
+       leaves a 1px white hairline all round. */
+    if(circ){rad=Math.min(w,h)/2-1.5; el('circle',{cx:px,cy:py,r:rad,fill:col},g);}
+    else    {el('rect',{x:px-w/2+1,y:py-h/2+1,width:w-2,height:h-2,rx:2,fill:col},g);}
   }
-  el('text',{x:px,y:py+fs*0.355,'font-size':fs,'font-weight':'800',fill:(se?'#ffffff':'#16161a'),'text-anchor':'middle'},g).textContent=txt;
+  /* a two-digit value in a circle needs a smaller numeral than the plain cell does */
+  let fs2=fs;
+  if(rad){const lim=2*rad-3; while(fs2>9 && String(txt).length*0.58*fs2>lim) fs2-=1;}
+  el('text',{x:px,y:py+fs2*0.355,'font-size':fs2,'font-weight':'800',fill:(se?'#ffffff':'#16161a'),'text-anchor':'middle'},g).textContent=txt;
   /* Peter 2026-10-20: per-VALUE tooltips - each cell carries its own hit rect (topmost within
      the click group) so hovering a value is specific to that value + its SE, not the row. */
   if(tipText){const r=el('rect',{x:px-w/2,y:py-h/2,width:w,height:h,fill:'transparent','pointer-events':'all'},g);tip(r,tipText);}}
