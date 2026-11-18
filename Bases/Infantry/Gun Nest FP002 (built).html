@@ -1,4 +1,4 @@
-wicon('boot',262,S_Y,ICON_S,'FootSpeed speed-mode icon — left of the speed value; STANDARD 32px (one standard size for speed/range/attack/defense, Peter 2026-10-21)'); wicon('atk',268,A_Y,ICON_S,'Attack icon — left of the attack value; STANDARD 32px'); right edge clear of slot; wicon('def',415,473,ICON_S,'Defense icon — STANDARD 32px; nudged up-left 3px so its corners clear the defense box and the rear arc'); rangePrint('b',1,0,16,347,397,'Attack (Primary): Ballistic — 1 target(s) (1 b symbol(s), STANDARD 32px), range 0–16');<!DOCTYPE html>
+<!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>Gun Nest — Infantry Base Mockup</title>
 <style>
 body{background:#111;color:#ddd;font:14px system-ui;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -145,7 +145,10 @@ el('rect',{x:DEFX+DEFW-8,y:DEF_TOP,width:8,height:DEF_BOT-DEF_TOP,fill:'url(#vR)
 tip(el('path',{d:STRIP_D+' '+DEF_D,fill:'none',stroke:'#4a4a52','stroke-width':1.5}),'Die-cut edge of the stat-slot window — 4 values: damage, speed, attack stacked, defense beside');
 el('circle',{cx:CX,cy:CY,r:4,fill:'#e8e8ec',opacity:.9});
 /* ==== unit art: faction logo, speed-mode glyph, range prints ==== */
-wicon('boot',262,S_Y,ICON_S,'Foot speed-mode icon — left of the speed value; STANDARD 32px (Peter 2026-10-21: one standard size for speed/range/attack/defense; was 22→30.8→36.96→44.35, now reduced to 32)'); wicon('atk',268,A_Y,ICON_S,'Attack icon — left of the attack value; STANDARD 32px (was 22→30.8→36.96); right edge clear of slot'); wicon('def',415,473,ICON_S,'Defense icon — STANDARD 32px (was 30.8); nudged up-left 3px so its bounding corners still clear the 17 box (right edge 396, 3px gap) and the rear arc (corner r≈210.6 vs inner edge 213.25)'); rangePrint('b',1,0,6,347,397,'Attack (Primary): Ballistic — 1 target (1 ballistic symbol, STANDARD 32px), range 0–6');
+wicon('boot',262,S_Y,ICON_S,'FootSpeed speed-mode icon — left of the speed value; STANDARD 32px (one standard size for speed/range/attack/defense, Peter 2026-10-21)');
+wicon('atk',268,A_Y,ICON_S,'Attack icon — left of the attack value; STANDARD 32px; right edge clear of the slot');
+wicon('def',415,473,ICON_S,'Defense icon — STANDARD 32px; nudged up-left 3px so its corners clear the defense box and the rear arc');
+rangePrint('b',1,0,16,347,397,'Attack (Primary): Ballistic — 1 target(s) (1 b symbol(s), STANDARD 32px), range 0–16');
 
 /* ==== rim prints ==== */
 const NAME_ARC_D=`M 125.8 202.4 A 222 222 0 0 1 514.2 202.4`;
