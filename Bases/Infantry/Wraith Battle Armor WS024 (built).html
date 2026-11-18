@@ -205,7 +205,7 @@ document.getElementById('bRst').onclick=()=>{cur=0;destroyed=false;render(false)
 document.getElementById('bRestart').onclick=()=>{cur=0;destroyed=false;render(false);setStatus('Restart — dial back to the starting position (click 1 of '+NCLICK+').');};
 /* ==== flat-print tooltip areas ==== */
 area(314,304,12,12,'Dial center — the disc pivots here beneath the fixed base');
-wicon('fac',96,290,64,'Faction symbol — Rasalhague Dominion (position mirrors the mech template; placement on real infantry bases not yet photo-verified)'); /* Rasalhague Dominion */
+wicon('fac',169.5,370.2,64.2,'Faction symbol — Rasalhague Dominion (same spot on the face as on the biped \'Mech bases)'); /* Rasalhague Dominion */
 for(const t of svg.querySelectorAll('text')){
   if(!t.querySelector('textPath')) continue;
   const b=t.getBBox(); if(b.width<=0) continue;
